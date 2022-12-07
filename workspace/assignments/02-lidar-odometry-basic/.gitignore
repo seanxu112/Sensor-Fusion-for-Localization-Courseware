@@ -1,4 +1,5 @@
 .catkin_tools
+./src/lidar_odometry/slam_data
 build
 devel
 install
