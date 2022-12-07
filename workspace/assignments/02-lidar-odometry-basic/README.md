@@ -1,97 +1,176 @@
-# Multi-Sensor Fusion for Localization & Mapping -- 多传感器融合定位与建图: Lidar Odometry Basic
+NDT:
 
-深蓝学院, 多传感器融合定位与建图, 第2节Lidar Odometry Basic代码框架.
+NDT_APE
+<table>
+  <td> <img src="imgs/ndt_full.png" width="300" height="300" /> </td>
+  <td> <img src="imgs/ndt_full_traj.png" width="400" height="300" /> </td>
+</table>
 
----
+NDT_RPE
+<table>
+  <td> <img src="imgs/ndt_seg.png" width="300" height="300" /> </td>
+  <td> <img src="imgs/ndt_seg_traj.png" width="400" height="300" /> </td>
+</table>
 
-## Overview
+ICP_SVD:
+GetCorrespondence method:
 
-本作业旨在实现经典的激光里程计算法.
+```
+size_t ICPSVDRegistration::GetCorrespondence(
+    const CloudData::CLOUD_PTR &input_source, 
+    std::vector<Eigen::Vector3f> &xs,
+    std::vector<Eigen::Vector3f> &ys
+) {
+    const float MAX_CORR_DIST_SQR = max_corr_dist_ * max_corr_dist_;
 
----
+    size_t num_corr = 0;
 
-## Getting Started
+    pcl::PointXYZ curr_point_input, curr_point_target;
 
-### 环境检查: 确保Git Repo与使用的Docker Image均为最新
+	std::vector<float> dist(1);
+	std::vector<int> closest_pt(1);
+	// // cout << “Starting Finding Correspondence” << endl;
+	for (int i = 0; i < input_source->size(); i++ )
+	{
+		curr_point_input = input_source->points[i];
+        input_target_kdtree_->nearestKSearch (curr_point_input, 1, closest_pt, dist);
+        if (dist[0] < MAX_CORR_DIST_SQR)
+        {
+            num_corr++;
+            ys.push_back(Eigen::Vector3f({curr_point_input.x, curr_point_input.y, curr_point_input.z}));
+            curr_point_target = input_target_->points[closest_pt[0]];
+            xs.push_back(Eigen::Vector3f({curr_point_target.x, curr_point_target.y, curr_point_target.z}));
+        }
+	}
+	// cout << “Finished Finding Correspondence” << endl;
 
-首先, 请确保选择了正确的branch **02-lidar-odometry-basic**:
-
-<img src="doc/branch-check.png" alt="Branch Check" width="100%">
-
-执行以下命令，确保所使用的Git Repo与Docker Image均为最新:
-
-```bash
-# update git repo:
-git pull
-#
-# update docker image:
-#
-# 1. first, login to Sensor Fusion registry -- default password is shenlansf20210122:
-docker login --username=937570601@qq.com registry.cn-shanghai.aliyuncs.com
-# 2. then download images:
-docker pull registry.cn-shanghai.aliyuncs.com/shenlanxueyuan/sensor-fusion-workspace:bionic-cpu-vnc
+    return num_corr;
+}
 ```
 
-### 及格要求: 跑通提供的工程框架
+GetTransform Method:
+```
+void ICPSVDRegistration::GetTransform(
+    const std::vector<Eigen::Vector3f> &xs,
+    const std::vector<Eigen::Vector3f> &ys,
+    Eigen::Matrix4f &transformation_
+) {
+    const size_t N = xs.size();
 
-启动Docker后, 打开浏览器, 前往localhost:40080, 进入Web Workspace. **若需要提高清晰度, 可以更改URL中的quality参数**. 启动Terminator, 将两个Shell的工作目录切换如下:
+    // TODO: find centroids of mu_x and mu_y:
+    Eigen::Vector3f mu_x, mu_y;
+    mu_x.setZero(); 
+    mu_y.setZero();
+    for (unsigned int i = 0; i < xs.size(); i++)
+    {
+        mu_x+=xs[i];
+        mu_y+=ys[i];
+    }
+    mu_x /= xs.size();
+    mu_y /= ys.size();
 
-<img src="doc/terminator.png" alt="Terminator" width="100%">
+    // TODO: build H:
+    Eigen::Matrix3f H;
+    H.setZero();
+    for (unsigned int i = 0; i < xs.size(); i++)
+        H += (ys[i] - mu_y) * (xs[i] - mu_x).transpose();
 
-首先, 配置[Click Here](src/lidar_localization/config/front_end/config.yaml)Frontend所使用的算法. 其中2个来自PCL默认实现，另外2个为优秀要求待实现的算法. 应该用哪个，请你阅读框架后自行决定.
+    // TODO: solve R:
+    Eigen::JacobiSVD<Eigen::Matrix3f> svd(H, Eigen::ComputeFullU | Eigen::ComputeFullV); 
+    Eigen::Matrix3f U = svd.matrixU();
+    Eigen::Matrix3f V = svd.matrixV();
+    Eigen::Matrix3f R = V*(U.transpose());
 
-在**上侧**的Shell中, 输入如下命令, **编译catkin_workspace**
+    // TODO: solve t:
+    Eigen::Vector3f t;
+    t.setZero();
+    t = mu_x - R*mu_y;
 
-```bash
-# build
-catkin config --install && catkin build
+    // TODO: set output:
+    transformation_.setIdentity();
+    transformation_.topLeftCorner(3,3) = R;
+    transformation_.block(0,3,3,1) = t;
+    return;
+}
 ```
 
-然后**启动解决方案**
+ScanMatch Method
+```
+bool ICPSVDRegistration::ScanMatch(
+    const CloudData::CLOUD_PTR& input_source, 
+    const Eigen::Matrix4f& predict_pose, 
+    CloudData::CLOUD_PTR& result_cloud_ptr,
+    Eigen::Matrix4f& result_pose
+) {
+    input_source_ = input_source;
 
-```bash
-# set up session:
-source install/setup.bash
-# launch:
-roslaunch lidar_localization front_end.launch
+    // pre-process input source:
+    CloudData::CLOUD_PTR transformed_input_source(new CloudData::CLOUD());
+    pcl::transformPointCloud(*input_source_, *transformed_input_source, predict_pose);
+
+    // init estimation:
+    transformation_.setIdentity();
+    Eigen::Matrix4f transformation_update;
+    transformation_update.setIdentity();
+    
+    //
+    // TODO: first option -- implement all computing logic on your own
+    //
+    // do estimation:
+    int curr_iter = 0;
+    CloudData::CLOUD_PTR curr_source(new CloudData::CLOUD());
+    while (curr_iter < max_iter_) {
+        // TODO: apply current estimation:
+        pcl::transformPointCloud(*transformed_input_source, *curr_source, transformation_);
+        // TODO: get correspondence:
+        std::vector<Eigen::Vector3f> source_match, target_match;
+        int num_corr_ = GetCorrespondence(curr_source, source_match, target_match);
+
+        // TODO: do not have enough correspondence -- break:
+        if (num_corr_ < 20)
+        {
+            LOG(INFO) << "SVD_ICP FAILED, NOT ENOUGH CORRESPONDENSES FOR ICP" << std::endl;
+            LOG(INFO) << "NUM OF CORRESPONDENCE: " << num_corr_ << std::endl;
+            return false;
+        }
+
+        // TODO: update current transform:
+        GetTransform(source_match, target_match, transformation_update);
+
+        // TODO: whether the transformation update is significant:
+        if (!IsSignificant(transformation_update, trans_eps_))
+        {
+            LOG(INFO) << "Update is not significant: " << num_corr_ << std::endl;
+            break;
+        }
+        // TODO: update transformation:
+        transformation_ = transformation_update * transformation_;
+
+        ++curr_iter;
+    }
+    Eigen::Matrix3f  R_mat(transformation_.block<3,3>(0,0));
+    Eigen::JacobiSVD<Eigen::Matrix3f> svd(R_mat, Eigen::ComputeFullU | Eigen::ComputeFullV); 
+    Eigen::Matrix3f R_mat_normalized = svd.matrixU() * svd.matrixV().transpose();
+    transformation_.block<3,3>(0,0) = R_mat_normalized;
+    
+    // set output:
+    result_pose = transformation_ * predict_pose;
+    pcl::transformPointCloud(*input_source_, *result_cloud_ptr, result_pose);
+    
+    return true;
+}
 ```
 
-在**下侧**的Shell中, 输入如下命令, **Play KITTI ROS Bag**. 两个数据集均可用于完成课程, 对代码功能的运行没有任何影响, 区别在于第一个有Camera信息
+ICP_SVD:
 
-```bash
-# play ROS bag, full KITTI:
-rosbag play kitti_2011_10_03_drive_0027_synced.bag
-# play ROS bag, lidar-only KITTI:
-rosbag play kitti_lidar_only_2011_10_03_drive_0027_synced.bag
-```
+ICP_SVD_APE
+<table>
+  <td> <img src="imgs/svd_full.png" width="300" height="300" /> </td>
+  <td> <img src="imgs/svd_full_traj.png" width="400" height="300" /> </td>
+</table>
 
-如果选择的算法正确，成功编译运行后, 可以看到如下的RViz界面:
-
-<img src="doc/demo.png" alt="Frontend Demo" width="100%">
-
-### 良好要求: 使用evo计算出分段统计误差和整体轨迹误差
-
-此处以Docker Workspace为例. 在Terminator中添加新窗口, 切换至如下目录:
-
-```bash
-cd /workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/slam_data/trajectory
-```
-
-<img src="doc/trajectory-dump.png" alt="Trajectory Dumps" width="100%">
-
-该目录下会输出:
-
-* Ground Truth的RTK轨迹估计, ground_truth.txt
-* Lidar Frontend的轨迹估计, laser_odom.txt
-
-请使用上述两个文件, 完成**evo**的评估
-
-此处轨迹会有较大的偏移. 在后续的学习中, 你会了解如何修复这个偏移, 获得更好的轨迹估计.
-
-### 优秀要求: 自己实现点云匹配方法，而不是直接调用pcl库的匹配方法，并使用evo计算出指标
-
-# 高能预警: 该作业需要足够的C++与ROS开发基础. 如果没有, 欢迎发挥主观能动性, 在有限的时间内积极Catch Up, 或者选修深蓝学院的相关课程, 留待务实基础之后再来学习.
-
-为了鼓励真正有志研究框架的同学自主探索, 此处仅在有限的几处增加了`TODO`关键字进行思路提示.
-
-请以此为基础, 理解框架结构, 完成作业实现.
+ICP_SVD_RPE
+<table>
+  <td> <img src="imgs/svd_seg.png" width="300" height="300" /> </td>
+  <td> <img src="imgs/svd_seg_traj.png" width="400" height="300" /> </td>
+</table>
