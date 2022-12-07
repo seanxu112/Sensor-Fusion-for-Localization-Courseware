@@ -1,5 +1,7 @@
 NDT:
 
+<img src="imgs/HW2_NDT.png" width="800" height="500" />
+
 NDT_APE
 <table>
   <td> <img src="imgs/ndt_full.png" width="300" height="300" /> </td>
@@ -163,6 +165,8 @@ bool ICPSVDRegistration::ScanMatch(
 
 ICP_SVD:
 
+<img src="imgs/svd_traj.png" width="600" height="500" />
+
 ICP_SVD_APE
 <table>
   <td> <img src="imgs/svd_full.png" width="300" height="300" /> </td>
@@ -174,3 +178,7 @@ ICP_SVD_RPE
   <td> <img src="imgs/svd_seg.png" width="300" height="300" /> </td>
   <td> <img src="imgs/svd_seg_traj.png" width="400" height="300" /> </td>
 </table>
+
+ICP_SVD_FULLMAP
+
+<img src="imgs/svd_full_map.png" width="800" height="500" />
