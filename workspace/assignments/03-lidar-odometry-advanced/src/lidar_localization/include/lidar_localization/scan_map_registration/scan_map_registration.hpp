@@ -23,9 +23,9 @@
 #include <Eigen/Geometry>
 
 #include "lidar_localization/models/cloud_filter/voxel_filter.hpp"
-#include "lidar_localization/models/loam/sub_map.hpp"
+#include "lidar_localization/models/loam/floam_sub_map.hpp"
 
-#include "lidar_localization/models/loam/aloam_registration.hpp"
+#include "lidar_localization/models/loam/floam_registration.hpp"
 
 namespace lidar_localization {
 
@@ -67,7 +67,7 @@ class ScanMapRegistration {
       int num_threads{4};
       int max_num_iteration{4};
       double max_solver_time{0.05};
-      CeresALOAMRegistration::Config registration_config;
+      CeresFLOAMRegistration::Config registration_config;
     } config_;
 
     //
@@ -97,15 +97,15 @@ class ScanMapRegistration {
       pcl::KdTreeFLANN<CloudDataXYZI::POINT>::Ptr flat;
     } kdtree_;
 
-    std::unique_ptr<aloam::SubMap> submap_ptr_{nullptr};
+    std::unique_ptr<floam::SubMap> submap_ptr_{nullptr};
 
     bool InitParams(const YAML::Node& config_node);
     bool InitFilters(const YAML::Node& config_node);
     bool InitKdTrees(void);
     bool InitSubMap(const YAML::Node& config_node);
 
-    bool HasSufficientFeaturePoints(const aloam::SubMap::LocalMap &local_map);
-    bool SetTargetPoints(aloam::SubMap::LocalMap& local_map);
+    bool HasSufficientFeaturePoints(const floam::SubMap::LocalMap &local_map);
+    bool SetTargetPoints(floam::SubMap::LocalMap& local_map);
 
     bool ProjectToMapFrame(
       const CloudDataXYZI::CLOUD_PTR& source,
@@ -114,12 +114,12 @@ class ScanMapRegistration {
     int AddEdgeFactors(
       const CloudDataXYZI::CLOUD_PTR source,
       const CloudDataXYZI::CLOUD_PTR target,
-      CeresALOAMRegistration &aloam_registration 
+      CeresFLOAMRegistration &floam_registration 
     );
     int AddPlaneFactors(
       const CloudDataXYZI::CLOUD_PTR source,
       const CloudDataXYZI::CLOUD_PTR target,
-      CeresALOAMRegistration &aloam_registration 
+      CeresFLOAMRegistration &floam_registration 
     );
 
     bool PredictScanMapOdometry(const Eigen::Matrix4f& odom_scan_to_scan);

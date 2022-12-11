@@ -299,7 +299,7 @@ bool ScanScanRegistration::AssociateSurfacePoints(
 int ScanScanRegistration::AddEdgeFactors(
     const CloudDataXYZI::CLOUD &corner_sharp,
     const std::vector<CornerPointAssociation> &corner_point_associations,
-    CeresALOAMRegistration &aloam_registration
+    CeresFLOAMRegistration &floam_registration
 ) {
     int num_factors{0};
 
@@ -322,7 +322,7 @@ int ScanScanRegistration::AddEdgeFactors(
             kdtree_.candidate_corner_ptr->points.at(corner_point_association.associated_y_index).z
         };
 
-        aloam_registration.AddEdgeFactor(
+        floam_registration.AddEdgeFactor(
             source,
             target_x, target_y,
             1.0 // corner_point_association.ratio
@@ -337,7 +337,7 @@ int ScanScanRegistration::AddEdgeFactors(
 int ScanScanRegistration::AddPlaneFactors(
     const CloudDataXYZI::CLOUD &surf_flat,
     const std::vector<SurfacePointAssociation> &surface_point_associations,
-    CeresALOAMRegistration &aloam_registration
+    CeresFLOAMRegistration &floam_registration
 ) {
     int num_factors{0};
 
@@ -366,7 +366,7 @@ int ScanScanRegistration::AddPlaneFactors(
             kdtree_.candidate_surface_ptr->points.at(surface_point_association.associated_z_index).z
         };
 
-        aloam_registration.AddPlaneFactor(
+        floam_registration.AddPlaneFactor(
             source,
             target_x, target_y, target_z,
             1.0 // surface_point_association.ratio
@@ -430,13 +430,13 @@ bool ScanScanRegistration::Update(
             }
 
             // build problem:
-            CeresALOAMRegistration aloam_registration(config_.registration_config, dq_, dt_);
-            const auto num_edge_factors = AddEdgeFactors(*corner_sharp, corner_point_associations, aloam_registration);
-            const auto num_plane_factors = AddPlaneFactors(*surf_flat, surface_point_associations, aloam_registration);
+            CeresFLOAMRegistration floam_registration(config_.registration_config, dq_, dt_);
+            const auto num_edge_factors = AddEdgeFactors(*corner_sharp, corner_point_associations, floam_registration);
+            const auto num_plane_factors = AddPlaneFactors(*surf_flat, surface_point_associations, floam_registration);
 
             // get relative pose:
-            aloam_registration.Optimize();
-            aloam_registration.GetOptimizedRelativePose(dq_, dt_);
+            floam_registration.Optimize();
+            floam_registration.GetOptimizedRelativePose(dq_, dt_);
         }
 
         // update odometry:

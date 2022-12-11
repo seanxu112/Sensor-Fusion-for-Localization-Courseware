@@ -22,7 +22,7 @@
 #include <Eigen/Dense>
 #include <Eigen/Geometry>
 
-#include "lidar_localization/models/loam/aloam_registration.hpp"
+#include "lidar_localization/models/loam/floam_registration.hpp"
 
 namespace lidar_localization {
 
@@ -84,12 +84,12 @@ class ScanScanRegistration {
     int AddEdgeFactors(
         const CloudDataXYZI::CLOUD &corner_sharp,
         const std::vector<CornerPointAssociation> &corner_point_associations,
-        CeresALOAMRegistration &aloam_registration
+        CeresFLOAMRegistration &floam_registration
     );
     int AddPlaneFactors(
         const CloudDataXYZI::CLOUD &surf_flat,
         const std::vector<SurfacePointAssociation> &surface_point_associations,
-        CeresALOAMRegistration &aloam_registration
+        CeresFLOAMRegistration &floam_registration
     );
 
     bool SetTargetPoints(
@@ -109,7 +109,7 @@ class ScanScanRegistration {
       int num_threads{4};
       int max_num_iteration{4};
       double max_solver_time{0.05};
-      CeresALOAMRegistration::Config registration_config;
+      CeresFLOAMRegistration::Config registration_config;
     } config_;
 
     // target corner & plane feature points:

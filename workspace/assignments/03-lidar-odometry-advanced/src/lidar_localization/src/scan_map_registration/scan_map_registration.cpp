@@ -64,16 +64,16 @@ bool ScanMapRegistration::Update(
         // LOG(WARNING) << "Scan-Map Registration: " << std::endl;
         for (int i = 0; i < config_.max_num_iteration; ++i) {
             // build problem:
-            CeresALOAMRegistration aloam_registration(
+            CeresFLOAMRegistration floam_registration(
                 config_.registration_config,
                 pose_.scan_map_odometry.q, pose_.scan_map_odometry.t
             );
-            AddEdgeFactors(filtered_sharp_points, local_map.sharp, aloam_registration);
-            AddPlaneFactors(filtered_flat_points, local_map.flat, aloam_registration);
+            AddEdgeFactors(filtered_sharp_points, local_map.sharp, floam_registration);
+            AddPlaneFactors(filtered_flat_points, local_map.flat, floam_registration);
 
             // get relative pose:
-            aloam_registration.Optimize();
-            aloam_registration.GetOptimizedRelativePose(pose_.scan_map_odometry.q, pose_.scan_map_odometry.t);
+            floam_registration.Optimize();
+            floam_registration.GetOptimizedRelativePose(pose_.scan_map_odometry.q, pose_.scan_map_odometry.t);
         }
     }
 
@@ -133,7 +133,7 @@ bool ScanMapRegistration::InitKdTrees(void) {
 
 bool ScanMapRegistration::InitSubMap(const YAML::Node& config_node) {
     // init submap config:
-    aloam::SubMap::Config config;
+    floam::SubMap::Config config;
 
     config.set_resolution(config_node["resolution"].as<double>())
           .set_num_tiles_x(config_node["num_tiles_x"].as<int>())
@@ -144,12 +144,12 @@ bool ScanMapRegistration::InitSubMap(const YAML::Node& config_node) {
           .set_local_map_radius(config_node["local_map_radius"].as<int>());
     
     // init submap:
-    submap_ptr_ = std::make_unique<aloam::SubMap>(config);
+    submap_ptr_ = std::make_unique<floam::SubMap>(config);
 
     return true;
 }
 
-bool ScanMapRegistration::HasSufficientFeaturePoints(const aloam::SubMap::LocalMap &local_map) {
+bool ScanMapRegistration::HasSufficientFeaturePoints(const floam::SubMap::LocalMap &local_map) {
     const auto num_sharp_points = static_cast<int>(local_map.sharp->points.size());
     const auto num_flat_points = static_cast<int>(local_map.flat->points.size());
 
@@ -160,7 +160,7 @@ bool ScanMapRegistration::HasSufficientFeaturePoints(const aloam::SubMap::LocalM
 }
 
 bool ScanMapRegistration::SetTargetPoints(
-    aloam::SubMap::LocalMap& local_map
+    floam::SubMap::LocalMap& local_map
 ) {
     filter_.sharp_filter_ptr_->Filter(local_map.sharp, local_map.sharp);
     filter_.flat_filter_ptr_->Filter(local_map.flat, local_map.flat);
@@ -188,7 +188,7 @@ bool ScanMapRegistration::ProjectToMapFrame(
 int ScanMapRegistration::AddEdgeFactors(
     const CloudDataXYZI::CLOUD_PTR source,
     const CloudDataXYZI::CLOUD_PTR target,
-    CeresALOAMRegistration &aloam_registration 
+    CeresFLOAMRegistration &floam_registration 
 ) {
     const auto num_feature_points = source->points.size();
 
@@ -249,7 +249,7 @@ int ScanMapRegistration::AddEdgeFactors(
                 const auto target_y = -0.1 * unit_direction + mu;
 
                 // use predicted odometry from scan-scan odometry as initial value:
-                aloam_registration.AddEdgeFactor(
+                floam_registration.AddEdgeFactor(
                     source,
                     target_x, target_y,
                     1.0
@@ -266,7 +266,7 @@ int ScanMapRegistration::AddEdgeFactors(
 int ScanMapRegistration::AddPlaneFactors(
     const CloudDataXYZI::CLOUD_PTR source,
     const CloudDataXYZI::CLOUD_PTR target,
-    CeresALOAMRegistration &aloam_registration 
+    CeresFLOAMRegistration &floam_registration 
 ) {
     const auto num_feature_points = source->points.size();
 
@@ -316,7 +316,7 @@ int ScanMapRegistration::AddPlaneFactors(
                 };
 
                 // use predicted odometry from scan-scan odometry as initial value:
-                aloam_registration.AddPlaneNormFactor(
+                floam_registration.AddPlaneNormFactor(
                     source,
                     norm, negative_oa_dot_norm
                 );
@@ -330,7 +330,7 @@ int ScanMapRegistration::AddPlaneFactors(
 }
 
 bool ScanMapRegistration::PredictScanMapOdometry(const Eigen::Matrix4f& odom_scan_to_scan) {
-    // set scan-scan estimation, ALOAM original implementation:
+    // set scan-scan estimation, FLOAM original implementation:
     // pose_.scan_scan_odometry.q = odom_scan_to_scan.block<3, 3>(0, 0).cast<double>();
     // pose_.scan_scan_odometry.t = odom_scan_to_scan.block<3, 1>(0, 3).cast<double>();
 
