@@ -1,0 +1,15 @@
+[36mInstall the project...[0m
+-- Install configuration: ""
+-- Installing: /workspace/assignments/02-lidar-odometry-basic/install/_setup_util.py
+-- Installing: /workspace/assignments/02-lidar-odometry-basic/install/env.sh
+-- Installing: /workspace/assignments/02-lidar-odometry-basic/install/setup.bash
+-- Installing: /workspace/assignments/02-lidar-odometry-basic/install/local_setup.bash
+-- Installing: /workspace/assignments/02-lidar-odometry-basic/install/setup.sh
+-- Installing: /workspace/assignments/02-lidar-odometry-basic/install/local_setup.sh
+-- Installing: /workspace/assignments/02-lidar-odometry-basic/install/setup.zsh
+-- Installing: /workspace/assignments/02-lidar-odometry-basic/install/local_setup.zsh
+-- Installing: /workspace/assignments/02-lidar-odometry-basic/install/.rosinstall
+-- Installing: /workspace/assignments/02-lidar-odometry-basic/install/lib/pkgconfig/catkin_tools_prebuild.pc
+-- Installing: /workspace/assignments/02-lidar-odometry-basic/install/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake
+-- Installing: /workspace/assignments/02-lidar-odometry-basic/install/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
+-- Installing: /workspace/assignments/02-lidar-odometry-basic/install/share/catkin_tools_prebuild/package.xml

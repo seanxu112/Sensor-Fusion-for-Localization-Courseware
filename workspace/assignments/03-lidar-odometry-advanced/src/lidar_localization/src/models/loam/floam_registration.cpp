@@ -22,7 +22,7 @@ CeresFLOAMRegistration::CeresFLOAMRegistration(
     // config optimizer:
     // 
     // 1. parameterization:
-    config_.q_parameterization_ptr = new ceres::EigenQuaternionParameterization();
+    config_.q_parameterization_ptr = new PoseSE3Parameterization();
     // 2. loss function:
     // TODO: move param to config
     config_.loss_function_ptr = new ceres::HuberLoss(0.10);
@@ -42,8 +42,9 @@ CeresFLOAMRegistration::CeresFLOAMRegistration(
     //
     param_.q[0] = dq.x(); param_.q[1] = dq.y(); param_.q[2] = dq.z(); param_.q[3] = dq.w();
     param_.t[0] = dt.x(); param_.t[1] = dt.y(); param_.t[2] = dt.z();
-    problem_.AddParameterBlock(param_.q, 4, config_.q_parameterization_ptr);
-    problem_.AddParameterBlock(param_.t, 3);
+    param_.pose[0] = dq.x(); param_.pose[1] = dq.y(); param_.pose[2] = dq.z(); param_.pose[3] = dq.w();
+    param_.pose[4] = dt.x(); param_.pose[5] = dt.y(); param_.pose[6] = dt.z();
+    problem_.AddParameterBlock(param_.pose, 7, config_.q_parameterization_ptr);
 }
 
 CeresFLOAMRegistration::~CeresFLOAMRegistration() {
@@ -83,7 +84,7 @@ bool CeresFLOAMRegistration::AddEdgeFactor(
     problem_.AddResidualBlock(
         factor_edge, 
         config_.loss_function_ptr, 
-        param_.q, param_.t
+        param_.pose
     );
 
     return true;
@@ -125,7 +126,7 @@ bool CeresFLOAMRegistration::AddPlaneFactor(
     problem_.AddResidualBlock(
         factor_plane, 
         config_.loss_function_ptr, 
-        param_.q, param_.t
+        param_.pose
     );
 
     return true;
@@ -176,15 +177,27 @@ bool CeresFLOAMRegistration::Optimize() {
   * @return true if success false otherwise
   */
 bool CeresFLOAMRegistration::GetOptimizedRelativePose(Eigen::Quaterniond &dq, Eigen::Vector3d &dt) {
-    dq.x() = param_.q[0];
-    dq.y() = param_.q[1];
-    dq.z() = param_.q[2];
-    dq.w() = param_.q[3];
+    dq.x() = param_.pose[0];
+    dq.y() = param_.pose[1];
+    dq.z() = param_.pose[2];
+    dq.w() = param_.pose[3];
     dq.normalize();
 
-    dt.x() = param_.t[0];
-    dt.y() = param_.t[1];
-    dt.z() = param_.t[2];
+    dt.x() = param_.pose[4];
+    dt.y() = param_.pose[5];
+    dt.z() = param_.pose[6];
+    
+    // dq.x() = param_.q[0];
+    // dq.y() = param_.q[1];
+    // dq.z() = param_.q[2];
+    // dq.w() = param_.q[3];
+    // dq.normalize();
+
+    // dq = param.so3_.unit_quaternion();
+
+    // dt.x() = param_.t[0];
+    // dt.y() = param_.t[1];
+    // dt.z() = param_.t[2];
 
     return true;
 }

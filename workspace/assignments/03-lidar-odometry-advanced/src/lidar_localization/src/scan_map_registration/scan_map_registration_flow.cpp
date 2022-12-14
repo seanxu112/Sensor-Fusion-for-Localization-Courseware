@@ -67,7 +67,7 @@ bool ScanMapRegistrationFlow::InitPublishers(ros::NodeHandle& nh, const YAML::No
     );
 
     lidar_to_map_tf_pub_ptr_ = std::make_unique<TFBroadCaster>(
-        "/map", "/velo_link"
+        "map", "velo_link"
     );
 
     return true;

@@ -1,0 +1,141 @@
+In file included from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/sicp/sicp_registration.cpp:13:0[m[K:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/ICP.h:153:0:[m[K [01;35m[Kwarning: [m[Kignoring #pragma omp parallel [[01;35m[K-Wunknown-pragmas[m[K]
+         #pragma omp parallel
+ 
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/ICP.h:155:0:[m[K [01;35m[Kwarning: [m[Kignoring #pragma omp for [[01;35m[K-Wunknown-pragmas[m[K]
+             #pragma omp for
+ 
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/ICP.h:159:0:[m[K [01;35m[Kwarning: [m[Kignoring #pragma omp sections [[01;35m[K-Wunknown-pragmas[m[K]
+             #pragma omp sections nowait
+ 
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/ICP.h:161:0:[m[K [01;35m[Kwarning: [m[Kignoring #pragma omp section [[01;35m[K-Wunknown-pragmas[m[K]
+                 #pragma omp section
+ 
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/ICP.h:163:0:[m[K [01;35m[Kwarning: [m[Kignoring #pragma omp section [[01;35m[K-Wunknown-pragmas[m[K]
+                 #pragma omp section
+ 
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/ICP.h:165:0:[m[K [01;35m[Kwarning: [m[Kignoring #pragma omp section [[01;35m[K-Wunknown-pragmas[m[K]
+                 #pragma omp section
+ 
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/ICP.h:167:0:[m[K [01;35m[Kwarning: [m[Kignoring #pragma omp section [[01;35m[K-Wunknown-pragmas[m[K]
+                 #pragma omp section
+ 
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/ICP.h:231:0:[m[K [01;35m[Kwarning: [m[Kignoring #pragma omp parallel [[01;35m[K-Wunknown-pragmas[m[K]
+         #pragma omp parallel for
+ 
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/ICP.h:244:0:[m[K [01;35m[Kwarning: [m[Kignoring #pragma omp parallel [[01;35m[K-Wunknown-pragmas[m[K]
+         #pragma omp parallel for
+ 
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/ICP.h:276:0:[m[K [01;35m[Kwarning: [m[Kignoring #pragma omp parallel [[01;35m[K-Wunknown-pragmas[m[K]
+             #pragma omp parallel for
+ 
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/ICP.h:341:0:[m[K [01;35m[Kwarning: [m[Kignoring #pragma omp parallel [[01;35m[K-Wunknown-pragmas[m[K]
+             #pragma omp parallel for
+ 
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/ICP.h:499:0:[m[K [01;35m[Kwarning: [m[Kignoring #pragma omp parallel [[01;35m[K-Wunknown-pragmas[m[K]
+             #pragma omp parallel for
+ 
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/ICP.h:548:0:[m[K [01;35m[Kwarning: [m[Kignoring #pragma omp parallel [[01;35m[K-Wunknown-pragmas[m[K]
+             #pragma omp parallel for
+ 
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:[m[K In member function ‘[01m[Ksize_t lidar_localization::ICPSVDRegistration::GetCorrespondence(const CLOUD_PTR&, std::vector<Eigen::Matrix<float, 3, 1> >&, std::vector<Eigen::Matrix<float, 3, 1> >&)[m[K’:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:124:2:[m[K [01;31m[Kerror: [m[K‘[01m[Kmatch[m[K’ was not declared in this scope
+  [01;31m[Kmatch[m[K curr_match;
+  [01;31m[K^~~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:124:2:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Krpmatch[m[K’
+  [01;36m[Kmatch[m[K curr_match;
+  [01;36m[K^~~~~[m[K
+  [32m[Krpmatch[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:128:22:[m[K [01;31m[Kerror: [m[K‘[01m[Ktarget_cloud[m[K’ was not declared in this scope
+  for (int i = 0; i < [01;31m[Ktarget_cloud[m[K->size(); i++ )
+                      [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:130:3:[m[K [01;31m[Kerror: [m[K‘[01m[KsearchPoint[m[K’ was not declared in this scope
+   [01;31m[KsearchPoint[m[K = target_cloud->points[i];
+   [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:130:3:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Knearbyint[m[K’
+   [01;36m[KsearchPoint[m[K = target_cloud->points[i];
+   [01;36m[K^~~~~~~~~~~[m[K
+   [32m[Knearbyint[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:131:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kkdtree[m[K’ was not declared in this scope
+   if ([01;31m[Kkdtree[m[K.nearestKSearch (searchPoint, 1, closest_pt, dist) == 1)
+       [01;31m[K^~~~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:131:7:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kfree[m[K’
+   if ([01;36m[Kkdtree[m[K.nearestKSearch (searchPoint, 1, closest_pt, dist) == 1)
+       [01;36m[K^~~~~~[m[K
+       [32m[Kfree[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:134:6:[m[K [01;31m[Kerror: [m[K‘[01m[Kcorr[m[K’ was not declared in this scope
+      [01;31m[Kcorr[m[K.push_back(match(closest_pt[0], i));
+      [01;31m[K^~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:134:6:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kfork[m[K’
+      [01;36m[Kcorr[m[K.push_back(match(closest_pt[0], i));
+      [01;36m[K^~~~[m[K
+      [32m[Kfork[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:138:2:[m[K [01;31m[Kerror: [m[Kreturn-statement with no value, in function returning ‘[01m[Ksize_t {aka long unsigned int}[m[K’ [[01;31m[K-fpermissive[m[K]
+  [01;31m[Kreturn[m[K;
+  [01;31m[K^~~~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:119:17:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KMAX_CORR_DIST_SQR[m[K’ [[01;35m[K-Wunused-variable[m[K]
+     const float [01;35m[KMAX_CORR_DIST_SQR[m[K = max_corr_dist_ * max_corr_dist_;
+                 [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:[m[K In member function ‘[01m[Kvoid lidar_localization::ICPSVDRegistration::GetTransform(const std::vector<Eigen::Matrix<float, 3, 1> >&, const std::vector<Eigen::Matrix<float, 3, 1> >&, Eigen::Matrix4f&)[m[K’:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:149:18:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KN[m[K’ [[01;35m[K-Wunused-variable[m[K]
+     const size_t [01;35m[KN[m[K = xs.size();
+                  [01;35m[K^[m[K
+In file included from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/ICP.h:24:0[m[K,
+                 from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/sicp/sicp_registration.cpp:13[m[K:
+/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/nanoflann.hpp: In instantiation of ‘[01m[Knanoflann::KDTreeSingleIndexAdaptor<Distance, DatasetAdaptor, DIM, IndexType>::Node* nanoflann::KDTreeSingleIndexAdaptor<Distance, DatasetAdaptor, DIM, IndexType>::divideTree(IndexType, IndexType, nanoflann::KDTreeSingleIndexAdaptor<Distance, DatasetAdaptor, DIM, IndexType>::BoundingBox&) [with Distance = nanoflann::L2_Simple_Adaptor<double, nanoflann::KDTreeAdaptor<Eigen::Matrix<double, 3, -1>, 3, nanoflann::metric_L2_Simple>, double>; DatasetAdaptor = nanoflann::KDTreeAdaptor<Eigen::Matrix<double, 3, -1>, 3, nanoflann::metric_L2_Simple>; int DIM = 3; IndexType = int; nanoflann::KDTreeSingleIndexAdaptor<Distance, DatasetAdaptor, DIM, IndexType>::NodePtr = nanoflann::KDTreeSingleIndexAdaptor<nanoflann::L2_Simple_Adaptor<double, nanoflann::KDTreeAdaptor<Eigen::Matrix<double, 3, -1>, 3, nanoflann::metric_L2_Simple>, double>, nanoflann::KDTreeAdaptor<Eigen::Matrix<double, 3, -1>, 3, nanoflann::metric_L2_Simple>, 3, int>::Node*; nanoflann::KDTreeSingleIndexAdaptor<Distance, DatasetAdaptor, DIM, IndexType>::BoundingBox = std::vector<nanoflann::KDTreeSingleIndexAdaptor<nanoflann::L2_Simple_Adaptor<double, nanoflann::KDTreeAdaptor<Eigen::Matrix<double, 3, -1>, 3, nanoflann::metric_L2_Simple>, double>, nanoflann::KDTreeAdaptor<Eigen::Matrix<double, 3, -1>, 3, nanoflann::metric_L2_Simple>, 3, int>::Interval, std::allocator<nanoflann::KDTreeSingleIndexAdaptor<nanoflann::L2_Simple_Adaptor<double, nanoflann::KDTreeAdaptor<Eigen::Matrix<double, 3, -1>, 3, nanoflann::metric_L2_Simple>, double>, nanoflann::KDTreeAdaptor<Eigen::Matrix<double, 3, -1>, 3, nanoflann::metric_L2_Simple>, 3, int>::Interval> >][m[K’:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/nanoflann.hpp:749:26:[m[K   required from ‘[01m[Kvoid nanoflann::KDTreeSingleIndexAdaptor<Distance, DatasetAdaptor, DIM, IndexType>::buildIndex() [with Distance = nanoflann::L2_Simple_Adaptor<double, nanoflann::KDTreeAdaptor<Eigen::Matrix<double, 3, -1>, 3, nanoflann::metric_L2_Simple>, double>; DatasetAdaptor = nanoflann::KDTreeAdaptor<Eigen::Matrix<double, 3, -1>, 3, nanoflann::metric_L2_Simple>; int DIM = 3; IndexType = int][m[K’
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/ICP.h:40:13:[m[K   required from ‘[01m[Knanoflann::KDTreeAdaptor<MatrixType, DIM, Distance, IndexType>::KDTreeAdaptor(const MatrixType&, int) [with MatrixType = Eigen::Matrix<double, 3, -1>; int DIM = 3; Distance = nanoflann::metric_L2_Simple; IndexType = int][m[K’
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/ICP.h:488:92:[m[K   required from here
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/sicp/nanoflann.hpp:922:22:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+    if ( [01;35m[K(right-left) <= m_leaf_max_size[m[K) {
+         [01;35m[K~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/front_end_node.dir/src/models/registration/icp_svd_registration.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+In file included from [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/sac_model.h:52:0[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/sac.h:45[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/ransac.h:44[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/registration/icp.h:45[m[K,
+                 from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/models/registration/icp_registration.hpp:9[m[K,
+                 from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_registration.cpp:6[m[K:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:[m[K In function ‘[01m[Kvoid __static_initialization_and_destruction_0(int, int)[m[K’:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Kpcl::SAC_SAMPLE_SIZE[m[K’ is deprecated: This map is deprecated and is kept only to prevent breaking existing user code. Starting from PCL 1.8.0 model sample size is a protected member of the SampleConsensusModel class [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[KSAC_SAMPLE_SIZE[m[K (sample_size_pairs, sample_size_pairs + sizeof (sample_size_pairs) / sizeof (SampleSizeModel));
+   [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;36m[Knote: [m[Kdeclared here
+In file included from [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/sac_model.h:52:0[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/sac.h:45[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/ransac.h:44[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/registration/icp.h:45[m[K,
+                 from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/front_end/front_end.hpp:15[m[K,
+                 from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/front_end/front_end_flow.hpp:37[m[K,
+                 from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/front_end_node.cpp:14[m[K:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:[m[K In function ‘[01m[Kvoid __static_initialization_and_destruction_0(int, int)[m[K’:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Kpcl::SAC_SAMPLE_SIZE[m[K’ is deprecated: This map is deprecated and is kept only to prevent breaking existing user code. Starting from PCL 1.8.0 model sample size is a protected member of the SampleConsensusModel class [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[KSAC_SAMPLE_SIZE[m[K (sample_size_pairs, sample_size_pairs + sizeof (sample_size_pairs) / sizeof (SampleSizeModel));
+   [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;36m[Knote: [m[Kdeclared here
+In file included from [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/sac_model.h:52:0[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/sac.h:45[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/ransac.h:44[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/registration/icp.h:45[m[K,
+                 from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/front_end/front_end.hpp:15[m[K,
+                 from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/front_end/front_end.cpp:6[m[K:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:[m[K In function ‘[01m[Kvoid __static_initialization_and_destruction_0(int, int)[m[K’:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Kpcl::SAC_SAMPLE_SIZE[m[K’ is deprecated: This map is deprecated and is kept only to prevent breaking existing user code. Starting from PCL 1.8.0 model sample size is a protected member of the SampleConsensusModel class [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[KSAC_SAMPLE_SIZE[m[K (sample_size_pairs, sample_size_pairs + sizeof (sample_size_pairs) / sizeof (SampleSizeModel));
+   [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;36m[Knote: [m[Kdeclared here
+In file included from [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/sac_model.h:52:0[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/sac.h:45[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/ransac.h:44[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/registration/icp.h:45[m[K,
+                 from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/front_end/front_end.hpp:15[m[K,
+                 from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/include/lidar_localization/front_end/front_end_flow.hpp:37[m[K,
+                 from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/front_end/front_end_flow.cpp:6[m[K:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:[m[K In function ‘[01m[Kvoid __static_initialization_and_destruction_0(int, int)[m[K’:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Kpcl::SAC_SAMPLE_SIZE[m[K’ is deprecated: This map is deprecated and is kept only to prevent breaking existing user code. Starting from PCL 1.8.0 model sample size is a protected member of the SampleConsensusModel class [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[KSAC_SAMPLE_SIZE[m[K (sample_size_pairs, sample_size_pairs + sizeof (sample_size_pairs) / sizeof (SampleSizeModel));
+   [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;36m[Knote: [m[Kdeclared here
+make[1]: *** [CMakeFiles/front_end_node.dir/all] Error 2
+make: *** [all] Error 2

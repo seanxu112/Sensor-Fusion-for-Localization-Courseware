@@ -1,0 +1,111 @@
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:[m[K In member function ‘[01m[Ksize_t lidar_localization::ICPSVDRegistration::GetCorrespondence(const CLOUD_PTR&, std::vector<Eigen::Matrix<float, 3, 1> >&, std::vector<Eigen::Matrix<float, 3, 1> >&)[m[K’:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:143:20:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+  for (int i = 0; [01;35m[Ki < input_source->size()[m[K; i++ )
+                  [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:146:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kpcl::KdTreeFLANN<pcl::PointXYZ>::Ptr {aka class boost::shared_ptr<pcl::KdTreeFLANN<pcl::PointXYZ> >}[m[K’ has no member named ‘[01m[KnearestKSearch[m[K’
+   if (input_target_kdtree_.[01;31m[KnearestKSearch[m[K (curr_point_input, 1, closest_pt, dist) == 1)
+                            [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:148:19:[m[K [01;31m[Kerror: [m[K‘[01m[Kmax_corr_dist[m[K’ was not declared in this scope
+     if (dist[0] < [01;31m[Kmax_corr_dist[m[K)
+                   [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:148:19:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kmax_corr_dist_[m[K’
+     if (dist[0] < [01;36m[Kmax_corr_dist[m[K)
+                   [01;36m[K^~~~~~~~~~~~~[m[K
+                   [32m[Kmax_corr_dist_[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:152:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_point_target[m[K’ was not declared in this scope
+                     [01;31m[Kcurrent_point_target[m[K = input_target_->points[closest_pt[0]];
+                     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:152:21:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kcurr_point_target[m[K’
+                     [01;36m[Kcurrent_point_target[m[K = input_target_->points[closest_pt[0]];
+                     [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+                     [32m[Kcurr_point_target[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:153:122:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KEigen::Matrix<float, 3, 1>::Matrix(<brace-enclosed initializer list>)[m[K’
+                     ys.push_back(Eigen::Vector3f({current_point_target.x, current_point_target.y, current_point_target.z}[01;31m[K)[m[K);
+                                                                                                                          [01;31m[K^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:438:0[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/StdVector:14[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/point_cloud.h:46[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/common/transforms.h:42[m[K,
+                 from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:7[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:389:14:[m[K [01;36m[Knote: [m[Kcandidate: template<class OtherDerived> Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Matrix(const Eigen::RotationBase<OtherDerived, ColsAtCompileTime>&)
+     explicit [01;36m[KMatrix[m[K(const RotationBase<OtherDerived,ColsAtCompileTime>& r);
+              [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:389:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:153:122:[m[K [01;36m[Knote: [m[K  couldn't deduce template parameter ‘[01m[KOtherDerived[m[K’
+                     ys.push_back(Eigen::Vector3f({current_point_target.x, current_point_target.y, current_point_target.z}[01;36m[K)[m[K);
+                                                                                                                          [01;36m[K^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:438:0[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/StdVector:14[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/point_cloud.h:46[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/common/transforms.h:42[m[K,
+                 from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:7[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:378:25:[m[K [01;36m[Knote: [m[Kcandidate: template<class OtherDerived> Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Matrix(const Eigen::EigenBase<OtherDerived>&)
+     EIGEN_STRONG_INLINE [01;36m[KMatrix[m[K(const EigenBase<OtherDerived> &other)
+                         [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:378:25:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:153:122:[m[K [01;36m[Knote: [m[K  couldn't deduce template parameter ‘[01m[KOtherDerived[m[K’
+                     ys.push_back(Eigen::Vector3f({current_point_target.x, current_point_target.y, current_point_target.z}[01;36m[K)[m[K);
+                                                                                                                          [01;36m[K^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:438:0[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/StdVector:14[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/point_cloud.h:46[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/common/transforms.h:42[m[K,
+                 from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:7[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:370:25:[m[K [01;36m[Knote: [m[Kcandidate: Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Matrix(const Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>&) [with _Scalar = float; int _Rows = 3; int _Cols = 1; int _Options = 0; int _MaxRows = 3; int _MaxCols = 1]
+     EIGEN_STRONG_INLINE [01;36m[KMatrix[m[K(const Matrix& other) : Base(other)
+                         [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:370:25:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[K<brace-enclosed initializer list>[m[K’ to ‘[01m[Kconst Eigen::Matrix<float, 3, 1>&[m[K’
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:357:25:[m[K [01;36m[Knote: [m[Kcandidate: Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Matrix(const Scalar&, const Scalar&, const Scalar&, const Scalar&) [with _Scalar = float; int _Rows = 3; int _Cols = 1; int _Options = 0; int _MaxRows = 3; int _MaxCols = 1; Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Scalar = float]
+     EIGEN_STRONG_INLINE [01;36m[KMatrix[m[K(const Scalar& x, const Scalar& y, const Scalar& z, const Scalar& w)
+                         [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:357:25:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 1 provided
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:347:25:[m[K [01;36m[Knote: [m[Kcandidate: Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Matrix(const Scalar&, const Scalar&, const Scalar&) [with _Scalar = float; int _Rows = 3; int _Cols = 1; int _Options = 0; int _MaxRows = 3; int _MaxCols = 1; Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Scalar = float]
+     EIGEN_STRONG_INLINE [01;36m[KMatrix[m[K(const Scalar& x, const Scalar& y, const Scalar& z)
+                         [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:347:25:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 1 provided
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:301:25:[m[K [01;36m[Knote: [m[Kcandidate: template<class T0, class T1> Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Matrix(const T0&, const T1&)
+     EIGEN_STRONG_INLINE [01;36m[KMatrix[m[K(const T0& x, const T1& y)
+                         [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:301:25:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:153:122:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+                     ys.push_back(Eigen::Vector3f({current_point_target.x, current_point_target.y, current_point_target.z}[01;36m[K)[m[K);
+                                                                                                                          [01;36m[K^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:438:0[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/StdVector:14[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/point_cloud.h:46[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/common/transforms.h:42[m[K,
+                 from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:7[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:293:34:[m[K [01;36m[Knote: [m[Kcandidate: template<class T> Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Matrix(const T&)
+     EIGEN_STRONG_INLINE explicit [01;36m[KMatrix[m[K(const T& x)
+                                  [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:293:34:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:153:122:[m[K [01;36m[Knote: [m[K  couldn't deduce template parameter ‘[01m[KT[m[K’
+                     ys.push_back(Eigen::Vector3f({current_point_target.x, current_point_target.y, current_point_target.z}[01;36m[K)[m[K);
+                                                                                                                          [01;36m[K^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:438:0[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/StdVector:14[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/point_cloud.h:46[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/common/transforms.h:42[m[K,
+                 from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:7[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:273:5:[m[K [01;36m[Knote: [m[Kcandidate: Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Matrix(Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>&&) [with _Scalar = float; int _Rows = 3; int _Cols = 1; int _Options = 0; int _MaxRows = 3; int _MaxCols = 1]
+     [01;36m[KMatrix[m[K(Matrix&& other) EIGEN_NOEXCEPT_IF(std::is_nothrow_move_constructible<Scalar>::value)
+     [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:273:5:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[K<brace-enclosed initializer list>[m[K’ to ‘[01m[KEigen::Matrix<float, 3, 1>&&[m[K’
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:267:14:[m[K [01;36m[Knote: [m[Kcandidate: Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Matrix(Eigen::internal::constructor_without_unaligned_array_assert) [with _Scalar = float; int _Rows = 3; int _Cols = 1; int _Options = 0; int _MaxRows = 3; int _MaxCols = 1]
+     explicit [01;36m[KMatrix[m[K(internal::constructor_without_unaligned_array_assert)
+              [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:267:14:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[K<brace-enclosed initializer list>[m[K’ to ‘[01m[KEigen::internal::constructor_without_unaligned_array_assert[m[K’
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:259:25:[m[K [01;36m[Knote: [m[Kcandidate: Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Matrix() [with _Scalar = float; int _Rows = 3; int _Cols = 1; int _Options = 0; int _MaxRows = 3; int _MaxCols = 1]
+     EIGEN_STRONG_INLINE [01;36m[KMatrix[m[K() : Base()
+                         [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:259:25:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 1 provided
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:134:17:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KMAX_CORR_DIST_SQR[m[K’ [[01;35m[K-Wunused-variable[m[K]
+     const float [01;35m[KMAX_CORR_DIST_SQR[m[K = max_corr_dist_ * max_corr_dist_;
+                 [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:[m[K In member function ‘[01m[Kvoid lidar_localization::ICPSVDRegistration::GetTransform(const std::vector<Eigen::Matrix<float, 3, 1> >&, const std::vector<Eigen::Matrix<float, 3, 1> >&, Eigen::Matrix4f&)[m[K’:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:169:18:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KN[m[K’ [[01;35m[K-Wunused-variable[m[K]
+     const size_t [01;35m[KN[m[K = xs.size();
+                  [01;35m[K^[m[K
+make[2]: *** [CMakeFiles/front_end_node.dir/src/models/registration/icp_svd_registration.cpp.o] Error 1
+make[1]: *** [CMakeFiles/front_end_node.dir/all] Error 2
+make: *** [all] Error 2

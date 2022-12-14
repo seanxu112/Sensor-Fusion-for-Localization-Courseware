@@ -117,6 +117,7 @@ private:
     struct {
       double q[4] = {0.0, 0.0, 0.0, 1.0};
       double t[3] = {0.0, 0.0, 0.0};
+      double pose[7] = {0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0};
     } param_;
 
     // problem:

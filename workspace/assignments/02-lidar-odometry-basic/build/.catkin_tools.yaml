@@ -1,0 +1,6 @@
+devel_space: /workspace/assignments/02-lidar-odometry-basic/devel
+install: true
+install_space: /workspace/assignments/02-lidar-odometry-basic/install
+profile: default
+source_space: /workspace/assignments/02-lidar-odometry-basic/src
+workspace: /workspace/assignments/02-lidar-odometry-basic

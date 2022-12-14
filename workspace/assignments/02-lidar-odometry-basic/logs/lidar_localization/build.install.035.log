@@ -1,0 +1,157 @@
+[  0%] Built target _lidar_localization_generate_messages_check_deps_saveMap
+[  0%] Built target std_msgs_generate_messages_cpp
+[  3%] Built target lidar_localization_generate_messages_cpp
+[  3%] Built target std_msgs_generate_messages_py
+[ 11%] Built target lidar_localization_generate_messages_py
+[ 11%] Built target std_msgs_generate_messages_nodejs
+[ 15%] Built target lidar_localization_generate_messages_nodejs
+[ 15%] Built target std_msgs_generate_messages_lisp
+[ 19%] Built target lidar_localization_generate_messages_lisp
+[ 19%] Built target std_msgs_generate_messages_eus
+[ 26%] Built target lidar_localization_generate_messages_eus
+[ 26%] Built target lidar_localization_generate_messages
+[ 26%] Built target actionlib_msgs_generate_messages_py
+[ 26%] Built target tf2_msgs_generate_messages_nodejs
+[ 26%] Built target tf2_msgs_generate_messages_eus
+[ 26%] Built target tf2_msgs_generate_messages_cpp
+[ 26%] Built target nodelet_generate_messages_nodejs
+[ 26%] Built target pcl_msgs_generate_messages_nodejs
+[ 26%] Built target nodelet_generate_messages_eus
+[ 26%] Built target geometry_msgs_generate_messages_lisp
+[ 26%] Built target tf2_msgs_generate_messages_lisp
+[ 26%] Built target dynamic_reconfigure_gencfg
+[ 26%] Built target geometry_msgs_generate_messages_py
+[ 26%] Built target dynamic_reconfigure_generate_messages_py
+[ 26%] Built target dynamic_reconfigure_generate_messages_lisp
+[ 26%] Built target pcl_msgs_generate_messages_cpp
+[ 26%] Built target rosgraph_msgs_generate_messages_cpp
+[ 26%] Built target topic_tools_generate_messages_cpp
+[ 26%] Built target pcl_ros_gencfg
+[ 26%] Built target topic_tools_generate_messages_nodejs
+[ 26%] Built target tf2_msgs_generate_messages_py
+[ 26%] Built target actionlib_generate_messages_py
+[ 26%] Built target dynamic_reconfigure_generate_messages_eus
+[ 26%] Built target bond_generate_messages_lisp
+[ 26%] Built target nodelet_generate_messages_lisp
+[ 26%] Built target sensor_msgs_generate_messages_lisp
+[ 26%] Built target nodelet_generate_messages_cpp
+[ 26%] Built target bond_generate_messages_py
+[ 26%] Built target std_srvs_generate_messages_nodejs
+[ 26%] Built target geometry_msgs_generate_messages_cpp
+[ 26%] Built target actionlib_generate_messages_lisp
+[ 26%] Built target roscpp_generate_messages_cpp
+[ 26%] Built target sensor_msgs_generate_messages_nodejs
+[ 26%] Built target actionlib_generate_messages_cpp
+[ 26%] Built target geometry_msgs_generate_messages_nodejs
+[ 26%] Built target std_srvs_generate_messages_eus
+[ 26%] Built target roscpp_generate_messages_lisp
+[ 26%] Built target bond_generate_messages_eus
+[ 26%] Built target roscpp_generate_messages_nodejs
+[ 26%] Built target geometry_msgs_generate_messages_eus
+[ 26%] Built target roscpp_generate_messages_py
+[ 26%] Built target dynamic_reconfigure_generate_messages_nodejs
+[ 26%] Built target rosgraph_msgs_generate_messages_eus
+[ 26%] Built target rosgraph_msgs_generate_messages_lisp
+[ 26%] Built target actionlib_msgs_generate_messages_eus
+[ 26%] Built target roscpp_generate_messages_eus
+[ 26%] Built target rosgraph_msgs_generate_messages_py
+[ 26%] Built target rosgraph_msgs_generate_messages_nodejs
+[ 26%] Built target bond_generate_messages_cpp
+[ 26%] Built target bond_generate_messages_nodejs
+[ 26%] Built target topic_tools_generate_messages_py
+[ 26%] Built target actionlib_msgs_generate_messages_nodejs
+[ 26%] Built target nodelet_topic_tools_gencfg
+[ 26%] Built target std_srvs_generate_messages_lisp
+[ 26%] Built target topic_tools_generate_messages_lisp
+[ 26%] Built target pcl_msgs_generate_messages_eus
+[ 26%] Built target topic_tools_generate_messages_eus
+[ 26%] Built target sensor_msgs_generate_messages_cpp
+[ 26%] Built target sensor_msgs_generate_messages_eus
+[ 26%] Built target nodelet_generate_messages_py
+[ 26%] Built target sensor_msgs_generate_messages_py
+[ 26%] Built target dynamic_reconfigure_generate_messages_cpp
+[ 26%] Built target tf_generate_messages_py
+[ 26%] Built target std_srvs_generate_messages_cpp
+[ 26%] Built target tf_generate_messages_eus
+[ 26%] Built target actionlib_msgs_generate_messages_cpp
+[ 26%] Built target std_srvs_generate_messages_py
+[ 26%] Built target tf_generate_messages_lisp
+[ 26%] Built target tf_generate_messages_nodejs
+[ 26%] Built target pcl_msgs_generate_messages_py
+[ 26%] Built target actionlib_generate_messages_eus
+[ 26%] Built target pcl_msgs_generate_messages_lisp
+[ 26%] Built target tf_generate_messages_cpp
+[ 26%] Built target actionlib_generate_messages_nodejs
+[ 26%] Built target actionlib_msgs_generate_messages_lisp
+[100%] Built target front_end_node
+[36mInstall the project...[0m
+-- Install configuration: "Release"
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/_setup_util.py
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/env.sh
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/setup.bash
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/local_setup.bash
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/setup.sh
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/local_setup.sh
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/setup.zsh
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/local_setup.zsh
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/.rosinstall
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/lidar_localization/srv/saveMap.srv
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/lidar_localization/cmake/lidar_localization-msg-paths.cmake
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/include/lidar_localization
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/include/lidar_localization/saveMapResponse.h
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/include/lidar_localization/saveMap.h
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/include/lidar_localization/saveMapRequest.h
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/roseus/ros/lidar_localization
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/roseus/ros/lidar_localization/manifest.l
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/roseus/ros/lidar_localization/srv
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/roseus/ros/lidar_localization/srv/saveMap.l
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/common-lisp/ros/lidar_localization
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/common-lisp/ros/lidar_localization/srv
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/common-lisp/ros/lidar_localization/srv/_package_saveMap.lisp
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/common-lisp/ros/lidar_localization/srv/_package.lisp
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/common-lisp/ros/lidar_localization/srv/saveMap.lisp
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/common-lisp/ros/lidar_localization/srv/lidar_localization-srv.asd
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/gennodejs/ros/lidar_localization
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/gennodejs/ros/lidar_localization/srv
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/gennodejs/ros/lidar_localization/srv/saveMap.js
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/gennodejs/ros/lidar_localization/srv/_index.js
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/gennodejs/ros/lidar_localization/_index.js
+Listing /workspace/assignments/02-lidar-odometry-basic/devel/.private/lidar_localization/lib/python2.7/dist-packages/lidar_localization ...
+Listing /workspace/assignments/02-lidar-odometry-basic/devel/.private/lidar_localization/lib/python2.7/dist-packages/lidar_localization/srv ...
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/lib/python2.7/dist-packages/lidar_localization
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/lib/python2.7/dist-packages/lidar_localization/__init__.py
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/lib/python2.7/dist-packages/lidar_localization/srv
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/lib/python2.7/dist-packages/lidar_localization/srv/_saveMap.py
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/lib/python2.7/dist-packages/lidar_localization/srv/__init__.py
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/lib/python2.7/dist-packages/lidar_localization/srv/__init__.pyc
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/lib/python2.7/dist-packages/lidar_localization/srv/_saveMap.pyc
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/lib/python2.7/dist-packages/lidar_localization/__init__.pyc
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/lib/pkgconfig/lidar_localization.pc
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/lidar_localization/cmake/lidar_localization-msg-extras.cmake
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/lidar_localization/cmake/lidar_localizationConfig.cmake
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/lidar_localization/cmake/lidar_localizationConfig-version.cmake
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/lidar_localization/package.xml
+-- Installing: /workspace/assignments/02-lidar-odometry-basic/install/lib/lidar_localization/front_end_node
+-- Set runtime path of "/workspace/assignments/02-lidar-odometry-basic/install/lib/lidar_localization/front_end_node" to ""
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/include/lidar_localization
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/include/lidar_localization/lidar_localization
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/include/lidar_localization/lidar_localization/subscriber
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/include/lidar_localization/lidar_localization/global_defination
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/include/lidar_localization/lidar_localization/publisher
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/include/lidar_localization/lidar_localization/sensor_data
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/include/lidar_localization/lidar_localization/tools
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/include/lidar_localization/lidar_localization/front_end
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/include/lidar_localization/lidar_localization/models
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/include/lidar_localization/lidar_localization/models/registration
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/include/lidar_localization/lidar_localization/models/registration/sicp
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/include/lidar_localization/lidar_localization/models/registration/sicp/ICP.h
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/include/lidar_localization/lidar_localization/models/cloud_filter
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/lidar_localization/launch
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/lidar_localization/launch/front_end.launch
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/lidar_localization/config
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/lidar_localization/config/dataset
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/lidar_localization/config/dataset/config.yaml
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/lidar_localization/config/front_end
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/lidar_localization/config/front_end/config.yaml
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/lidar_localization/rviz
+-- Up-to-date: /workspace/assignments/02-lidar-odometry-basic/install/share/lidar_localization/rviz/front_end.rviz

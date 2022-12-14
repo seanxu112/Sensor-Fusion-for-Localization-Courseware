@@ -1,0 +1,1 @@
+/workspace/assignments/02-lidar-odometry-basic/devel/.private/lidar_localization/share/common-lisp/ros/lidar_localization/srv/lidar_localization-srv.asd

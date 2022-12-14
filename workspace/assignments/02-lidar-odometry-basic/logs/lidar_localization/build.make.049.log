@@ -1,0 +1,97 @@
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target tf2_msgs_generate_messages_nodejs
+[  0%] Built target tf2_msgs_generate_messages_cpp
+[  0%] Built target nodelet_generate_messages_nodejs
+[  0%] Built target actionlib_msgs_generate_messages_py
+[  0%] Built target pcl_msgs_generate_messages_nodejs
+[  0%] Built target nodelet_generate_messages_eus
+[  0%] Built target dynamic_reconfigure_gencfg
+[  0%] Built target tf2_msgs_generate_messages_eus
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[  0%] Built target tf2_msgs_generate_messages_lisp
+[  0%] Built target actionlib_generate_messages_py
+[  0%] Built target dynamic_reconfigure_generate_messages_py
+[  0%] Built target geometry_msgs_generate_messages_py
+[  0%] Built target dynamic_reconfigure_generate_messages_eus
+[  0%] Built target pcl_msgs_generate_messages_cpp
+[  0%] Built target pcl_ros_gencfg
+[  0%] Built target dynamic_reconfigure_generate_messages_lisp
+[  0%] Built target topic_tools_generate_messages_cpp
+[  0%] Built target rosgraph_msgs_generate_messages_cpp
+[  0%] Built target bond_generate_messages_lisp
+[  0%] Built target tf2_msgs_generate_messages_py
+[  0%] Built target sensor_msgs_generate_messages_lisp
+[  0%] Built target _lidar_localization_generate_messages_check_deps_saveMap
+[  0%] Built target topic_tools_generate_messages_nodejs
+[  0%] Built target nodelet_generate_messages_cpp
+[  0%] Built target nodelet_generate_messages_lisp
+[  0%] Built target std_srvs_generate_messages_nodejs
+[  0%] Built target bond_generate_messages_py
+[  0%] Built target actionlib_generate_messages_lisp
+[  0%] Built target roscpp_generate_messages_cpp
+[  0%] Built target sensor_msgs_generate_messages_nodejs
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[  0%] Built target bond_generate_messages_eus
+[  0%] Built target actionlib_generate_messages_cpp
+[  0%] Built target std_srvs_generate_messages_eus
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[  0%] Built target roscpp_generate_messages_lisp
+[  0%] Built target roscpp_generate_messages_nodejs
+[  0%] Built target roscpp_generate_messages_py
+[  0%] Built target dynamic_reconfigure_generate_messages_nodejs
+[  0%] Built target geometry_msgs_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_lisp
+[  0%] Built target actionlib_msgs_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_py
+[  0%] Built target roscpp_generate_messages_eus
+[  0%] Built target bond_generate_messages_cpp
+[  0%] Built target rosgraph_msgs_generate_messages_nodejs
+[  0%] Built target actionlib_msgs_generate_messages_nodejs
+[  0%] Built target nodelet_topic_tools_gencfg
+[  0%] Built target bond_generate_messages_nodejs
+[  0%] Built target std_srvs_generate_messages_lisp
+[  0%] Built target topic_tools_generate_messages_lisp
+[  0%] Built target topic_tools_generate_messages_py
+[  0%] Built target pcl_msgs_generate_messages_eus
+[  0%] Built target topic_tools_generate_messages_eus
+[  0%] Built target sensor_msgs_generate_messages_cpp
+[  0%] Built target sensor_msgs_generate_messages_eus
+[  0%] Built target dynamic_reconfigure_generate_messages_cpp
+[  0%] Built target nodelet_generate_messages_py
+[  0%] Built target tf_generate_messages_py
+[  0%] Built target sensor_msgs_generate_messages_py
+[  0%] Built target tf_generate_messages_eus
+[  0%] Built target std_srvs_generate_messages_cpp
+[  0%] Built target tf_generate_messages_lisp
+[  0%] Built target actionlib_msgs_generate_messages_cpp
+[  0%] Built target actionlib_generate_messages_eus
+[  0%] Built target tf_generate_messages_nodejs
+[  0%] Built target std_srvs_generate_messages_py
+[  0%] Built target pcl_msgs_generate_messages_py
+[  0%] Built target actionlib_generate_messages_nodejs
+[  0%] Built target pcl_msgs_generate_messages_lisp
+[  0%] Built target tf_generate_messages_cpp
+[  0%] Built target actionlib_msgs_generate_messages_lisp
+[  3%] Built target lidar_localization_generate_messages_cpp
+[ 15%] Built target lidar_localization_generate_messages_py
+[ 15%] Built target lidar_localization_generate_messages_nodejs
+[ 19%] Built target lidar_localization_generate_messages_lisp
+[ 26%] Built target lidar_localization_generate_messages_eus
+[ 26%] Built target lidar_localization_generate_messages
+[35m[1mScanning dependencies of target front_end_node[0m
+[ 30%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/models/registration/icp_svd_registration.cpp.o[0m
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:[m[K In member function ‘[01m[Ksize_t lidar_localization::ICPSVDRegistration::GetCorrespondence(const CLOUD_PTR&, std::vector<Eigen::Matrix<float, 3, 1> >&, std::vector<Eigen::Matrix<float, 3, 1> >&)[m[K’:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:150:20:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+  for (int i = 0; [01;35m[Ki < input_source->size()[m[K; i++ )
+                  [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:[m[K In member function ‘[01m[Kvoid lidar_localization::ICPSVDRegistration::GetTransform(const std::vector<Eigen::Matrix<float, 3, 1> >&, const std::vector<Eigen::Matrix<float, 3, 1> >&, Eigen::Matrix4f&)[m[K’:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:172:18:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KN[m[K’ [[01;35m[K-Wunused-variable[m[K]
+     const size_t [01;35m[KN[m[K = xs.size();
+                  [01;35m[K^[m[K
+[ 34%] [32m[1mLinking CXX executable /workspace/assignments/02-lidar-odometry-basic/devel/.private/lidar_localization/lib/lidar_localization/front_end_node[0m
+[100%] Built target front_end_node

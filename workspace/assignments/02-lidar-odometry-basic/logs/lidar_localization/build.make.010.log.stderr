@@ -1,0 +1,21 @@
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:[m[K In member function ‘[01m[Ksize_t lidar_localization::ICPSVDRegistration::GetCorrespondence(const CLOUD_PTR&, std::vector<Eigen::Matrix<float, 3, 1> >&, std::vector<Eigen::Matrix<float, 3, 1> >&)[m[K’:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:143:20:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+  for (int i = 0; [01;35m[Ki < input_source->size()[m[K; i++ )
+                  [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:[m[K In member function ‘[01m[Kvoid lidar_localization::ICPSVDRegistration::GetTransform(const std::vector<Eigen::Matrix<float, 3, 1> >&, const std::vector<Eigen::Matrix<float, 3, 1> >&, Eigen::Matrix4f&)[m[K’:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:173:23:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+     for (int i = 0; [01;35m[Ki < xs.size()[m[K; i++)
+                     [01;35m[K~~^~~~~~~~~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:184:23:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+     for (int i = 0; [01;35m[Ki < xs.size()[m[K, i++)
+                     [01;35m[K~~^~~~~~~~~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:184:23:[m[K [01;35m[Kwarning: [m[Kvalue computed is not used [[01;35m[K-Wunused-value[m[K]
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:184:39:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K)[m[K’ token
+     for (int i = 0; i < xs.size(), i++[01;31m[K)[m[K
+                                       [01;31m[K^[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:167:18:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KN[m[K’ [[01;35m[K-Wunused-variable[m[K]
+     const size_t [01;35m[KN[m[K = xs.size();
+                  [01;35m[K^[m[K
+make[2]: *** [CMakeFiles/front_end_node.dir/src/models/registration/icp_svd_registration.cpp.o] Error 1
+make[1]: *** [CMakeFiles/front_end_node.dir/all] Error 2
+make: *** [all] Error 2

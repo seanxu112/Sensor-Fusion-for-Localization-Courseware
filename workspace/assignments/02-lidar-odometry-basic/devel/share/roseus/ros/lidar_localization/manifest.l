@@ -1,0 +1,1 @@
+/workspace/assignments/02-lidar-odometry-basic/devel/.private/lidar_localization/share/roseus/ros/lidar_localization/manifest.l

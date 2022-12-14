@@ -1,0 +1,4 @@
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:[m[K In member function ‘[01m[Ksize_t lidar_localization::ICPSVDRegistration::GetCorrespondence(const CLOUD_PTR&, std::vector<Eigen::Matrix<float, 3, 1> >&, std::vector<Eigen::Matrix<float, 3, 1> >&)[m[K’:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:144:20:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+  for (int i = 0; [01;35m[Ki < input_source->size()[m[K; i++ )
+                  [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~[m[K

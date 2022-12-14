@@ -1,0 +1,23 @@
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:[m[K In member function ‘[01m[Kvirtual bool lidar_localization::ICPSVDRegistration::ScanMatch(const CLOUD_PTR&, const Matrix4f&, lidar_localization::CloudData::CLOUD_PTR&, Eigen::Matrix4f&)[m[K’:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:127:56:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kconst class Eigen::MatrixSquareRootReturnValue<Eigen::Inverse<Eigen::Product<Eigen::Matrix<float, 3, 3>, Eigen::Transpose<Eigen::Matrix<float, 3, 3> >, 0> > >[m[K’
+     R_mat = ((R_mat*R_mat.transpose()).inverse()).sqrt([01;31m[K)[m[K * R_mat;
+                                                        [01;31m[K^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:346:0[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/StdVector:14[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/point_cloud.h:46[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/common/transforms.h:42[m[K,
+                 from [01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:7[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h:286:34:[m[K [01;36m[Knote: [m[Kdeclaration of ‘[01m[Kclass Eigen::MatrixSquareRootReturnValue<Eigen::Inverse<Eigen::Product<Eigen::Matrix<float, 3, 3>, Eigen::Transpose<Eigen::Matrix<float, 3, 3> >, 0> > >[m[K’
+ template<typename Derived> class [01;36m[KMatrixSquareRootReturnValue[m[K;
+                                  [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:[m[K In member function ‘[01m[Ksize_t lidar_localization::ICPSVDRegistration::GetCorrespondence(const CLOUD_PTR&, std::vector<Eigen::Matrix<float, 3, 1> >&, std::vector<Eigen::Matrix<float, 3, 1> >&)[m[K’:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:154:20:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+  for (int i = 0; [01;35m[Ki < input_source->size()[m[K; i++ )
+                  [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:[m[K In member function ‘[01m[Kvoid lidar_localization::ICPSVDRegistration::GetTransform(const std::vector<Eigen::Matrix<float, 3, 1> >&, const std::vector<Eigen::Matrix<float, 3, 1> >&, Eigen::Matrix4f&)[m[K’:
+[01m[K/workspace/assignments/02-lidar-odometry-basic/src/lidar_localization/src/models/registration/icp_svd_registration.cpp:176:18:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KN[m[K’ [[01;35m[K-Wunused-variable[m[K]
+     const size_t [01;35m[KN[m[K = xs.size();
+                  [01;35m[K^[m[K
+make[2]: *** [CMakeFiles/front_end_node.dir/src/models/registration/icp_svd_registration.cpp.o] Error 1
+make[1]: *** [CMakeFiles/front_end_node.dir/all] Error 2
+make: *** [all] Error 2

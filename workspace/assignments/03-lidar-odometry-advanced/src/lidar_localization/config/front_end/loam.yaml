@@ -67,12 +67,12 @@ scan_scan_registration:
             queue_size: 5000
         odometry:
             topic_name: /odometry/lidar/scan_to_scan
-            frame_id: /map
-            child_frame_id: /velo_link
+            frame_id: map
+            child_frame_id: velo_link
             queue_size: 5000
         path:
             topic_name: /trajectory/lidar/scan_to_scan
-            frame_id: /map
+            frame_id: map
             queue_size: 5000
     param:
         # kdtree nearest-neighborhood thresh:
@@ -93,12 +93,12 @@ scan_map_registration:
     publisher:
         odometry:
             topic_name: /odometry/lidar/scan_to_map
-            frame_id: /map
+            frame_id: map
             child_frame_id: /velo_link
             queue_size: 5000
         path:
             topic_name: /trajectory/lidar/scan_to_map
-            frame_id: /map
+            frame_id: map
             queue_size: 5000
     param:
         # down sampler for LOAM feature points:

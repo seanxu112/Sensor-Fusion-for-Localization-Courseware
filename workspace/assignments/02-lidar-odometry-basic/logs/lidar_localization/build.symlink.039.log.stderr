@@ -1,0 +1,9 @@
+Warning: Cannot symlink from /workspace/assignments/02-lidar-odometry-basic/devel/.private/lidar_localization/lib/python2.7/dist-packages/lidar_localization/__init__.pyc to existing file /workspace/assignments/02-lidar-odometry-basic/devel/lib/python2.7/dist-packages/lidar_localization/__init__.pyc
+Warning: Source hash: 40bc646ca8a486bf66825b73df819a26
+Warning: Dest hash: 2ff8f5aeb474cf781f7b744e468825bf
+Warning: Cannot symlink from /workspace/assignments/02-lidar-odometry-basic/devel/.private/lidar_localization/lib/python2.7/dist-packages/lidar_localization/srv/__init__.pyc to existing file /workspace/assignments/02-lidar-odometry-basic/devel/lib/python2.7/dist-packages/lidar_localization/srv/__init__.pyc
+Warning: Source hash: 94f9ca3e1b5de72b06f853e3544a2bcb
+Warning: Dest hash: 0e52b1c338baa4d54fb1bc8859bb26d5
+Warning: Cannot symlink from /workspace/assignments/02-lidar-odometry-basic/devel/.private/lidar_localization/lib/python2.7/dist-packages/lidar_localization/srv/_saveMap.pyc to existing file /workspace/assignments/02-lidar-odometry-basic/devel/lib/python2.7/dist-packages/lidar_localization/srv/_saveMap.pyc
+Warning: Source hash: 0638098ef0c51665769ce27e6c22d5ce
+Warning: Dest hash: 33ab02fa16aabf082feab115698f733f

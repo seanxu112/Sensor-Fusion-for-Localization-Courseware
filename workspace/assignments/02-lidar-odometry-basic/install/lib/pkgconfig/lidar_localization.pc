@@ -1,0 +1,8 @@
+prefix=/workspace/assignments/02-lidar-odometry-basic/install
+
+Name: lidar_localization
+Description: Description of lidar_localization
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /workspace/assignments/02-lidar-odometry-basic/install/setup.sh

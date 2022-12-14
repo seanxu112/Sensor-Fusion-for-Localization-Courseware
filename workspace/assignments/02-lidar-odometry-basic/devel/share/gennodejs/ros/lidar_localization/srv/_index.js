@@ -1,0 +1,1 @@
+/workspace/assignments/02-lidar-odometry-basic/devel/.private/lidar_localization/share/gennodejs/ros/lidar_localization/srv/_index.js

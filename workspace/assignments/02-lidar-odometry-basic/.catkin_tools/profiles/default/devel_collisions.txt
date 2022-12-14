@@ -1,0 +1,4 @@
+/workspace/assignments/02-lidar-odometry-basic/devel/lib/python2.7/dist-packages/lidar_localization/__init__.pyc 42
+/workspace/assignments/02-lidar-odometry-basic/devel/lib/python2.7/dist-packages/lidar_localization/srv/__init__.pyc 42
+/workspace/assignments/02-lidar-odometry-basic/devel/./cmake.lock 43
+/workspace/assignments/02-lidar-odometry-basic/devel/lib/python2.7/dist-packages/lidar_localization/srv/_saveMap.pyc 42
