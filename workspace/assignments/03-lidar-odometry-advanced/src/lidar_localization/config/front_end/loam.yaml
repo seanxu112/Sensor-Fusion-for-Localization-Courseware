@@ -94,7 +94,7 @@ scan_map_registration:
         odometry:
             topic_name: /odometry/lidar/scan_to_map
             frame_id: map
-            child_frame_id: /velo_link
+            child_frame_id: velo_link
             queue_size: 5000
         path:
             topic_name: /trajectory/lidar/scan_to_map

@@ -136,7 +136,7 @@ class LidarPlaneFactor : public   ceres::SizedCostFunction<1, 7>
 		// Eigen::Matrix<T, 3, 1> ljm{T(ljm_norm.x()), T(ljm_norm.y()), T(ljm_norm.z())};
 
 		//Eigen::Quaternion<T> q_last_curr{q[3], T(s) * q[0], T(s) * q[1], T(s) * q[2]};
-                Eigen::Map<const  Eigen::Quaterniond>   q_last_curr(parameters[0]);               //   存放 w  x y z 
+                Eigen::Map<const  Eigen::Quaterniond>   q_last_curr(parameters[0]);             
                 Eigen::Map<const  Eigen::Vector3d>      t_last_curr(parameters[0] + 4);
 		// Eigen::Quaternion<T> q_last_curr{q[3], q[0], q[1], q[2]};
 		// Eigen::Quaternion<T> q_identity{T(1), T(0), T(0), T(0)};
@@ -174,10 +174,10 @@ struct LidarPlaneNormFactor
 														 negative_OA_dot_norm(negative_OA_dot_norm_) {}
 
 	template <typename T>
-	bool operator()(const T *q, const T *t, T *residual) const
+	bool operator()(const T *pose, T *residual) const
 	{
-		Eigen::Quaternion<T> q_w_curr{q[3], q[0], q[1], q[2]};
-		Eigen::Matrix<T, 3, 1> t_w_curr{t[0], t[1], t[2]};
+		Eigen::Quaternion<T> q_w_curr{pose[3], pose[0], pose[1], pose[2]};
+		Eigen::Matrix<T, 3, 1> t_w_curr{pose[4], pose[5], pose[6]};
 		Eigen::Matrix<T, 3, 1> cp{T(curr_point.x()), T(curr_point.y()), T(curr_point.z())};
 		Eigen::Matrix<T, 3, 1> point_w;
 		point_w = q_w_curr * cp + t_w_curr;
@@ -191,7 +191,7 @@ struct LidarPlaneNormFactor
 									   const double negative_OA_dot_norm_)
 	{
 		return (new ceres::AutoDiffCostFunction<
-				LidarPlaneNormFactor, 1, 4, 3>(
+				LidarPlaneNormFactor, 1, 7>(
 			new LidarPlaneNormFactor(curr_point_, plane_unit_norm_, negative_OA_dot_norm_)));
 	}
 

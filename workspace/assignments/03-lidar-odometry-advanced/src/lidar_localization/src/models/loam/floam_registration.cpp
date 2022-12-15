@@ -40,8 +40,8 @@ CeresFLOAMRegistration::CeresFLOAMRegistration(
     //
     // config target variables:
     //
-    param_.q[0] = dq.x(); param_.q[1] = dq.y(); param_.q[2] = dq.z(); param_.q[3] = dq.w();
-    param_.t[0] = dt.x(); param_.t[1] = dt.y(); param_.t[2] = dt.z();
+    // param_.q[0] = dq.x(); param_.q[1] = dq.y(); param_.q[2] = dq.z(); param_.q[3] = dq.w();
+    // param_.t[0] = dt.x(); param_.t[1] = dt.y(); param_.t[2] = dt.z();
     param_.pose[0] = dq.x(); param_.pose[1] = dq.y(); param_.pose[2] = dq.z(); param_.pose[3] = dq.w();
     param_.pose[4] = dt.x(); param_.pose[5] = dt.y(); param_.pose[6] = dt.z();
     problem_.AddParameterBlock(param_.pose, 7, config_.q_parameterization_ptr);
@@ -151,7 +151,7 @@ bool CeresFLOAMRegistration::AddPlaneNormFactor(
     problem_.AddResidualBlock(
         factor_plane,
         config_.loss_function_ptr, 
-        param_.q, param_.t
+        param_.pose
     );
 
     return true;

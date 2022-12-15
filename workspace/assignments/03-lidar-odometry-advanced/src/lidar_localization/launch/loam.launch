@@ -28,6 +28,4 @@
     <group if="$(arg rviz)">
         <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find lidar_localization)/rviz/front_end.rviz" />
     </group>
-
-    <node pkg="rosbag" type="play" name="bag_player" args="--clock ~/shenlanxueyuan/Sensor-Fusion-for-Localization-Courseware/workspace/data/kitti/kitti_lidar_only_2011_10_03_drive_0027_synced.bag"/>
 </launch>
