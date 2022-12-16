@@ -34,8 +34,20 @@ F-Loam RPE
   <td> <img src="imgs/floam_rpe_traj.png" width="400" height="300" /> </td>
 </table>
 
-直接用了Floam的SE3 LocalParameterization:
+可以看出用解析求导和自动求导效果基本相当。但是不知道为什么跑解析求导时scan_to_map的线程跑的特别慢。还有一个疑问就是不是特别清楚loam的map_to_scan的过程，和回环检测的区别是在哪里呢？回环应该也是用了类似的概念，只是缺少一个后端位姿图优化吗？
 
+跑Aloam可以用
+
+```
+roslaunch lidar_locaization aloam.launch
+```
+跑Floam可以用
+
+```
+roslaunch lidar_locaization floam.launch
+```
+
+直接用了Floam的SE3 LocalParameterization:
 
 ```
 class PoseSE3Parameterization : public ceres::LocalParameterization {
