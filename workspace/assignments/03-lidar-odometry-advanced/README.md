@@ -1,106 +1,214 @@
-# Multi-Sensor Fusion for Localization & Mapping: 多传感器融合定位与建图: Lidar Odometry Advanced
+A-Loam:
 
-深蓝学院, 多传感器融合定位与建图, 第3章Lidar Odometry Advanced代码框架.
+<img src="imgs/aloam_traj.png" width="800" height="500" />
 
----
+A-Loam APE:
 
-## Overview
+<img src="imgs/aloam_rpe_number.png" width="300" height="200" />
+<table>
+  <td> <img src="imgs/aloam_ape.png" width="300" height="300" /> </td>
+  <td> <img src="imgs/aloam_ape_traj.png" width="400" height="300" /> </td>
+</table>
 
-本作业旨在实现基于线面特征的激光前端里程计算法.
+A-Loam RPE
+<table>
+  <td> <img src="imgs/aloam_rpe.png" width="300" height="300" /> </td>
+  <td> <img src="imgs/aloam_rpe_traj.png" width="400" height="300" /> </td>
+</table>
 
----
+F-Loam:
 
-## Getting Started
+<img src="imgs/Floam_traj.png" width="800" height="500" />
 
-### 环境检查: 确保Git Repo与使用的Docker Image均为最新
+F-Loam APE:
 
-首先, 请确保选择了正确的branch **03-lidar-odometry-advanced**:
+<img src="imgs/floam_rpe_number.png" width="300" height="200" />
+<table>
+  <td> <img src="imgs/floam_ape.png" width="300" height="300" /> </td>
+  <td> <img src="imgs/floam_ape_traj.png" width="400" height="300" /> </td>
+</table>
 
-<img src="doc/branch-check.png" alt="Branch Check" width="100%">
+F-Loam RPE
+<table>
+  <td> <img src="imgs/floam_rpe.png" width="300" height="300" /> </td>
+  <td> <img src="imgs/floam_rpe_traj.png" width="400" height="300" /> </td>
+</table>
 
-执行以下命令，确保所使用的Git Repo与Docker Image均为最新:
+直接用了Floam的SE3 LocalParameterization:
 
-```bash
-# update git repo:
-git pull
-#
-# update docker image:
-#
-# 1. first, login to Sensor Fusion registry -- default password is shenlansf20210122:
-docker login --username=937570601@qq.com registry.cn-shanghai.aliyuncs.com
-# 2. then download images:
-docker pull registry.cn-shanghai.aliyuncs.com/shenlanxueyuan/sensor-fusion-workspace:bionic-cpu-vnc
+
+```
+class PoseSE3Parameterization : public ceres::LocalParameterization {
+public:
+	// Quaternion and then translation
+    PoseSE3Parameterization() {}
+    virtual ~PoseSE3Parameterization() {}
+    virtual bool Plus(const double* x, const double* delta, double* x_plus_delta) const
+	{
+		Eigen::Map<const Eigen::Vector3d> trans(x + 4);
+
+		Eigen::Quaterniond delta_q;
+		Eigen::Vector3d delta_t;
+		getTransformFromSe3(Eigen::Map<const Eigen::Matrix<double,6,1>>(delta), delta_q, delta_t);
+		Eigen::Map<const Eigen::Quaterniond> quater(x);
+		Eigen::Map<Eigen::Quaterniond> quater_plus(x_plus_delta);
+		Eigen::Map<Eigen::Vector3d> trans_plus(x_plus_delta + 4);
+
+		quater_plus = delta_q * quater;
+		trans_plus = delta_q * trans + delta_t;
+
+    	return true;
+	}
+    virtual bool ComputeJacobian(const double* x, double* jacobian) const
+	{
+		Eigen::Map<Eigen::Matrix<double, 7, 6, Eigen::RowMajor>> j(jacobian);
+		(j.topRows(6)).setIdentity();
+		(j.bottomRows(1)).setZero();
+
+		return true;
+	}
+    virtual int GlobalSize() const { return 7; }
+    virtual int LocalSize() const { return 6; }
+};
 ```
 
-### 及格要求: 推导残差模型的雅可比
+将FloamRegistration从q，t改成了用一个parameter：pose:
 
-Good Luck & 干就完了
-
-### 良好要求: 编程实现新模型的解析式求导
-
-启动Docker后, 打开浏览器, 进入Web Workspace. 启动Terminator, 将两个Shell的工作目录切换如下:
-
-<img src="doc/terminator.png" alt="Terminator" width="100%">
-
-在**上侧**的Shell中, 输入如下命令, **编译catkin_workspace**
-
-```bash
-# build
-catkin config --install && catkin build
+```
+struct {
+      // double q[4] = {0.0, 0.0, 0.0, 1.0};
+      // double t[3] = {0.0, 0.0, 0.0};
+      double pose[7] = {0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0};
+    } param_;
 ```
 
-然后**启动解决方案**
+Edge Factor Definition:
 
-```bash
-# set up session:
-source install/setup.bash
-# launch:
-# option 1: aloam, migration through topic adaptation:
-roslaunch lidar_localization aloam.launch
-# option 2: aloam, in-depth adaptation for course assignment framework:
-roslaunch lidar_localization loam.launch
+```
+class LidarEdgeFactor:  public   ceres::SizedCostFunction<1, 7> // Size 1 residue, Input block 4 (quaternion), and 3 (translation) 
+{
+	public:
+		Eigen::Vector3d cp, lpa, lpb;
+		double s;
+		LidarEdgeFactor(Eigen::Vector3d curr_point_, Eigen::Vector3d last_point_a_,
+						Eigen::Vector3d last_point_b_, double s_)
+			: cp(curr_point_), lpa(last_point_a_), lpb(last_point_b_), s(s_) {}
+
+	virtual bool Evaluate(double const* const* parameters,
+                          double* residual,
+                          double** jacobians) const
+	{
+		Eigen::Map<const  Eigen::Quaterniond>   q_last_curr(parameters[0]);               //   存放 w  x y z 
+        Eigen::Map<const  Eigen::Vector3d>      t_last_curr(parameters[0] + 4);
+		// Eigen::Quaternion<T> q_last_curr{q[3], q[0], q[1], q[2]};
+		// Eigen::Quaternion<T> q_identity{T(1), T(0), T(0), T(0)};
+		// q_last_curr = q_identity.slerp(T(s), q_last_curr);
+		// Eigen::Matrix<T, 3, 1> t_last_curr{T(s) * t[0], T(s) * t[1], T(s) * t[2]};
+
+		Eigen::Vector3d lp;
+		lp = q_last_curr * cp + t_last_curr;
+
+		Eigen::Vector3d nu = (lp - lpa).cross(lp - lpb);
+		Eigen::Vector3d de = lpa - lpb;
+
+		residual[0] = nu.norm() / de.norm();
+
+		if (jacobians != nullptr && jacobians[0] != nullptr) 
+		{
+			Eigen::Matrix3d skew_lp = skew(lp);
+            Eigen::Matrix<double, 3, 6> dp_by_se3;
+            dp_by_se3.block<3,3>(0,0) = -skew_lp;
+            (dp_by_se3.block<3,3>(0, 3)).setIdentity();
+            Eigen::Map<Eigen::Matrix<double, 1, 7, Eigen::RowMajor> > J_se3(jacobians[0]);
+            J_se3.setZero();
+            Eigen::Matrix3d skew_de = skew(de);
+            J_se3.block<1,6>(0,0) = - nu.transpose() / nu.norm() * skew_de * dp_by_se3/de.norm();
+		}
+		return true;
+	}
+};
 ```
 
-在**下侧**的Shell中, 输入如下命令, **Play KITTI ROS Bag**. 两个数据集均可用于完成课程, 对代码功能的运行没有任何影响, 区别在于第一个有Camera信息
+Lidar Plane Factor:
 
-```bash
-# play ROS bag, full KITTI:
-rosbag play kitti_2011_10_03_drive_0027_synced.bag
-# play ROS bag, lidar-only KITTI:
-rosbag play kitti_lidar_only_2011_10_03_drive_0027_synced.bag
+```
+class LidarPlaneFactor : public   ceres::SizedCostFunction<1, 7> 
+{
+	public:
+		LidarPlaneFactor(Eigen::Vector3d curr_point_, Eigen::Vector3d last_point_j_,
+						Eigen::Vector3d last_point_l_, Eigen::Vector3d last_point_m_, double s_)
+			: cp(curr_point_), lpj(last_point_j_), lpl(last_point_l_),
+			lpm(last_point_m_), s(s_)
+		{
+			ljm_norm = (lpj - lpl).cross(lpj - lpm);
+			ljm_norm.normalize();
+		}
+
+	virtual bool Evaluate(double const* const* parameters,
+                          double* residual,
+                          double** jacobians) const
+	{
+		Eigen::Map<const  Eigen::Quaterniond>   q_last_curr(parameters[0]);             
+		Eigen::Map<const  Eigen::Vector3d>      t_last_curr(parameters[0] + 4);
+
+		Eigen::Vector3d lp;
+		lp = q_last_curr * cp + t_last_curr;
+
+		residual[0] = (lp - lpj).dot(ljm_norm);
+
+        if (jacobians != nullptr && jacobians[0] != nullptr) 
+		{
+			Eigen::Matrix3d skew_lp = skew(lp);
+            Eigen::Matrix<double, 3, 6> dp_by_se3;
+            dp_by_se3.block<3,3>(0,0) = -skew_lp;
+            (dp_by_se3.block<3,3>(0, 3)).setIdentity();
+            Eigen::Map<Eigen::Matrix<double, 1, 7, Eigen::RowMajor> > J_se3(jacobians[0]);
+            J_se3.setZero();
+            J_se3.block<1,6>(0,0) = ljm_norm.transpose() * dp_by_se3;
+		}
+		return true;
+	}
+
+	Eigen::Vector3d cp, lpj, lpl, lpm;
+	Eigen::Vector3d ljm_norm;
+	double s;
+};
 ```
 
-成功后, 可以看到如下的RViz界面:
+Lidar Plane Normal Factor （还是用的自动求导，但是改变了parameter的形式
 
-<img src="doc/demo-aloam.png" alt="ALOAM Frontend Demo" width="100%">
-
-<img src="doc/demo-loam.png" alt="ALOAM, In-Depth Adaptation, Frontend Demo" width="100%">
-
-本次作业的代码框架基于秦通大佬的[ALOAM](https://github.com/HKUST-Aerial-Robotics/A-LOAM)改造. 提供如下的两个版本:
-
-* Option 1: 针对深蓝学院教学框架深度适配版, loam.launch
-    * 将ALOAM全部节点按照教学框架设计理念进行重构.
-
-* Option 2: 简易适配版, aloam.launch
-    * 仅将Topic Name与课程数据集适配.
-
-请你在此基础上实现**新模型的解析求导**. 请在提交的报告中, 清晰明了地分析你的实现, 将代码实现与你的公式推导相对应. **仅仅跑通框架, 不会得到此题目的分数**
-
-**提示** 本次作业唯一需要修改的文件位于[here](src/lidar_localization/include/lidar_localization/models/loam/aloam_factor.hpp), 请开始你的表演！
-
-### 优秀要求: 给出新模型基于evo的精度评测结果
-
-**注意** 如果你没有提交残差模型的解析实现, 你不会得到此题目的分数
-
-此处以Docker Workspace为例. 在Terminator中添加新窗口, 切换至如下目录:
-
-```bash
-/workspace/assignments/03-lidar-odometry-advanced/src/lidar_localization/slam_data/trajectory
 ```
+struct LidarPlaneNormFactor
+{
 
-该目录下会输出:
+	LidarPlaneNormFactor(Eigen::Vector3d curr_point_, Eigen::Vector3d plane_unit_norm_,
+						 double negative_OA_dot_norm_) : curr_point(curr_point_), plane_unit_norm(plane_unit_norm_),
+														 negative_OA_dot_norm(negative_OA_dot_norm_) {}
 
-* 作为Ground Truth的RTK轨迹估计, ground_truth.txt
-* Lidar Frontend轨迹估计, laser_odom.txt
+	template <typename T>
+	bool operator()(const T *pose, T *residual) const
+	{
+		Eigen::Quaternion<T> q_w_curr{pose[3], pose[0], pose[1], pose[2]};
+		Eigen::Matrix<T, 3, 1> t_w_curr{pose[4], pose[5], pose[6]};
+		Eigen::Matrix<T, 3, 1> cp{T(curr_point.x()), T(curr_point.y()), T(curr_point.z())};
+		Eigen::Matrix<T, 3, 1> point_w;
+		point_w = q_w_curr * cp + t_w_curr;
 
-请使用上述两个文件, 完成**evo**的评估
+		Eigen::Matrix<T, 3, 1> norm(T(plane_unit_norm.x()), T(plane_unit_norm.y()), T(plane_unit_norm.z()));
+		residual[0] = norm.dot(point_w) + T(negative_OA_dot_norm);
+		return true;
+	}
+
+	static ceres::CostFunction *Create(const Eigen::Vector3d curr_point_, const Eigen::Vector3d plane_unit_norm_,
+									   const double negative_OA_dot_norm_)
+	{
+		return (new ceres::AutoDiffCostFunction<
+				LidarPlaneNormFactor, 1, 7>(
+			new LidarPlaneNormFactor(curr_point_, plane_unit_norm_, negative_OA_dot_norm_)));
+	}
+
+	Eigen::Vector3d curr_point;
+	Eigen::Vector3d plane_unit_norm;
+	double negative_OA_dot_norm;
+};
+```
