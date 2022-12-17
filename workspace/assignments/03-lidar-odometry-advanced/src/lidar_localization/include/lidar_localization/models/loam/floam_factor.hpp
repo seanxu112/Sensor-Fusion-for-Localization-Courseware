@@ -84,11 +84,7 @@ class LidarEdgeFactor:  public   ceres::SizedCostFunction<1, 7> // Size 1 residu
 	{
 		Eigen::Map<const  Eigen::Quaterniond>   q_last_curr(parameters[0]);               //   存放 w  x y z 
         Eigen::Map<const  Eigen::Vector3d>      t_last_curr(parameters[0] + 4);
-		// Eigen::Quaternion<T> q_last_curr{q[3], q[0], q[1], q[2]};
-		// Eigen::Quaternion<T> q_identity{T(1), T(0), T(0), T(0)};
-		// q_last_curr = q_identity.slerp(T(s), q_last_curr);
-		// Eigen::Matrix<T, 3, 1> t_last_curr{T(s) * t[0], T(s) * t[1], T(s) * t[2]};
-
+		
 		Eigen::Vector3d lp;
 		lp = q_last_curr * cp + t_last_curr;
 
@@ -128,20 +124,8 @@ class LidarPlaneFactor : public   ceres::SizedCostFunction<1, 7>
                           double* residual,
                           double** jacobians) const
 	{
-
-		// Eigen::Matrix<T, 3, 1> cp{T(curr_point.x()), T(curr_point.y()), T(curr_point.z())};
-		// Eigen::Matrix<T, 3, 1> lpj{T(last_point_j.x()), T(last_point_j.y()), T(last_point_j.z())};
-		//Eigen::Matrix<T, 3, 1> lpl{T(last_point_l.x()), T(last_point_l.y()), T(last_point_l.z())};
-		//Eigen::Matrix<T, 3, 1> lpm{T(last_point_m.x()), T(last_point_m.y()), T(last_point_m.z())};
-		// Eigen::Matrix<T, 3, 1> ljm{T(ljm_norm.x()), T(ljm_norm.y()), T(ljm_norm.z())};
-
-		//Eigen::Quaternion<T> q_last_curr{q[3], T(s) * q[0], T(s) * q[1], T(s) * q[2]};
-                Eigen::Map<const  Eigen::Quaterniond>   q_last_curr(parameters[0]);             
-                Eigen::Map<const  Eigen::Vector3d>      t_last_curr(parameters[0] + 4);
-		// Eigen::Quaternion<T> q_last_curr{q[3], q[0], q[1], q[2]};
-		// Eigen::Quaternion<T> q_identity{T(1), T(0), T(0), T(0)};
-		// q_last_curr = q_identity.slerp(T(s), q_last_curr);
-		// Eigen::Matrix<T, 3, 1> t_last_curr{T(s) * t[0], T(s) * t[1], T(s) * t[2]};
+		Eigen::Map<const  Eigen::Quaterniond>   q_last_curr(parameters[0]);             
+		Eigen::Map<const  Eigen::Vector3d>      t_last_curr(parameters[0] + 4);
 
 		Eigen::Vector3d lp;
 		lp = q_last_curr * cp + t_last_curr;

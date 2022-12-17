@@ -500,7 +500,7 @@ int main(int argc, char **argv)
                     options.minimizer_progress_to_stdout = false;
                     ceres::Solver::Summary summary;
                     ceres::Solve(options, &problem, &summary);
-                    // printf("solver time %f ms \n", t_solver.toc());
+                    printf("solver time %f ms \n", t_solver.toc());
 
                     std::cout << "\tInput. " << count << " : " << cornerPointsSharp->size() << " / "  << laserCloudCornerLast->size() << " / "  << surfPointsFlat->size() << " / "  << laserCloudSurfLast->size() << " / " << std::endl;
                     std::cout << "\tEstimation. " << count << ": num edges " << corner_correspondence << ", num planes " << plane_correspondence << std::endl;

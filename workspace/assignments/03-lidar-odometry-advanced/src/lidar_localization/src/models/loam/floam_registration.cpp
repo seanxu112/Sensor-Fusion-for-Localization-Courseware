@@ -167,7 +167,8 @@ bool CeresFLOAMRegistration::Optimize() {
     ceres::Solve(config_.options, &problem_, &summary);
     
     auto end = std::chrono::steady_clock::now();
-    std::chrono::duration<double> time_used = end - start;
+    // std::chrono::duration<double> time_used = end - start;
+    // std::cout << "time_used: " << time_used.count() << std::endl;
     
     return true;
 }

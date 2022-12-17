@@ -416,6 +416,7 @@ bool ScanScanRegistration::Update(
 
     // feature point association:
     if ( inited_ ) {
+        TicToc t_whole;
         // iterative optimization:
         // LOG(WARNING) << "Scan-Scan Registration: " << std::endl;
         for (int i = 0; i < config_.max_num_iteration; ++i) {
@@ -434,15 +435,19 @@ bool ScanScanRegistration::Update(
             const auto num_edge_factors = AddEdgeFactors(*corner_sharp, corner_point_associations, floam_registration);
             const auto num_plane_factors = AddPlaneFactors(*surf_flat, surface_point_associations, floam_registration);
 
+            TicToc t_solver;
             // get relative pose:
             floam_registration.Optimize();
+            printf("solver time %f ms \n", t_solver.toc());
             floam_registration.GetOptimizedRelativePose(dq_, dt_);
         }
 
+
         // update odometry:
         UpdateOdometry(lidar_odometry);
+        printf("whole laserOdometry time %f ms \n \n", t_whole.toc());
     }
-
+    
     // set target feature points for next association:
     SetTargetPoints(corner_less_sharp, surf_less_flat);
 

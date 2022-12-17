@@ -15,6 +15,7 @@
 #include <yaml-cpp/yaml.h>
 
 #include "lidar_localization/sensor_data/cloud_data.hpp"
+#include "lidar_localization/utils/tic_toc.h"
 
 #include <pcl/kdtree/kdtree_flann.h>
 

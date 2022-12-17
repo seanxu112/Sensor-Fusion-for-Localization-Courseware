@@ -721,7 +721,7 @@ void process()
 					ceres::Solve(options, &problem, &summary);
 					// printf("mapping solver time %f ms \n", t_solver.toc());
 
-					// printf("time %f \n", timeLaserOdometry);
+					printf("time %f \n", timeLaserOdometry);
 					// printf("corner factor num %d surf factor num %d\n", corner_num, surf_num);
 					// printf("result q %f %f %f %f result t %f %f %f\n", parameters[3], parameters[0], parameters[1], parameters[2],
 					//	   parameters[4], parameters[5], parameters[6]);
