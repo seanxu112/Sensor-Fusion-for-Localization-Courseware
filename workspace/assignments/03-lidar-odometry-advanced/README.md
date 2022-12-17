@@ -2,15 +2,19 @@ A-Loam:
 
 <img src="imgs/aloam_traj.png" width="800" height="500" />
 
+<img src="imgs/aloam_solving_time.png" />
+
 A-Loam APE:
 
-<img src="imgs/aloam_rpe_number.png" width="300" height="200" />
+<img src="imgs/aloam_ape_number.png" />
 <table>
   <td> <img src="imgs/aloam_ape.png" width="300" height="300" /> </td>
   <td> <img src="imgs/aloam_ape_traj.png" width="400" height="300" /> </td>
 </table>
 
 A-Loam RPE
+
+<img src="imgs/aloam_rpe_number.png" />
 <table>
   <td> <img src="imgs/aloam_rpe.png" width="300" height="300" /> </td>
   <td> <img src="imgs/aloam_rpe_traj.png" width="400" height="300" /> </td>
@@ -19,22 +23,25 @@ A-Loam RPE
 F-Loam:
 
 <img src="imgs/Floam_traj.png" width="800" height="500" />
+<img src="imgs/floam_solving_time.png"/>
 
 F-Loam APE:
 
-<img src="imgs/floam_rpe_number.png" width="300" height="200" />
+<img src="imgs/floam_ape_number.png"/>
 <table>
   <td> <img src="imgs/floam_ape.png" width="300" height="300" /> </td>
   <td> <img src="imgs/floam_ape_traj.png" width="400" height="300" /> </td>
 </table>
 
 F-Loam RPE
+<img src="imgs/floam_rpe_number.png"/>
 <table>
   <td> <img src="imgs/floam_rpe.png" width="300" height="300" /> </td>
   <td> <img src="imgs/floam_rpe_traj.png" width="400" height="300" /> </td>
 </table>
 
 可以看出用解析求导和自动求导效果基本相当。但是不知道为什么跑解析求导时scan_to_map的线程跑的特别慢。还有一个疑问就是不是特别清楚loam的map_to_scan的过程，和回环检测的区别是在哪里呢？回环应该也是用了类似的概念，只是缺少一个后端位姿图优化吗？
+可以看到优化的速度从aloam的6.3ms降到了floam的2.5ms。但是由于实现的框架不同，整体floam的速度反而比aloam慢一些。应该是一些代码优化的问题。
 
 跑Aloam可以用
 
@@ -224,3 +231,16 @@ struct LidarPlaneNormFactor
 	double negative_OA_dot_norm;
 };
 ```
+
+Jacobian的推导：
+HW31024_1.jpg
+
+<img src="imgs/HW31024_1.jpg" width="400" height="500" />
+
+<img src="imgs/HW31024_2.jpg" width="400" height="500" />
+
+<img src="imgs/HW31024_3.jpg" width="400" height="500" />
+
+<img src="imgs/HW31024_4.jpg" width="400" height="500" />
+
+<img src="imgs/HW31024_5.jpg" width="400" height="500" />
