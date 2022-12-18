@@ -182,3 +182,5 @@ ICP_SVD_RPE
 ICP_SVD_FULLMAP
 
 <img src="imgs/svd_full_map.png" width="800" height="500" />
+
+可以看出ICP_SVD和NDT效果都不错。只是里程计的漂移还是无法避免。NDT的漂移比起ICP_SVD更加平均一些。ICP_SVD的最大误差较大一些。而且也可以看出ICP_SVD和NDT两个的naive 实现还是很耗算力的。可以和之后加上闭环和loam的实现比较一下算力和精确性的比较。
