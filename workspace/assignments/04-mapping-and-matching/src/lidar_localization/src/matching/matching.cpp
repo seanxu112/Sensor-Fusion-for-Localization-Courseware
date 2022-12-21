@@ -53,7 +53,7 @@ bool Matching::InitWithConfig() {
 }
 
 bool Matching::InitDataPath(const YAML::Node& config_node) {
-    map_path_ = config_node["map_path"].as<std::string>();
+    map_path_ = config_node["init_strategy"].as<int>();
 
     return true;
 }
@@ -108,7 +108,8 @@ bool Matching::InitBoxFilter(const YAML::Node& config_node) {
 }
 
 bool Matching::InitGlobalMap() {
-    pcl::io::loadPCDFile(map_path_, *global_map_ptr_);
+    std::cout << "map path: " << map_path_ << std::endl;
+    pcl::io::loadPCDFile("/workspace/assignments/04-mapping-and-matching/src/lidar_localization/slam_data/map/filtered_map.pcd", *global_map_ptr_);
     LOG(INFO) << "Load global map, size:" << global_map_ptr_->points.size();
 
     // since scan-map matching is used, here apply the same filter to local map & scan:

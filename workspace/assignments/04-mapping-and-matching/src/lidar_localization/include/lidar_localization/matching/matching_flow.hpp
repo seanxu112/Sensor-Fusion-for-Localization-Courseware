@@ -50,6 +50,8 @@ class MatchingFlow {
     CloudData current_cloud_data_;
     PoseData current_gnss_data_;
 
+    int init_strategy_;
+
     Eigen::Matrix4f laser_odometry_ = Eigen::Matrix4f::Identity();
 };
 }

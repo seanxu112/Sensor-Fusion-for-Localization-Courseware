@@ -5,4 +5,5 @@
     <node pkg="lidar_localization"  type="back_end_node"  name="back_end_node"  output="screen"></node>
     <node pkg="lidar_localization"  type="loop_closing_node"  name="loop_closing_node"  output="screen"></node>
     <node pkg="lidar_localization"  type="viewer_node"  name="viewer_node"  output="screen"></node>
+<node pkg="rosbag" type="play" name="bag_player" args="--clock /workspace/data/kitti/kitti_lidar_only_2011_10_03_drive_0027_synced.bag"/>
 </launch>
