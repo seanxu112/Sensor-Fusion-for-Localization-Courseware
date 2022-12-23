@@ -49,6 +49,7 @@ bool MatchingFlow::UpdateMatching() {
   YAML::Node config_node = YAML::LoadFile(config_file_path);
   init_strategy_ = config_node["init_strategy"].as<int>();
 
+```
 
 ScanContextInit 结果
 
