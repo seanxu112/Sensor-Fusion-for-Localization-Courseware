@@ -15,33 +15,41 @@ from gnss_ins_sim.sim import ins_sim
 from std_msgs.msg import String
 from sensor_msgs.msg import Imu
 from nav_msgs.msg import Odometry
+# from geometry_msgs.msg import Pose
 
 def get_gnss_ins_sim(motion_def_file, fs_imu, fs_gps):
     '''
     Generate simulated GNSS/IMU data using specified trajectory.
     '''
     # set IMU model:
+
+    # Set the starting point of reference pose
+    # So that we can visualize the data on rviz
+    origin_x = -2849886.6182508753
+    origin_y = 4656214.272941935
+    origin_z = 3287190.600463123
+    
     D2R = math.pi/180.0
     # imu_err = 'low-accuracy'
     imu_err = {
         # 1. gyro:
         # a. random noise:
         # gyro angle random walk, deg/rt-hr
-        'gyro_arw': np.array([0.75, 0.75, 0.75]),
+        'gyro_arw': np.array([0.1, 0.1, 0.1]),
         # gyro bias instability, deg/hr
-        'gyro_b_stability': np.array([10.0, 10.0, 10.0]),
+        'gyro_b_stability': np.array([1.0, 1.0, 1.0]),
         # gyro bias isntability correlation time, sec
-        'gyro_b_corr': np.array([100.0, 100.0, 100.0]),
+        'gyro_b_corr': np.array([10.0, 10.0, 10.0]),
         # b. deterministic error:
         'gyro_b': np.array([0.0, 0.0, 0.0]),
-        'gyro_k': np.array([1.0, 1.0, 1.0]),
+        'gyro_k': np.array([1, 1, 1]),
         'gyro_s': np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]),
         # 2. accel:
         # a. random noise:
         # accel velocity random walk, m/s/rt-hr
-        'accel_vrw': np.array([0.05, 0.05, 0.05]),
+        'accel_vrw': np.array([0.005, 0.005, 0.005]),
         # accel bias instability, m/s2
-        'accel_b_stability': np.array([2.0e-4, 2.0e-4, 2.0e-4]),
+        'accel_b_stability': np.array([2.0e-6, 2.0e-6, 2.0e-6]),
         # accel bias isntability correlation time, sec
         'accel_b_corr': np.array([100.0, 100.0, 100.0]),
         # b. deterministic error:
@@ -79,12 +87,14 @@ def get_gnss_ins_sim(motion_def_file, fs_imu, fs_gps):
 
     # imu measurements:
     step_size = 1.0 / fs_imu
-    for i, (gyro, accel) in enumerate(
+    for i, (gyro, accel, ref_pos, ref_att_quat) in enumerate(
         zip(
             # a. gyro
             sim.dmgr.get_data_all('gyro').data[0], 
             # b. accel
-            sim.dmgr.get_data_all('accel').data[0]
+            sim.dmgr.get_data_all('accel').data[0],
+            sim.dmgr.get_data_all('ref_pos').data,
+            sim.dmgr.get_data_all('ref_att_quat').data
         )
     ):
         yield {
@@ -97,7 +107,16 @@ def get_gnss_ins_sim(motion_def_file, fs_imu, fs_gps):
                 # b. accel:
                 'accel_x': accel[0],
                 'accel_y': accel[1],
-                'accel_z': accel[2]
+                'accel_z': accel[2],
+                # c. ref_position
+                'pos_x': ref_pos[0] - origin_x,
+                'pos_y': ref_pos[1] - origin_y,
+                'pos_z': ref_pos[2] - origin_z,
+                # d. quaternion
+                'quat_w': ref_att_quat[0],
+                'quat_x': ref_att_quat[1],
+                'quat_y': ref_att_quat[2],
+                'quat_z': ref_att_quat[3],
             }
         }
 
@@ -114,6 +133,7 @@ def gnss_ins_sim_recorder():
     sample_freq_imu = rospy.get_param('/gnss_ins_sim_recorder_node/sample_frequency/imu')
     sample_freq_gps = rospy.get_param('/gnss_ins_sim_recorder_node/sample_frequency/gps')
     topic_name_imu = rospy.get_param('/gnss_ins_sim_recorder_node/topic_name')
+    topic_name_odom = rospy.get_param('/gnss_ins_sim_recorder_node/topic_name_gt')
     rosbag_output_path = rospy.get_param('/gnss_ins_sim_recorder_node/output_path')
     rosbag_output_name = rospy.get_param('/gnss_ins_sim_recorder_node/output_name')
 
@@ -155,8 +175,23 @@ def gnss_ins_sim_recorder():
             msg.linear_acceleration.y = measurement['data']['accel_y']
             msg.linear_acceleration.z = measurement['data']['accel_z']
 
+            # Groundtruth Odom
+            odom_msg = Odometry()
+            odom_msg.header.frame_id = 'inertial'
+            odom_msg.header.stamp = msg.header.stamp
+
+            odom_msg.pose.pose.position.x =  measurement['data']['pos_x']   
+            odom_msg.pose.pose.position.y =  measurement['data']['pos_y']  
+            odom_msg.pose.pose.position.z =  measurement['data']['pos_z']   
+
+            odom_msg.pose.pose.orientation.w = measurement['data']['quat_w']
+            odom_msg.pose.pose.orientation.x = measurement['data']['quat_x']
+            odom_msg.pose.pose.orientation.y = measurement['data']['quat_y']
+            odom_msg.pose.pose.orientation.z = measurement['data']['quat_z']
+
             # write:
             bag.write(topic_name_imu, msg, msg.header.stamp)
+            bag.write(topic_name_odom, odom_msg, odom_msg.header.stamp)
 
 if __name__ == '__main__':
     try:

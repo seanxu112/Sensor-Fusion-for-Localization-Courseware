@@ -59,6 +59,10 @@ struct OdomConfig {
     } topic_name;
 };
 
+struct EstimatorConfig {
+    bool euler;
+};
+
 } // namespace imu_integration
 
 #endif 

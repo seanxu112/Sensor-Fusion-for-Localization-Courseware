@@ -57,6 +57,8 @@ void Activity::Init(void) {
     private_nh_.param("pose/topic_name/ground_truth", odom_config_.topic_name.ground_truth, std::string("/pose/ground_truth"));
     private_nh_.param("pose/topic_name/estimation", odom_config_.topic_name.estimation, std::string("/pose/estimation"));
 
+    private_nh_.param("estimator/euler", estimator_config_.euler, false);
+
     odom_ground_truth_sub_ptr = std::make_shared<OdomSubscriber>(private_nh_, odom_config_.topic_name.ground_truth, 1000000);
     odom_estimation_pub_ = private_nh_.advertise<nav_msgs::Odometry>(odom_config_.topic_name.estimation, 500);
 }
@@ -125,17 +127,40 @@ bool Activity::UpdatePose(void) {
         //
         // TODO: implement your estimation here
         //
+
+        Eigen::Vector3d angular_delta, vel_delta;
+        Eigen::Matrix3d R_p, R_c;
+        double dt;
+        angular_delta.setZero();
+        vel_delta.setZero();
+        R_p.setZero();
+        R_c.setZero();
+
         // get deltas:
+        bool get_ang_success = GetAngularDelta(1, 0, angular_delta);
+        if (!get_ang_success)
+        {
+            std::cout<< "GetAngularDelta() Failed!!!" << std::endl;
+            return false;
+        }
 
         // update orientation:
+        UpdateOrientation(angular_delta, R_c, R_p);
 
         // get velocity delta:
+        bool get_vel_success = GetVelocityDelta(1, 0, R_c, R_p, dt, vel_delta);
+        if (!get_vel_success)
+        {
+            std::cout<< "GetVelocityDelta() Failed!!!" << std::endl;
+            return false;
+        }
 
         // update position:
-
+        UpdatePosition(dt, vel_delta);
         // move forward -- 
         // NOTE: this is NOT fixed. you should update your buffer according to the method of your choice:
         imu_data_buff_.pop_front();
+        // std::cout<< "Updating IMU trajectory" << std::endl;
     }
     
     return true;
@@ -223,7 +248,10 @@ bool Activity::GetAngularDelta(
     Eigen::Vector3d angular_vel_curr = GetUnbiasedAngularVel(imu_data_curr.angular_velocity);
     Eigen::Vector3d angular_vel_prev = GetUnbiasedAngularVel(imu_data_prev.angular_velocity);
 
-    angular_delta = 0.5*delta_t*(angular_vel_curr + angular_vel_prev);
+    if (!estimator_config_.euler)
+        angular_delta = 0.5*delta_t*(angular_vel_curr + angular_vel_prev);
+    else
+        angular_delta = delta_t * angular_vel_prev;
 
     return true;
 }
@@ -259,8 +287,13 @@ bool Activity::GetVelocityDelta(
 
     Eigen::Vector3d linear_acc_curr = GetUnbiasedLinearAcc(imu_data_curr.linear_acceleration, R_curr);
     Eigen::Vector3d linear_acc_prev = GetUnbiasedLinearAcc(imu_data_prev.linear_acceleration, R_prev);
+
+    std::cout << estimator_config_.euler << std::endl;
     
-    velocity_delta = 0.5*delta_t*(linear_acc_curr + linear_acc_prev);
+    if (!estimator_config_.euler)
+        velocity_delta = 0.5*delta_t*(linear_acc_curr + linear_acc_prev);
+    else 
+        velocity_delta = delta_t * linear_acc_prev;
 
     return true;
 }

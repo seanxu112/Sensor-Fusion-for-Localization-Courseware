@@ -115,6 +115,7 @@ class Activity {
 
     IMUConfig imu_config_;
     OdomConfig odom_config_;
+    EstimatorConfig estimator_config_;
 
     // a. gravity constant:
     Eigen::Vector3d G_;
