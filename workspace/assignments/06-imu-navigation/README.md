@@ -1,137 +1,140 @@
-# Sensor Fusion: Lidar Odometry -- 多传感器融合定位与建图: 惯性导航解算
+Mid Point Method vs Euler's Method：
 
-深蓝学院, 多传感器融合定位与建图, 第6章IMU Navigation代码框架.
+<table>
+  <td> <img src="imgs/mid_point.png" width="500" height="400" />
+  Mid-point Method
+  </td> 
+  <td> <img src="imgs/euler.png" width="500" height="400" />
+  Euler's Method
+  </td> 
+</table>
 
----
+用gnss_imu_sim由于噪音比较大的imu数据导致可视化和效果可能更多是由于噪音造成的，而不是由算法的误差造成的，所以将噪音设置得成比较小。
 
-## Overview
-
-本作业旨在加深对**惯性导航解算**的理解.
-
----
-
-## Getting Started
-
-### 环境检查: 确保Git Repo与使用的Docker Image均为最新
-
-首先, 请确保选择了正确的branch **06-imu-navigation**:
-
-<img src="doc/images/branch-check.png" alt="Branch Check" width="100%">
-
-执行以下命令，确保所使用的Git Repo与Docker Image均为最新:
-
-```bash
-# update git repo:
-git pull
-#
-# update docker image:
-#
-# 1. first, login to Sensor Fusion registry -- default password is shenlansf20210122:
-docker login --username=937570601@qq.com registry.cn-shanghai.aliyuncs.com
-# 2. then download images:
-docker pull registry.cn-shanghai.aliyuncs.com/shenlanxueyuan/sensor-fusion-workspace:bionic-cpu-vnc
+```
+imu_err = {
+        # 1. gyro:
+        # a. random noise:
+        # gyro angle random walk, deg/rt-hr
+        'gyro_arw': np.array([0.05, 0.05, 0.05]),
+        # gyro bias instability, deg/hr
+        'gyro_b_stability': np.array([1.0, 1.0, 1.0]),
+        # gyro bias isntability correlation time, sec
+        'gyro_b_corr': np.array([10.0, 10.0, 10.0]),
+        # b. deterministic error:
+        'gyro_b': np.array([0.0, 0.0, 0.0]),
+        'gyro_k': np.array([1, 1, 1]),
+        'gyro_s': np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]),
+        # 2. accel:
+        # a. random noise:
+        # accel velocity random walk, m/s/rt-hr
+        'accel_vrw': np.array([0.00005, 0.00005, 0.00005]),
+        # accel bias instability, m/s2
+        'accel_b_stability': np.array([2.0e-7, 2.0e-7, 2.0e-7]),
+        # accel bias isntability correlation time, sec
+        'accel_b_corr': np.array([100.0, 100.0, 100.0]),
+        # b. deterministic error:
+        'accel_b': np.array([0.0e-3, 0.0e-3, 0.0e-3]),
+        'accel_k': np.array([1.0, 1.0, 1.0]),
+        'accel_s': np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]),
+        # 3. mag:
+        'mag_si': np.eye(3) + np.random.randn(3, 3)*0.0, 
+        'mag_hi': np.array([10.0, 10.0, 10.0])*0.0,
+        'mag_std': np.array([0.1, 0.1, 0.1])
+    }
 ```
 
-### 及格要求: 根据课程给定的数据, 完成基于中值法的解算
+以下是用gnss_imu_sim生成的匀加速轨迹：
 
-本章参考框架, 基于VIO课程作业修改得到. 该实现相比优秀要求的GNSS-Ins-Sim, 对运动的自定义程度更高. 
+<table>
+  <td> <img src="imgs/mid_point_hold.png" width="500" height="300" />
+  Mid-point Method
+  </td> 
+  <td> <img src="imgs/euler_hold.png" width="500" height="300" />
+  Euler's Method
+  </td> 
+</table>
 
-在此再次对贺博&高博的优秀课程表示感谢! 
+以下是用gnss_imu_sim生成的静止轨迹：
 
-启动Docker后, 打开浏览器, 进入Web Workspace. 启动Terminator, 将Shell的工作目录切换如下:
+<table>
+  <td> <img src="imgs/mid_point_vx_001.png" width="500" height="300" />
+  Mid-point Method
+  </td> 
+  <td> <img src="imgs/euler_vx_001.png" width="500" height="300" />
+  Euler's Method
+  </td> 
+</table>
 
-<img src="doc/images/terminator.png" alt="Terminator" width="100%">
+可以看出在轨迹加速度的导数变化不大时，两种方法并没有很大的差距
 
-在**上侧**的Shell中, 输入如下命令, **编译imu_integration**. 如非首次编译, 且遇到错误, 请尝试执行**catkin clean**
+以下是用gnss_imu_sim生成的200米跑道的形状：
 
-```bash
-# build:
-catkin config --install && catkin build imu_integration
-# set up session:
-source install/setup.bash
-# launch:
-roslaunch imu_integration imu_integration.launch
+<table>
+  <td> <img src="imgs/mid_point_loop.png" width="500" height="300" />
+  Mid-point Method
+  </td> 
+  <td> <img src="imgs/euler_loop.png" width="500" height="300" />
+  Euler's Method
+  </td> 
+</table>
+
+以下是用gnss_imu_sim生成的和上面差不多的输入，但是在掉头时给的时间很短导致角速度变化较大：
+
+<table>
+  <td> <img src="imgs/mid_point_sharper_loop.png" width="500" height="300" />
+  Mid-point Method
+  </td> 
+  <td> <img src="imgs/euler_sharper_loop.png" width="500" height="300" />
+  Euler's Method
+  </td> 
+</table>
+
+可以看出在第一组图里，欧拉法反倒是更好的效果，具体原因也不是很清楚。
+但是在第二组图里，由于角速度变化过快，中值法明显优于欧拉法。
+
+最后我将gnss_imu_sim的噪声改大了一些：
+
+```
+imu_err = {
+        # 1. gyro:
+        # a. random noise:
+        # gyro angle random walk, deg/rt-hr
+        'gyro_arw': np.array([0.1, 0.1, 0.1]),
+        # gyro bias instability, deg/hr
+        'gyro_b_stability': np.array([1.0, 1.0, 1.0]),
+        # gyro bias isntability correlation time, sec
+        'gyro_b_corr': np.array([10.0, 10.0, 10.0]),
+        # b. deterministic error:
+        'gyro_b': np.array([0.0, 0.0, 0.0]),
+        'gyro_k': np.array([1, 1, 1]),
+        'gyro_s': np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]),
+        # 2. accel:
+        # a. random noise:
+        # accel velocity random walk, m/s/rt-hr
+        'accel_vrw': np.array([0.005, 0.005, 0.005]),
+        # accel bias instability, m/s2
+        'accel_b_stability': np.array([2.0e-6, 2.0e-6, 2.0e-6]),
+        # accel bias isntability correlation time, sec
+        'accel_b_corr': np.array([100.0, 100.0, 100.0]),
+        # b. deterministic error:
+        'accel_b': np.array([0.0e-3, 0.0e-3, 0.0e-3]),
+        'accel_k': np.array([1.0, 1.0, 1.0]),
+        'accel_s': np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]),
+        # 3. mag:
+        'mag_si': np.eye(3) + np.random.randn(3, 3)*0.0, 
+        'mag_hi': np.array([10.0, 10.0, 10.0])*0.0,
+        'mag_std': np.array([0.1, 0.1, 0.1])
+    }
 ```
 
-成功后, 可以看到如下的RViz Visualization. 其中:
+<table>
+  <td> <img src="imgs/mid_point_sharper_noisier.png" width="500" height="300" />
+  Mid-point Method
+  </td> 
+  <td> <img src="imgs/euler_sharper_loop_noisier.png" width="500" height="300" />
+  Euler's Method
+  </td> 
+</table>
 
-* **红色**轨迹为**Ground Truth**
-
-* **蓝色**轨迹为**IMU Navigation Estimation**
-
-<img src="doc/images/demo.png" alt="Demo" width="100%">
-
-此Demo基于已有的解算方法得到. **在你自行实现解算方法之前, 你将不会看到蓝色轨迹**. 你的任务是自行实现精度尽可能高的解算方法. 期待你的精彩发挥!
-
-请搜索TODO, 开始你的编码 :P
-
-### 良好要求: 根据课程给定的数据, 完成基于中值法, 欧拉法的解算, 并对精度做对比分析
-
-相比及格要求, 变化不大, 改算法就行, Good Luck!
-
-### 优秀要求: 利用IMU仿真程序,自己生成不同运动状况(静止、匀速、加减速、快速转弯等)的仿真数据,对比两种解算方法精度差异与运动状况的关系,并给出原因分析
-
-注意: 为了提升课程的区分度, 从本章开始, **优秀要求的难度会大幅提升, 框架的提示会越来越少**, 期待喜爱挑战的你的精彩发挥!
-
-此处推荐使用**GNSS-Ins-Sim**生成仿真数据, 也可以沿用基础框架的方法生成, 但为了胡后续学习考虑, 推荐**尽早开始熟悉GNSS-Ins-Sim的使用**.
-
-为了方便你的学习， 此处已额外提供`gnss-ins-sim ROS wrapper package`. 使用它, 仅需更改配置文件, 即可得到ROS Bag格式的GNSS-Ins-Sim仿真数据. 
-
-此处以生成**Allan Variance Estimation**测试数据为例. 
-
-首先修改**config**[here](src/gnss_ins_sim/config/recorder_allan_variance_analysis.yaml), 指定输出路径. 此处以Docker环境为例. **输出前请务必保证output_path已存在**:
-
-```yaml
-# motion def:
-motion_file: allan_variance_analysis.csv
-# IMU params:
-imu: 1
-# sample frequency of simulated GNSS/IMU data:
-sample_frequency:
-    imu: 100.0
-    gps: 10.0
-# topic name:
-topic_name: /sim/sensor/imu
-# output rosbag path:
-output_path: /workspace/data/gnss_ins_sim/allan_variance_analysis
-# output name:
-output_name: data.bag
-```
-
-接着, 修改**GNSS-Ins-Sim**的**motion_def**文件[here](src/gnss_ins_sim/config/motion_def/allan_variance_analysis.csv):
-
-```csv
-ini lat (deg),ini lon (deg),ini alt (m),ini vx_body (m/s),ini vy_body (m/s),ini vz_body (m/s),ini yaw (deg),ini pitch (deg),ini roll (deg)
-31.224361,121.469170,0,0,0,0,0,0,0
-command type,yaw (deg),pitch (deg),roll (deg),vx_body (m/s),vy_body (m/s),vz_body (m/s),command duration (s),GPS visibility
-1,0,0,0,0,0,0,3600,1
-```
-
-最后, 编译&运行.
-
-```bash
-# build
-catkin config --install && catkin build gnss_ins_sim
-# set up session:
-source install/setup.bash
-# generate data:
-roslaunch gnss_ins_sim gnss_ins_sim_recorder.launch
-```
-
-若使用默认配置, 可在Docker环境`/workspace/data/gnss_ins_sim/allan_variance_analysis`路径下发现生成的`ROS Bag`:
-
-```bash
-root@7186fbc850f6:/workspace/data/gnss_ins_sim/allan_variance_analysis# rosbag info data.bag 
-path:        data.bag
-version:     2.0
-duration:    59:59s (3599s)
-start:       Mar 01 2021 14:27:42.03 (1614608862.03)
-end:         Mar 01 2021 15:27:42.02 (1614612462.02)
-size:        128.1 MB
-messages:    360000
-compression: none [166/166 chunks]
-types:       sensor_msgs/Imu [6a62c6daae103f4ff57a132d6f95cec2]
-topics:      /sim/sensor/imu   360000 msgs    : sensor_msgs/Imu
-```
-
-好, 提示就这么多了, 请志在优秀的你, 开始你的表演!
+由于噪音的变化两种算法都受到影响更大，但是哪种算法收到噪音的影响更大还需要更深一步的探索。但是由于中值法有一个平均的步骤，相当于一个长度为2的movmean filter所以感觉上中值法会比欧拉法受到的噪音更小一些
