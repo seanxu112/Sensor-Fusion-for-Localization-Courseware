@@ -473,16 +473,16 @@ void ErrorStateKalmanFilter::UpdateOdomEstimation(
   R_c.setZero();
 
   bool get_ang_success = GetAngularDelta(1, 0, angular_delta, angular_vel_mid);
-  if (!get_ang_success)
-      return false;
+  // if (!get_ang_success)
+  //     return false;
 
   // update orientation:
   UpdateOrientation(angular_delta, R_c, R_p);
 
   // get velocity delta:
   bool get_vel_success = GetVelocityDelta(1, 0, R_c, R_p, dt, vel_delta, linear_acc_mid);
-  if (!get_vel_success)
-      return false;
+  // if (!get_vel_success)
+  //     return false;
   // save mid-value unbiased linear acc for error-state update:
 
   // update position:
@@ -575,10 +575,10 @@ void ErrorStateKalmanFilter::CorrectErrorEstimationPose(
   G.block<3, 3>(0, 0) = Eigen::Matrix3d::Identity();
   G.block<3, 3>(3, kIndexErrorOri) = Eigen::Matrix3d::Identity();
 
-  Eigen::MatrixXd<6, 6> C = Eigen::MatrixXd<6, 6>::Identity();
+  Eigen::MatrixXd C = Eigen::MatrixXd<6, 6>::Identity();
   // TODO: set Kalman gain:              
   K.setZero();
-  K = P_ * G.transpose() * (G * P_ * G.transpose() + C * R_ * C.transpose()).inverse();
+  K = P_ * G.transpose() * (G * P_ * G.transpose() + C * RPose_ * C.transpose()).inverse();
 }
 
 /**
@@ -603,7 +603,8 @@ void ErrorStateKalmanFilter::CorrectErrorEstimation(
   }
 
   // TODO: perform Kalman correct:
-  
+  X_ += K * (Y - G * X_);
+  P_ = (Eigen::MatrixP::Identity() - K * G) * P_;
 }
 
 /**
@@ -617,19 +618,24 @@ void ErrorStateKalmanFilter::EliminateError(void) {
   //
   // a. position:
   // do it!
+  pose_.block<3,1>(0,3) -= X_.block<3,1>(kIndexErrorPos, 0);
   // b. velocity:
   // do it!
+  vel_.block<3,1>(0,3) -= X_.block<3,1>(kIndexErrorVel, 0);
   // c. orientation:
   // do it!
+  Eigen::Quaterniond temp_quat(pose_.block<3,3>(0,0) * (Eigen::Matrix3d::Identity() - Sophus::SO3d::hat((X_.block<3, 1>(kIndexErrorOri, 0)))));
+  temp_quat.normalize();
+  pose_.block<3,3>(0,0) = temp_quat.toRotationMatrix();
 
   // d. gyro bias:
   if (IsCovStable(kIndexErrorGyro)) {
-    gyro_bias_ += X_.block<3, 1>(kIndexErrorGyro, 0);
+    gyro_bias_ -= X_.block<3, 1>(kIndexErrorGyro, 0);
   }
 
   // e. accel bias:
   if (IsCovStable(kIndexErrorAccel)) {
-    accl_bias_ += X_.block<3, 1>(kIndexErrorAccel, 0);
+    accl_bias_ -= X_.block<3, 1>(kIndexErrorAccel, 0);
   }
 }
 
