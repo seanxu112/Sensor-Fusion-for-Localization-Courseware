@@ -1,5 +1,5 @@
 # 全局地图
-map_path: /workspace/assignments/07-filtering-basic/src/lidar_localization/slam_data/map/filtered_map.pcd
+map_path: /workspace/assignments/07-filtering-basic/src/lidar_localization/slam_data/map/filtered_map_1.pcd
 global_map_filter: voxel_filter # 选择滑窗地图点云滤波方法，目前支持：voxel_filter、no_filter
 
 # 局部地图
@@ -75,14 +75,14 @@ error_state_kalman_filter:
         latitude:   48.9827703173
     covariance:
         prior:
-            pos: 1.0e-6
-            vel: 1.0e-6
-            ori: 1.0e-6
+            pos: 1.0e-5
+            vel: 1.0e-5
+            ori: 1.0e-5
             epsilon: 1.0e-6
             delta: 1.0e-6
         process:
-            gyro: 1.0e-4
-            accel: 2.5e-3
+            gyro: 1.0e-6
+            accel: 2.5e-4
             bias_accel: 2.5e-3
             bias_gyro: 1.0e-4
         measurement:

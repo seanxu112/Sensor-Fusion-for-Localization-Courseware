@@ -300,11 +300,10 @@ bool KITTIFiltering::SetInitGNSS(const Eigen::Matrix4f &gnss_pose) {
 
   current_gnss_pose_ = gnss_pose;
 
-  if (gnss_cnt == 0) {
-    SetInitPose(gnss_pose);
-  } else if (gnss_cnt > 3) {
+  if (gnss_cnt > 3) {
     has_inited_ = true;
   }
+  SetInitPose(gnss_pose);
   gnss_cnt++;
 
   return true;

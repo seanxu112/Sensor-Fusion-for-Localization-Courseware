@@ -120,6 +120,7 @@ bool KITTIFilteringFlow::SaveOdometry(void) {
       !FileManager::CreateFile(ref_odom_ofs,
                                WORK_SPACE_PATH +
                                    "/slam_data/trajectory/ground_truth.txt")) {
+    std::cout << "ERROR: file cannot be created!!!!" << std::endl;
     return false;
   }
 
@@ -132,6 +133,7 @@ bool KITTIFilteringFlow::SaveOdometry(void) {
     }
 
     if (gnss_data_buff_.empty()) {
+      std::cout << "No GNSS Data Available!" << std::endl;
       break;
     }
 
@@ -142,9 +144,11 @@ bool KITTIFilteringFlow::SaveOdometry(void) {
     const Eigen::Vector3f &position_lidar =
         trajectory.lidar_.at(i).block<3, 1>(0, 3);
 
-    if ((position_ref - position_lidar).norm() > 3.0) {
+    if ((position_ref - position_lidar).norm() > 10.0) {
       continue;
     }
+
+    std::cout << "Saving Pose information " << i << std::endl;
 
     SavePose(trajectory.fused_.at(i), fused_odom_ofs);
     SavePose(trajectory.lidar_.at(i), laser_odom_ofs);
@@ -249,7 +253,18 @@ bool KITTIFilteringFlow::InitLocalization(void) {
   Eigen::Vector3f init_vel = current_pos_vel_data_.vel;
 
   // first try to init using scan context query:
-  if (filtering_ptr_->Init(current_cloud_data_, init_vel,
+  // if (filtering_ptr_->Init(current_cloud_data_, init_vel,
+  //                          current_imu_synced_data_)) {
+  //   // prompt:
+  //   LOG(INFO) << "Scan Context Localization Init Succeeded." << std::endl;
+  // }
+  static int gnss_count = 0;
+  if(!(gnss_count > 3)){
+        current_gnss_data_ =  gnss_data_buff_.at(gnss_count);            //   舍弃GNSS的第三帧数据
+        // std::cout  << " gnss_data_buff_   "   <<  gnss_count  << "  "   <<  current_gnss_data_.pose << std::endl;
+  }
+  gnss_count  ++ ;
+  if (filtering_ptr_->Init(current_gnss_data_.pose, init_vel,
                            current_imu_synced_data_)) {
     // prompt:
     LOG(INFO) << "Scan Context Localization Init Succeeded." << std::endl;
