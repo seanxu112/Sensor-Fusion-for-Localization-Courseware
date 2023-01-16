@@ -215,6 +215,7 @@ protected:
       double ORI;
       double MAG;
     } MEASUREMENT;
+    bool BIAS_RANDOM_WALK;
   } COV;
   // c. motion constraint:
   struct {
