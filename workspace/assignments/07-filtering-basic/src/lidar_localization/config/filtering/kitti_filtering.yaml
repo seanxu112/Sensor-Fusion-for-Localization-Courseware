@@ -92,7 +92,7 @@ error_state_kalman_filter:
             pos: 1.0e-4
             vel: 2.5e-3
         bias:
-            random_walk: false
+            random_walk: true
     motion_constraint: 
         activated: true
         w_b_thresh: 0.13
