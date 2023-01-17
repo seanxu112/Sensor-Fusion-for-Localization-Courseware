@@ -168,7 +168,7 @@ void ErrorStateKalmanFilter::EliminateError(void) {
 <img src="imgs/gyro1e5_param.png"/>
 <img src="imgs/gyro1e5_error.png"/>
 <img src="imgs/gyro1e5.png"/>
-因为想要更信任gyro的数据，将gyro的方差改小到1*10^(-5)。总体差别不大。但是效果更差了一下
+因为想要更信任gyro的数据，将gyro的方差改小到1*10^(-5)。总体差别不大。效果区别不是很大，但是稍微好了一些。
 
 <img src="imgs/prior1e5_gyro1e5_param.png"/>
 <img src="imgs/prior1e5_gyro1e5_error.png"/>
@@ -192,8 +192,11 @@ void ErrorStateKalmanFilter::EliminateError(void) {
 感觉要真正评测滤波的有效性，还是的要重新跑一下第四章的mapping。
 
 
-不考虑随机游走的推导过程：
 
+
+不考虑随机游走的推导过程：
+<img src="imgs/HW7-1.jpg“/>
+<img src="imgs/HW7-2.jpg“/>
 
 需要修改的地方：
 
