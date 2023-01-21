@@ -619,12 +619,24 @@ void ErrorStateKalmanFilter::CorrectErrorEstimationPoseVel(
     //
     // TODO: set measurement:
     //
+    Eigen::Vector3d dx = pose_.block<3,1>(0,3) - T_nb.block<3,1>(0,3);
+    Eigen::Vector3d dv = T_nb.block<3,3>(0,0).transpose() * vel_ - v_b;
+    Eigen::Matrix3d dR = T_nb.block<3,3>(0,0).transpose() * pose_.block<3, 3>(0,0);
+    Eigen::Vector3d dtheta = Sophus::SO3d::vee(dR - Eigen::Matrix3d::Identity()); 
 
-    // set measurement equation:
+    YPoseVel_.head(3) = dx;
+    YPoseVel_.block<3,1>(3,0) = dv;
+    YPoseVel_.tail(3) = dtheta;
+    Y = YPoseVel_;
 
-    //
-    // TODO: set Kalman gain:
-    //
+    // TODO: set measurement equation:
+    GPoseVel_.block<3,3>(3,3) = T_nb.block<3,3>(0,0).transpose();
+    GPoseVel_.block<3,3>(3,6) = Sophus::SO3d::hat(T_nb.block<3,3>(0,0).transpose() * vel_);
+    G = GPoseVel_;
+
+    // TODO: set Kalman gain:              
+    K.setZero();
+    K = P_ * G.transpose() * (G * P_ * G.transpose() + CPoseVel_ * RPoseVel_ * CPoseVel_.transpose()).inverse();
 }
 
 /**
@@ -668,6 +680,10 @@ void ErrorStateKalmanFilter::CorrectErrorEstimation(
     //
     // TODO: register new correction logic here:
     //
+    CorrectErrorEstimationPoseVel(
+      measurement.T_nb, 
+      measurement.v_b, measurement.w_b,
+      Y, G, K);
     break;
   case MeasurementType::POSI_VEL:
     //
