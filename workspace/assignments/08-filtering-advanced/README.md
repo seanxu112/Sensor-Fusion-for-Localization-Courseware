@@ -62,9 +62,14 @@ void ErrorStateKalmanFilter::CorrectErrorEstimationPosiVel(
     K = P_ * G.transpose() * (G * P_ * G.transpose() + CPosiVel_ * RPosiVel_ * CPosiVel_.transpose()).inverse();
 }
 ```
+
+<img src="imgs/HW 9-1.jpg "/>
+
+
 这一章有一点要注意就是pose_和T_nb的区别。pose_是当前的状态量(x)，T_nb是观测量(y)，所以在计算的时候基本都要用pose_，只有在计算观测量与状态量之差才会用T_nb。
 
 效果
+
 <img src="imgs/posivel_comp.png "/>
 <img src="imgs/rviz_posi_vel_traj.png "/>
 
