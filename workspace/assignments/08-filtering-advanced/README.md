@@ -62,7 +62,7 @@ void ErrorStateKalmanFilter::CorrectErrorEstimationPosiVel(
     K = P_ * G.transpose() * (G * P_ * G.transpose() + CPosiVel_ * RPosiVel_ * CPosiVel_.transpose()).inverse();
 }
 ```
-这一章有一点要注意就是pose_和T_nb的区别。pose_是当前的状态量(x)，T_nb是观测量(y)，所以在计算的时候基本都要用pose_，只有在计算观测量与状态量之差才会用。
+这一章有一点要注意就是pose_和T_nb的区别。pose_是当前的状态量(x)，T_nb是观测量(y)，所以在计算的时候基本都要用pose_，只有在计算观测量与状态量之差才会用T_nb。
 
 效果
 <img src="imgs/posivel_comp.png "/>
@@ -85,4 +85,4 @@ void ErrorStateKalmanFilter::CorrectErrorEstimationPosiVel(
   </td> 
 </table>
 
-
+添加了odom的效果比GNSS效果好太多了。但是GNSS的白噪音还是让fused轨迹有很多噪音。
