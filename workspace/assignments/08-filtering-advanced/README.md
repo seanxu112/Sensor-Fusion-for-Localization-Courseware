@@ -37,6 +37,7 @@ void ErrorStateKalmanFilter::CorrectErrorEstimationPoseVel(
 
 
 误差很大一部分我感觉是map的问题。因为感觉激光的icp其实对应map的点云挺准的，至少在10米之内。但是用第四章的地图也不行。好象是第四章存下来的scan context的proto版本不对。
+还有一个问题就是轮速计应该只有用在差速驱动的机器人上才会让vy为零，在汽车上（ackermann）由于车轮可以yaw所以前轮中心是有vy的速度的。当然还是要看轮速计到底是在哪两个轮子还有汽车中心是定义在哪里（汽车中心，前轮中心，后轮中心还是激光雷达下方）。
 
 CorrectErrorEstimationPosiVel：去掉姿态部分就行了推导公式在代码后
 ```
