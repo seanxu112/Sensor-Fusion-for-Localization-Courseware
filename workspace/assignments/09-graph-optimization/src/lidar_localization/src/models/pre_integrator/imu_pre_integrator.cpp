@@ -228,22 +228,39 @@ void IMUPreIntegrator::UpdateState(void) {
     // TODO: a. update mean:
     //
     // 1. get w_mid:
+    w_mid = 0.5 * (prev_w + curr_w);
     // 2. update relative orientation, so3:
+    prev_theta_ij = state.theta_ij_;
+    d_theta_ij = Sophus:SO3d::exp(w_mid*T);
+    curr_theta_ij = prev_theta_ij * d_theta_ij;
+    state.theta_ij_ = curr_theta_ij;
     // 3. get a_mid:
+    a_mid = 0.5 * (prev_a + curr_a);
     // 4. update relative translation:
+    state.alpha_ij_ += state.beta_ij_*T + 0.5*a_mid*T*T;
     // 5. update relative velocity:
-
+    state.beta_ij_ += a_mid*T;
+    
     //
     // TODO: b. update covariance:
     //
     // 1. intermediate results:
-
+    dR_inv = d_theta_ij.inverse().matrix();
+    prev_R = prev_theta_ij.matrix();
+    curr_R = curr_theta_ij.matrix();
+    prev_R_a_hat = prev_R * Sophus::SO3d::hat(prev_a);
+    curr_R_a_hat = curr_R * Sophus::SO3d::hat(curr_a);
     //
     // TODO: 2. set up F:
     //
     // F12 & F32:
+    F.block<3,3>(INDEX_ALPHA, INDEX_THETA) = -T*T/4 * (prev_R_a_hat + curr_R_a_hat*(Eigen::Matrix3d::Identity() - Sophus::SO3d::hat(w_mid)*T));
+    F.block<3,3>(INDEX_BETA, INDEX_THETA) = -T/2 * (prev_R_a_hat + curr_R_a_hat*(Eigen::Matrix3d::Identity() - Sophus::SO3d::hat(w_mid)*T));
     // F14 & F34:
+    F.block<3,3>(INDEX_ALPHA, INDEX_B_A) = -0.25 * (prev_R + curr_R) * T*T;
+    F.block<3,3>(INDEX_BETA, INDEX_B_A) = -0.5 * (prev_R + curr_R) * T;
     // F15 & F35:
+    F.block<3,3>(INDEX_ALPHA, INDEX_B_G) = T*T*T/4 * curr_R_a_hat;
     // F22:
 
     //
