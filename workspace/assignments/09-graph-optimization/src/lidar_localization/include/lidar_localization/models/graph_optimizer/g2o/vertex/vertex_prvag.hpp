@@ -72,12 +72,13 @@ public:
         //
         // TODO: do update
         //
-        _estimate.pos += update.block<3,1>.block(PRVAG::INDEX_POS);
-        _estimate.ori = Sophus::SO3d::exp(update.block<3,1>.block(INDEX_ORI)) * PRVAG.ori;
-        _estimate.vel += update.block<3,1>.block(PRVAG::INDEX_VEL);
-        _estimate.b_a += update.block<3,1>.block(PRVAG::INDEX_B_A);
-        _estimate.b_g += update.block<3,1>.block(PRVAG::INDEX_B_G);
-        updateDeltaBiases(update.block<3,1>.block(PRVAG::INDEX_B_A), update.block<3,1>.block(PRVAG::INDEX_B_G));
+        Eigen::Map<const Eigen::Matrix<double, 15, 1>> update_vec(update, 15);
+        _estimate.pos += update_vec.block<3,1>(PRVAG::INDEX_POS, 0);
+        _estimate.ori = _estimate.ori * Sophus::SO3d::exp(update_vec.block<3,1>(PRVAG::INDEX_ORI, 0));
+        _estimate.vel += update_vec.block<3,1>(PRVAG::INDEX_VEL, 0);
+        _estimate.b_a += update_vec.block<3,1>(PRVAG::INDEX_B_A, 0);
+        _estimate.b_g += update_vec.block<3,1>(PRVAG::INDEX_B_G, 0);
+        updateDeltaBiases(update_vec.block<3,1>(PRVAG::INDEX_B_A, 0), update_vec.block<3,1>(PRVAG::INDEX_B_G, 0));
     }
 
     bool isUpdated(void) const { return _is_updated; }

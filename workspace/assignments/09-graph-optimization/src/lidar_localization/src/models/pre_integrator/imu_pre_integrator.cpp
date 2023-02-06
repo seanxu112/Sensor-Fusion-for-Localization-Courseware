@@ -231,7 +231,7 @@ void IMUPreIntegrator::UpdateState(void) {
     w_mid = 0.5 * (prev_w + curr_w);
     // 2. update relative orientation, so3:
     prev_theta_ij = state.theta_ij_;
-    d_theta_ij = Sophus:SO3d::exp(w_mid*T);
+    d_theta_ij = Sophus::SO3d::exp(w_mid*T);
     curr_theta_ij = prev_theta_ij * d_theta_ij;
     state.theta_ij_ = curr_theta_ij;
     // 3. get a_mid:
@@ -255,7 +255,7 @@ void IMUPreIntegrator::UpdateState(void) {
     //
     // F12 & F32:
     F_ = MatrixF::Identity();
-    F_.block<3,3>(INDEX_ALPHA, INDEX_THETA) = -0.25*T*T/ * (prev_R_a_hat + curr_R_a_hat*(Eigen::Matrix3d::Identity() - Sophus::SO3d::hat(w_mid)*T));
+    F_.block<3,3>(INDEX_ALPHA, INDEX_THETA) = -0.25*T*T * (prev_R_a_hat + curr_R_a_hat*(Eigen::Matrix3d::Identity() - Sophus::SO3d::hat(w_mid)*T));
     F_.block<3,3>(INDEX_BETA, INDEX_THETA) = -0.5*T * (prev_R_a_hat + curr_R_a_hat*(Eigen::Matrix3d::Identity() - Sophus::SO3d::hat(w_mid)*T));
     // F14 & F34:
     F_.block<3,3>(INDEX_ALPHA, INDEX_B_A) = -0.25 * (prev_R + curr_R) * T*T;

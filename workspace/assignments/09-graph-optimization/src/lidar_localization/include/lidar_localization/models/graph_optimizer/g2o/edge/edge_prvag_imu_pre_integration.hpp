@@ -70,11 +70,12 @@ public:
 		// TODO: compute error:
 		//
 		const Eigen::Vector3d &alpha_ij = _measurement.block<3, 1>(INDEX_P, 0);
-		const Sophus::SO3d &theta_ij = _measurement.block<3, 1>(INDEX_R, 0);
-		const Eigen::Quaterniond residual_ori = 2 * theta_ij.inverse() * ori_i.inverse().inverse() * ori_j;
+		const Eigen::Vector3d &theta_ij = _measurement.block<3, 1>(INDEX_R, 0);
 		const Eigen::Vector3d &beta_ij = _measurement.block<3, 1>(INDEX_V, 0);
+		// const Sophus::SO3d residual_ori_quat = (Sophus::SO3d::exp(theta_ij).inverse() * ori_i.inverse() * ori_j);
+		// const Eigen::Vector3d residual_ori(residual_ori_quat.unit_quaternion().x(), residual_ori_quat.unit_quaternion().y(), residual_ori_quat.unit_quaternion().z());
 		_error.block<3, 1>(INDEX_P, 0) = ori_i.matrix() * (pos_j - pos_i - vel_i*T_ + 0.5*g_*T_*T_) - alpha_ij;
-		_error.block<3, 1>(INDEX_R, 0) = Eigen::Vector3d({residual_ori.x, residual_ori.y, residual_ori.z})
+		_error.block<3, 1>(INDEX_R, 0) = (Sophus::SO3d::exp(theta_ij).inverse() * ori_i.inverse() * ori_j).log();
 		_error.block<3, 1>(INDEX_V, 0) = ori_i.inverse() * (vel_j - vel_i + g_ * T_) - beta_ij;
 		_error.block<3, 1>(INDEX_A, 0) = b_a_j - b_a_i;
 		_error.block<3, 1>(INDEX_G, 0) = b_g_j - b_g_i;
