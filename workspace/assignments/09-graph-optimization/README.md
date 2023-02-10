@@ -180,4 +180,4 @@ virtual void computeError() override {
 <img src="imgs/10.png" width="450" height="600" /> 
 <img src="imgs/11.png" width="450" height="600" /> 
 <img src="imgs/12.png" width="450" height="600" /> 
-<img src="imgs/13.png" width="450" height="600" /> 
+<img src="imgs/13.png" width="450" height="300" /> 
