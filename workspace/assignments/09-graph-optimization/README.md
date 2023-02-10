@@ -1,3 +1,12 @@
+公式推导：
+
+<img src="imgs/1.png" width="450" height="600" /> 
+<img src="imgs/2.png" width="450" height="600" /> 
+<img src="imgs/3.png" width="450" height="600" /> 
+<img src="imgs/4.png" width="450" height="600" /> 
+<img src="imgs/5.png" width="450" height="600" /> 
+<img src="imgs/6.png" width="450" height="600" /> 
+
 补全代码：
 
 UpdateState: 中值法更新最优先验，然后F和B相对应的值补进去就行了
@@ -161,3 +170,13 @@ virtual void computeError() override {
 </table>
 
 可以看出用IMU预积分反而效果变差了，应该是KITTI数据集的缘故
+
+
+优秀部分：
+
+<img src="imgs/7.png" width="450" height="600" /> 
+<img src="imgs/8.png" width="450" height="600" /> 
+<img src="imgs/9.png" width="450" height="600" /> 
+<img src="imgs/10.png" width="450" height="600" /> 
+<img src="imgs/11.png" width="450" height="600" /> 
+<img src="imgs/12.png" width="450" height="600" /> 
