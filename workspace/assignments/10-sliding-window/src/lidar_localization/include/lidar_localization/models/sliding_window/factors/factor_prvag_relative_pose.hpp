@@ -57,11 +57,16 @@ public:
     //
     // TODO: get square root of information matrix:
     //
-
+    Eigen::Matrix<double, 6, 6>  sqrt_info =  Eigen::LLT<Eigen::Matrix<double, 6 ,6>>(
+      I_
+    ).matrixL().transpose() ;
 
     //
     // TODO: compute residual:
     //
+    Eigen::Map<Eigen::VectorXd> residual_vec(residuals);
+    residual_vec.head<3> = ori.i.inverse() * (pos_j - pos_i) - pos_ij;
+    residual_vec.tail<3> = (ori_ij * (ori_i.inverse() * ori_j)).log();
 
     //
     // TODO: compute jacobians:
