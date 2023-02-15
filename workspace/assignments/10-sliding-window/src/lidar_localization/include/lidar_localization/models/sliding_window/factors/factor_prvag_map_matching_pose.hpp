@@ -52,24 +52,31 @@ public:
     //
     // TODO: get square root of information matrix:
     //
-
+    Eigen::Matrix<double, 6, 6>  sqrt_info =  Eigen::LLT<Eigen::Matrix<double, 6 ,6>>(I_).matrixL().transpose() ;
     //
     // TODO: compute residual:
     //
-
+    Eigen::Map<Eigen::VectorXd> residual_vec(residuals);
+    residual_vec.head(3) = pos_prior - pos;
+    residual_vec.tail(3) = (ori_prior.inverse() * ori).log();
     //
     // TODO: compute jacobians:
     //
     if ( jacobians ) {
       if ( jacobians[0] ) {
         // implement jacobian computing:
+        Eigen::Map<Eigen::MatriXd<6,6>> jacobi_mat(jacobians[0]);
+        jacobi_mat.setZero();
+
+        jacobi_mat.block<3,3>(INDEX_P, INDEX_P) = - Eigen::Matrix3d::Identity();
+        jacobi_mat.block<3,3>(INDEX_R, INDEX_R) = JacobianRInv(residual.block<3, 1>(INDEX_R, 0));
       }
     }
 
     //
     // TODO: correct residual by square root of information matrix:
     //
-		
+		residual_vec = sqrt_info*residual_vec;
     return true;
   }
 

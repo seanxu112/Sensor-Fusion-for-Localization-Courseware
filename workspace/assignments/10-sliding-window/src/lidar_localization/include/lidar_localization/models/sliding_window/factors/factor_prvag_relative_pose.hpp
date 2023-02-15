@@ -73,20 +73,34 @@ public:
     //
     if ( jacobians ) {
       // compute shared intermediate results:
+      Eigen::MatrixXd<3,3> R_i(ori_i.matrix());
+      // Eigen::MatrixXd<3,3> R_j(ori_i.matrix());
+      Eigen::MatrixXd<3,3> J_r_inv(JacobianRInv(
+                                  residual.block(INDEX_R, 0, 3, 1)));
 
       if ( jacobians[0] ) {
         // implement computing:
+        Eigen::Map<Eigen::MatriXd<6,6>> jacobi_mat(jacobians[0]);
+        jacobi_mat.setZero();
+        jacobi_mat.block<3,3>(INDEX_P, INDEX_P) = -R_i.transpose();
+        jacobi_mat.block<3,3>(INDEX_P, INDEX_R) = R_i.transpose() * (pos_j - pos_i);
+        jacobi_mat.block<3,3>(INDEX_R, INDEX_R) = -J_r_inv * R_j.transpose() * R_i;
       }
 
       if ( jacobians[1] ) {
         // implement computing:
+        Eigen::Map<Eigen::MatriXd<6,6>> jacobi_mat(jacobians[0]);
+        jacobi_mat.setZero();
+        jacobi_mat.block<3,3>(INDEX_P, INDEX_P) = R_i.transpose();
+        // jacobi_mat.block<3,3>(INDEX_P, INDEX_R) = R_i.transpose() * (pos_j - pos_i);
+        jacobi_mat.block<3,3>(INDEX_R, INDEX_R) = J_r_inv;
       }
     }
 
     //
     // TODO: correct residual by square root of information matrix:
     //
-
+    residual_vec = sqrt_info * residual_vec;
     return true;
   }
 
