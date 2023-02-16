@@ -330,6 +330,7 @@ bool SlidingWindow::Update(void) {
     //
     // a. map matching / GNSS position:
     //
+    std::cout << "Adding Map Matching Factors" << std::endl;
     if ( N > 0 && measurement_config_.source.map_matching ) {
         // get prior position measurement:
         Eigen::Matrix4d prior_pose = current_map_matching_pose_.pose.cast<double>();
@@ -341,6 +342,7 @@ bool SlidingWindow::Update(void) {
     //
     // add binary constraints:
     //
+    std::cout << "Adding Relative Factors" << std::endl;
     if ( N > 1 ) {
         // get param block ID, previous:
         const int param_index_i = N - 2;
@@ -352,7 +354,7 @@ bool SlidingWindow::Update(void) {
         Eigen::Matrix4d relative_pose = (last_key_frame_.pose.inverse() * current_key_frame_.pose).cast<double>();
         // TODO: add constraint, lidar frontend / loop closure detection:
         sliding_window_ptr_->AddPRVAGRelativePoseFactor(param_index_i, param_index_j, relative_pose, measurement_config_.noise.lidar_odometry);
-        
+        std::cout << "Finished 1 relative pose" << std::endl;
         //
         // b. IMU pre-integration:
         //
@@ -360,6 +362,7 @@ bool SlidingWindow::Update(void) {
             // TODO: add constraint, IMU pre-integraion:
             sliding_window_ptr_->AddPRVAGIMUPreIntegrationFactor(param_index_i, param_index_j, imu_pre_integration_);
         }
+        std::cout << "Finished 1 imu pose" << std::endl;
     }
 
     // move forward:

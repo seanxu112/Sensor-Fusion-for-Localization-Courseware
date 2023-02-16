@@ -241,11 +241,14 @@ bool CeresSlidingWindow::Optimize() {
     // get key frames count:
     const int N = GetNumParamBlocks();
 
+    
     if ( 
         (kWindowSize + 1 <= N)
     ) {
         // TODO: create new sliding window optimization problem:
         ceres::Problem problem;
+
+        std::cout << "Create Parameter Blocks" << std::endl;
 
         // TODO: a. add parameter blocks:
         for ( int i = 1; i <= kWindowSize + 1; ++i) {
@@ -262,14 +265,17 @@ bool CeresSlidingWindow::Optimize() {
 
         // TODO: add residual blocks:
         // b.1. marginalization constraint:
+        
         if (
             !residual_blocks_.map_matching_pose.empty() && 
             !residual_blocks_.relative_pose.empty() && 
             !residual_blocks_.imu_pre_integration.empty()
         ) {
+            std::cout << "Starting marginalization factor" << std::endl;
             auto &key_frame_m = optimized_key_frames_.at(N - kWindowSize - 1);
             auto &key_frame_r = optimized_key_frames_.at(N - kWindowSize - 0);
 
+            std::cout << "Getting Data for Factors" << std::endl;
             const ceres::CostFunction *factor_map_matching_pose = GetResMapMatchingPose(
                 residual_blocks_.map_matching_pose.front()
             );
@@ -280,21 +286,28 @@ bool CeresSlidingWindow::Optimize() {
                 residual_blocks_.imu_pre_integration.front()
             );
 
+            std::cout << "Got marginalization factor data" << std::endl;
+
             sliding_window::FactorPRVAGMarginalization *factor_marginalization = new sliding_window::FactorPRVAGMarginalization();
 
+            std::cout << "1" << std::endl;
             factor_marginalization->SetResMapMatchingPose(
                 factor_map_matching_pose, 
                 std::vector<double *>{key_frame_m.prvag}
             );
+            std::cout << "2" << std::endl;
             factor_marginalization->SetResRelativePose(
                 factor_relative_pose,
                 std::vector<double *>{key_frame_m.prvag, key_frame_r.prvag}
             );
+            std::cout << "3" << std::endl;
             factor_marginalization->SetResIMUPreIntegration(
                 factor_imu_pre_integration,
                 std::vector<double *>{key_frame_m.prvag, key_frame_r.prvag}
             );
+            std::cout << "4" << std::endl;
             factor_marginalization->Marginalize(key_frame_r.prvag);
+            std::cout << "Finished marginalization factor" << std::endl;
 
             // add marginalization factor into sliding window
             problem.AddResidualBlock(
@@ -309,6 +322,7 @@ bool CeresSlidingWindow::Optimize() {
         }
 
         // TODO: b.2. map matching pose constraint:
+        std::cout << "Starting map matching factor" << std::endl;
         if ( !residual_blocks_.map_matching_pose.empty() ) {
             for ( const auto &residual_map_matching_pose: residual_blocks_.map_matching_pose ) {
                 auto &key_frame = optimized_key_frames_.at(residual_map_matching_pose.param_index);
@@ -321,8 +335,10 @@ bool CeresSlidingWindow::Optimize() {
                 problem.AddResidualBlock(factor_map_matching_pose, nullptr, key_frame.prvag);
             }            
         }
+        std::cout << "Finished map matching factor" << std::endl;
 
         // TODO: b.3. relative pose constraint:
+        std::cout << "Starting relative pose factor" << std::endl;
         if ( !residual_blocks_.relative_pose.empty() ) {
             for ( const auto &residual_relative_pose: residual_blocks_.relative_pose ) {
                 auto &key_frame_i = optimized_key_frames_.at(residual_relative_pose.param_index_i);
@@ -336,8 +352,10 @@ bool CeresSlidingWindow::Optimize() {
                 problem.AddResidualBlock(factor_relative_pose, nullptr, key_frame_i.prvag, key_frame_j.prvag);
             }
         }
+        std::cout << "Finished relative pose factor" << std::endl;
 
         // TODO: b.4. IMU pre-integration constraint
+        std::cout << "Starting imu factor" << std::endl;
         if ( !residual_blocks_.imu_pre_integration.empty() ) {
             for ( const auto &residual_imu_pre_integration: residual_blocks_.imu_pre_integration ) {
                 auto &key_frame_i = optimized_key_frames_.at(residual_imu_pre_integration.param_index_i);
@@ -351,6 +369,7 @@ bool CeresSlidingWindow::Optimize() {
                 problem.AddResidualBlock(factor_imu_pre_integration, nullptr, key_frame_i.prvag, key_frame_j.prvag);
             }
         }
+        std::cout << "Finished imu factor" << std::endl;
 
         // solve:
         ceres::Solver::Summary summary;

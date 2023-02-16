@@ -48,13 +48,13 @@ public:
     // TODO: Update H:
     //
     // a. H_mm:
-    // H_.block<15,15>(INDEX_M, INDEX_M) += J_m.transpose() * J_m;
+    H_.block<15,15>(INDEX_M, INDEX_M) += J_m.transpose() * J_m;
 
-    // //
-    // // TODO: Update b:
-    // //
-    // // a. b_m:
-    // b_.block<15,1>(INDEX_M, INDEX_M) += J_m.transpose() * residuals;
+    //
+    // TODO: Update b:
+    //
+    // a. b_m:
+    b_.block<15,1>(INDEX_M, INDEX_M) += J_m.transpose() * residuals;
   }
 
   void SetResRelativePose(
@@ -75,21 +75,21 @@ public:
     // TODO: Update H:
     //
     // a. H_mm:
-    // H_.block<15, 15>(INDEX_M, INDEX_M) += J_m.transpose() * J_m;
-    // // b. H_mr:
-    // H_.block<15, 15>(INDEX_M, INDEX_R) += J_m.transpose() * J_r;
-    // // c. H_rm:
-    // H_.block<15, 15>(INDEX_R, INDEX_M) += J_r.transpose() * J_m;
-    // // d. H_rr:
-    // H_.block<15, 15>(INDEX_R, INDEX_R) += J_r.transpose() * J_r;
+    H_.block<15, 15>(INDEX_M, INDEX_M) += J_m.transpose() * J_m;
+    // b. H_mr:
+    H_.block<15, 15>(INDEX_M, INDEX_R) += J_m.transpose() * J_r;
+    // c. H_rm:
+    H_.block<15, 15>(INDEX_R, INDEX_M) += J_r.transpose() * J_m;
+    // d. H_rr:
+    H_.block<15, 15>(INDEX_R, INDEX_R) += J_r.transpose() * J_r;
 
-    // //
-    // // TODO: Update b:
-    // //
-    // // a. b_m:
-    // b_.block<15, 1>(INDEX_M, 0) += J_m.transpose() * residuals;
-    // // a. b_r:
-    // b_.block<15, 1>(INDEX_R, 0) += J_r.transpose() * residuals;
+    //
+    // TODO: Update b:
+    //
+    // a. b_m:
+    b_.block<15, 1>(INDEX_M, 0) += J_m.transpose() * residuals;
+    // a. b_r:
+    b_.block<15, 1>(INDEX_R, 0) += J_r.transpose() * residuals;
   }
 
   void SetResIMUPreIntegration(
@@ -102,6 +102,7 @@ public:
     std::vector<Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>> jacobians;
 
     // compute:
+    std::cout << "Pre Evaluate" << std::endl;
     Evaluate(res_imu_pre_integration, residuals, jacobians);
     const Eigen::MatrixXd &J_m = jacobians.at(0);
     const Eigen::MatrixXd &J_r = jacobians.at(1);
@@ -110,21 +111,24 @@ public:
     // TODO: Update H:
     //
     // a. H_mm:
-    // H_.block<15, 15>(INDEX_M, INDEX_M) += J_m.transpose() * J_m;
-    // // b. H_mr:
-    // H_.block<15, 15>(INDEX_M, INDEX_R) += J_m.transpose() * J_r;
-    // // c. H_rm:
-    // H_.block<15, 15>(INDEX_R, INDEX_M) += J_r.transpose() * J_m;
-    // // d. H_rr:
-    // H_.block<15, 15>(INDEX_R, INDEX_R) += J_r.transpose() * J_r;
+    std::cout << "Pre assignment H" << std::endl;
+    H_.block<15, 15>(INDEX_M, INDEX_M) += J_m.transpose() * J_m;
+    // b. H_mr:
+    H_.block<15, 15>(INDEX_M, INDEX_R) += J_m.transpose() * J_r;
+    // c. H_rm:
+    H_.block<15, 15>(INDEX_R, INDEX_M) += J_r.transpose() * J_m;
+    // d. H_rr:
+    H_.block<15, 15>(INDEX_R, INDEX_R) += J_r.transpose() * J_r;
 
-    // //
-    // // TODO: Update b:
-    // //
-    // // a. b_m:
-    // b_.block<15, 1>(INDEX_M, 0) += J_m.transpose() * residuals;
-    // // a. b_r:
-    // b_.block<15, 1>(INDEX_R, 0) += J_r.transpose() * residuals;
+    //
+    // TODO: Update b:
+    //
+    // a. b_m:
+    std::cout << "Pre assignment b" << std::endl;
+    b_.block<15, 1>(INDEX_M, 0) += J_m.transpose() * residuals;
+    // a. b_r:
+    b_.block<15, 1>(INDEX_R, 0) += J_r.transpose() * residuals;
+    std::cout << "Post assignment" << std::endl;
   }
 
   void Marginalize(
@@ -133,27 +137,27 @@ public:
     Eigen::Map<const Eigen::Matrix<double, 15, 1>> x_0(raw_param_r_0);
     x_0_ = x_0;
     // TODO: implement marginalization logic
-    // const Eigen::MatrixXd H_mm = H_.block<15, 15>(INDEX_M, INDEX_M);
-    // const Eigen::MatrixXd H_mr = H_.block<15, 15>(INDEX_M, INDEX_R);
-    // const Eigen::MatrixXd H_rm = H_.block<15, 15>(INDEX_R, INDEX_M);
-    // const Eigen::MatrixXd H_rr = H_.block<15, 15>(INDEX_R, INDEX_R);
-    // const Eigen::MatrixXd H_mm_inv = H_mm.inverse();
+    const Eigen::MatrixXd H_mm = H_.block<15, 15>(INDEX_M, INDEX_M);
+    const Eigen::MatrixXd H_mr = H_.block<15, 15>(INDEX_M, INDEX_R);
+    const Eigen::MatrixXd H_rm = H_.block<15, 15>(INDEX_R, INDEX_M);
+    const Eigen::MatrixXd H_rr = H_.block<15, 15>(INDEX_R, INDEX_R);
+    const Eigen::MatrixXd H_mm_inv = H_mm.inverse();
 
-    // const Eigen::VectorXd b_m = b_.head(15);
-    // const Eigen::VectorXd b_r = b_.tail(15);
+    const Eigen::VectorXd b_m = b_.head(15);
+    const Eigen::VectorXd b_r = b_.tail(15);
 
-    // const Eigen::MatrixXd LHS = H_rr - H_rm * H_mm_inv * H_mr;
-    // const Eigen::VectorXd RHS = b_r - H_rm * H_mm_inv * b_m;
+    const Eigen::MatrixXd LHS = H_rr - H_rm * H_mm_inv * H_mr;
+    const Eigen::VectorXd RHS = b_r - H_rm * H_mm_inv * b_m;
 
-    // Eigen::SelfAdjointEigenSolver<Eigen::MatrixXd> saes2(LHS);
-    // Eigen::VectorXd S = Eigen::VectorXd((saes2.eigenvalues().array() > eps).select(saes2.eigenvalues().array(), 0));
-    // Eigen::VectorXd S_inv = Eigen::VectorXd((saes2.eigenvalues().array() > eps).select(saes2.eigenvalues().array().inverse(), 0));
+    Eigen::SelfAdjointEigenSolver<Eigen::MatrixXd> saes2(LHS);
+    Eigen::VectorXd S = Eigen::VectorXd((saes2.eigenvalues().array() > 1.0e-3).select(saes2.eigenvalues().array(), 0));
+    Eigen::VectorXd S_inv = Eigen::VectorXd((saes2.eigenvalues().array() > 1.0e-3).select(saes2.eigenvalues().array().inverse(), 0));
 
-    // Eigen::VectorXd S_sqrt = S.cwiseSqrt();
-    // Eigen::VectorXd S_inv_sqrt = S_inv.cwiseSqrt();
+    Eigen::VectorXd S_sqrt = S.cwiseSqrt();
+    Eigen::VectorXd S_inv_sqrt = S_inv.cwiseSqrt();
 
-    // linearized_jacobians = S_sqrt.asDiagonal() * saes2.eigenvectors().transpose();
-    // linearized_residuals = S_inv_sqrt.asDiagonal() * saes2.eigenvectors().transpose() * RHS;
+    J_ = S_sqrt.asDiagonal() * saes2.eigenvectors().transpose();
+    e_ = S_inv_sqrt.asDiagonal() * saes2.eigenvectors().transpose() * RHS;
 
   }
 
@@ -167,19 +171,24 @@ public:
     //
     // TODO: compute residual:
     //
-    // Eigen::Map<Eigen::Matrix<double, 15, 1>> residual_vec(residuals);
-    // residual_vec = e_ + J_ * dx;
+    std::cout << "Pre TODO" << std::endl;
+    Eigen::Map<Eigen::Matrix<double, 15, 1>> residual_vec(residuals);
+    residual_vec = e_ + J_ * dx;
+    std::cout << "Post residual_vec" << std::endl;
 
-    // //
-    // // TODO: compute jacobian:
-    // //
-    // if ( jacobians ) {
-    //   if ( jacobians[0] ) {
-    //     // implement computing:
-    //     Eigen::Map<Eigen::Matrix<double, 15, 15, Eigen::RowMajor>> jacobi_mat(jacobians[0]);
-    //     jacobi_mat = J_;
-    //   }
-    // }
+    //
+    // TODO: compute jacobian:
+    //
+    std::cout << "Pre Jacobian" << std::endl;
+    if ( jacobians ) {
+      if ( jacobians[0] ) {
+        // implement computing:
+        Eigen::Map<Eigen::Matrix<double, 15, 15, Eigen::RowMajor>> jacobi_mat(jacobians[0]);
+        jacobi_mat.setZero();
+        jacobi_mat = J_;
+      }
+    }
+    std::cout << "Post Jacobian" << std::endl;
 
     return true;
   }

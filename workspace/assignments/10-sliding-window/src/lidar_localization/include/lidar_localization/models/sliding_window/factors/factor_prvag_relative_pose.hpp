@@ -74,11 +74,11 @@ public:
       Eigen::Matrix<double, 3, 3> R_i(ori_i.matrix());
       Eigen::Matrix<double, 3, 3> R_j(ori_j.matrix());
       Eigen::Matrix<double, 3, 3> J_r_inv(JacobianRInv(
-                                  residual_vec.block(INDEX_R, 0, 3, 1)));
+                                  residual_vec.tail(3)));
 
       if ( jacobians[0] ) {
         // implement computing:
-        Eigen::Map<Eigen::Matrix<double, 6, 6>> jacobi_mat(jacobians[0]);
+        Eigen::Map<Eigen::Matrix<double, 6, 15>> jacobi_mat(jacobians[0]);
         jacobi_mat.setZero();
         jacobi_mat.block<3,3>(INDEX_P, INDEX_P) = -R_i.transpose();
         jacobi_mat.block<3,3>(INDEX_P, INDEX_R) = Sophus::SO3d::hat(R_i.transpose() * (pos_j - pos_i));
@@ -87,7 +87,7 @@ public:
 
       if ( jacobians[1] ) {
         // implement computing:
-        Eigen::Map<Eigen::Matrix<double, 6, 6>> jacobi_mat(jacobians[0]);
+        Eigen::Map<Eigen::Matrix<double, 6, 15>> jacobi_mat(jacobians[1]);
         jacobi_mat.setZero();
         jacobi_mat.block<3,3>(INDEX_P, INDEX_P) = R_i.transpose();
         // jacobi_mat.block<3,3>(INDEX_P, INDEX_R) = R_i.transpose() * (pos_j - pos_i);

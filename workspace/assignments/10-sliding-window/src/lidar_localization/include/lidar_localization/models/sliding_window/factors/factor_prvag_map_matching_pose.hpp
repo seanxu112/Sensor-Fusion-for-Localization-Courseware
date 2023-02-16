@@ -65,7 +65,7 @@ public:
     if ( jacobians ) {
       if ( jacobians[0] ) {
         // implement jacobian computing:
-        Eigen::Map<Eigen::Matrix<double, 6, 6>> jacobi_mat(jacobians[0]);
+        Eigen::Map<Eigen::Matrix<double, 6, 15>> jacobi_mat(jacobians[0]);
         jacobi_mat.setZero();
 
         jacobi_mat.block<3,3>(INDEX_P, INDEX_P) = - Eigen::Matrix3d::Identity();
