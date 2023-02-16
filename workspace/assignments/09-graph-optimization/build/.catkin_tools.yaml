@@ -1,0 +1,6 @@
+devel_space: /workspace/assignments/09-graph-optimization/devel
+install: true
+install_space: /workspace/assignments/09-graph-optimization/install
+profile: default
+source_space: /workspace/assignments/09-graph-optimization/src
+workspace: /workspace/assignments/09-graph-optimization

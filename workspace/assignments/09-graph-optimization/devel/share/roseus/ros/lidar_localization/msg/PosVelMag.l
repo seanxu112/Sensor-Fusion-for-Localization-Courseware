@@ -1,0 +1,1 @@
+/workspace/assignments/09-graph-optimization/devel/.private/lidar_localization/share/roseus/ros/lidar_localization/msg/PosVelMag.l

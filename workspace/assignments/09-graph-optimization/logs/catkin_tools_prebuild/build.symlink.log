@@ -1,0 +1,12 @@
+Symlinking /workspace/assignments/09-graph-optimization/devel/./setup.bash
+Symlinking /workspace/assignments/09-graph-optimization/devel/./local_setup.zsh
+Symlinking /workspace/assignments/09-graph-optimization/devel/./setup.sh
+Symlinking /workspace/assignments/09-graph-optimization/devel/./env.sh
+Symlinking /workspace/assignments/09-graph-optimization/devel/./_setup_util.py
+Symlinking /workspace/assignments/09-graph-optimization/devel/./local_setup.bash
+Symlinking /workspace/assignments/09-graph-optimization/devel/./setup.zsh
+Symlinking /workspace/assignments/09-graph-optimization/devel/./cmake.lock
+Symlinking /workspace/assignments/09-graph-optimization/devel/./local_setup.sh
+Symlinking /workspace/assignments/09-graph-optimization/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake
+Symlinking /workspace/assignments/09-graph-optimization/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
+Symlinking /workspace/assignments/09-graph-optimization/devel/lib/pkgconfig/catkin_tools_prebuild.pc

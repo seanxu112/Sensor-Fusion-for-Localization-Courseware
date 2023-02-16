@@ -1,0 +1,291 @@
+[  0%] Built target tf_generate_messages_nodejs
+[  0%] Built target tf2_msgs_generate_messages_nodejs
+[  0%] Built target tf2_msgs_generate_messages_cpp
+[  0%] Built target tf2_msgs_generate_messages_py
+[  0%] Built target actionlib_generate_messages_py
+[  0%] Built target actionlib_generate_messages_cpp
+[  0%] Built target _lidar_localization_generate_messages_check_deps_PosVelMag
+[  0%] Built target _lidar_localization_generate_messages_check_deps_ESKFStd
+[  0%] Built target _lidar_localization_generate_messages_check_deps_PosVel
+[  0%] Built target _lidar_localization_generate_messages_check_deps_IMUGNSSMeasurement
+[  0%] Built target _lidar_localization_generate_messages_check_deps_LidarMeasurement
+[  0%] Built target _lidar_localization_generate_messages_check_deps_optimizeMap
+[  0%] Built target _lidar_localization_generate_messages_check_deps_saveMap
+[  0%] Built target nav_msgs_generate_messages_cpp
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[  0%] Built target sensor_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target _lidar_localization_generate_messages_check_deps_saveOdometry
+[  0%] Built target _lidar_localization_generate_messages_check_deps_saveScanContext
+[  0%] Built target _lidar_localization_generate_messages_check_deps_EKFStd
+[  3%] Built target lidar_localization_generate_messages_cpp
+[  3%] Built target tf2_msgs_generate_messages_eus
+[  3%] Built target nav_msgs_generate_messages_eus
+[  3%] Built target sensor_msgs_generate_messages_nodejs
+[  3%] Built target roscpp_generate_messages_cpp
+[  3%] Built target sensor_msgs_generate_messages_lisp
+[  3%] Built target geometry_msgs_generate_messages_py
+[  3%] Built target geometry_msgs_generate_messages_lisp
+[  3%] Built target actionlib_generate_messages_lisp
+[  3%] Built target std_msgs_generate_messages_nodejs
+[  3%] Built target bond_generate_messages_lisp
+[  3%] Built target sensor_msgs_generate_messages_eus
+[  3%] Built target nav_msgs_generate_messages_nodejs
+[  3%] Built target sensor_msgs_generate_messages_py
+[  3%] Built target nodelet_generate_messages_py
+[  3%] Built target geometry_msgs_generate_messages_nodejs
+[  3%] Built target std_srvs_generate_messages_eus
+[  3%] Built target roscpp_generate_messages_lisp
+[  3%] Built target bond_generate_messages_eus
+[  3%] Built target std_msgs_generate_messages_lisp
+[  3%] Built target roscpp_generate_messages_nodejs
+[  3%] Built target geometry_msgs_generate_messages_eus
+[  3%] Built target std_msgs_generate_messages_py
+[  3%] Built target roscpp_generate_messages_py
+[  3%] Built target rosgraph_msgs_generate_messages_cpp
+[  3%] Built target tf_generate_messages_py
+[  3%] Built target dynamic_reconfigure_generate_messages_cpp
+[  3%] Built target topic_tools_generate_messages_cpp
+[  3%] Built target std_srvs_generate_messages_cpp
+[  3%] Built target rosgraph_msgs_generate_messages_eus
+[  3%] Built target rosgraph_msgs_generate_messages_lisp
+[  3%] Built target std_msgs_generate_messages_eus
+[  3%] Built target rosgraph_msgs_generate_messages_nodejs
+[  3%] Built target roscpp_generate_messages_eus
+[  3%] Built target rosgraph_msgs_generate_messages_py
+[  3%] Built target actionlib_msgs_generate_messages_eus
+[  3%] Built target nodelet_generate_messages_lisp
+[  3%] Built target actionlib_msgs_generate_messages_lisp
+[  3%] Built target actionlib_msgs_generate_messages_py
+[  3%] Built target pcl_ros_gencfg
+[  3%] Built target topic_tools_generate_messages_nodejs
+[  3%] Built target dynamic_reconfigure_generate_messages_eus
+[  3%] Built target dynamic_reconfigure_generate_messages_lisp
+[  3%] Built target pcl_msgs_generate_messages_cpp
+[  3%] Built target dynamic_reconfigure_generate_messages_nodejs
+[  3%] Built target dynamic_reconfigure_generate_messages_py
+[  3%] Built target tf2_msgs_generate_messages_lisp
+[  3%] Built target nav_msgs_generate_messages_py
+[  3%] Built target dynamic_reconfigure_gencfg
+[  3%] Built target nodelet_generate_messages_cpp
+[  3%] Built target bond_generate_messages_py
+[  3%] Built target std_srvs_generate_messages_nodejs
+[  3%] Built target nodelet_generate_messages_eus
+[  3%] Built target nodelet_generate_messages_nodejs
+[  3%] Built target nav_msgs_generate_messages_lisp
+[  3%] Built target pcl_msgs_generate_messages_nodejs
+[  3%] Built target bond_generate_messages_cpp
+[  3%] Built target actionlib_msgs_generate_messages_cpp
+[  3%] Built target tf_generate_messages_eus
+[  3%] Built target bond_generate_messages_nodejs
+[  3%] Built target actionlib_msgs_generate_messages_nodejs
+[  3%] Built target topic_tools_generate_messages_py
+[  3%] Built target nodelet_topic_tools_gencfg
+[  3%] Built target std_srvs_generate_messages_lisp
+[  3%] Built target topic_tools_generate_messages_lisp
+[  3%] Built target pcl_msgs_generate_messages_eus
+[  3%] Built target topic_tools_generate_messages_eus
+[  3%] Built target actionlib_generate_messages_eus
+[  3%] Built target pcl_msgs_generate_messages_py
+[  3%] Built target std_srvs_generate_messages_py
+[  3%] Built target actionlib_generate_messages_nodejs
+[  3%] Built target pcl_msgs_generate_messages_lisp
+[  3%] Built target tf_generate_messages_cpp
+[  3%] Built target tf_generate_messages_lisp
+[ 20%] Built target viewer_node
+[ 37%] Built target data_pretreat_node
+[ 41%] Built target lidar_localization_generate_messages_py
+[ 44%] Built target lidar_localization_generate_messages_nodejs
+[ 47%] Built target lidar_localization_generate_messages_lisp
+[ 50%] Built target lidar_localization_generate_messages_eus
+[ 50%] Built target lidar_localization_generate_messages
+[ 67%] Built target loop_closing_node
+[ 83%] Built target lio_back_end_node
+[100%] Built target front_end_node
+[36mInstall the project...[0m
+-- Install configuration: "Release"
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/_setup_util.py
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/env.sh
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/setup.bash
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/local_setup.bash
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/setup.sh
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/local_setup.sh
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/setup.zsh
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/local_setup.zsh
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/.rosinstall
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/msg/IMUGNSSMeasurement.msg
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/msg/LidarMeasurement.msg
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/msg/ESKFStd.msg
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/msg/EKFStd.msg
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/msg/PosVel.msg
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/msg/PosVelMag.msg
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/srv/saveScanContext.srv
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/srv/saveMap.srv
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/srv/optimizeMap.srv
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/srv/saveOdometry.srv
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/cmake/lidar_localization-msg-paths.cmake
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/PosVel.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/saveOdometryRequest.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/EKFStd.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/saveScanContextResponse.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/ESKFStd.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/PosVelMag.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/saveOdometry.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/LidarMeasurement.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/optimizeMapRequest.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/IMUGNSSMeasurement.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/saveMapResponse.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/saveScanContext.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/saveMap.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/saveMapRequest.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/optimizeMapResponse.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/optimizeMap.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/saveScanContextRequest.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/saveOdometryResponse.h
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/roseus/ros/lidar_localization
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/roseus/ros/lidar_localization/msg
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/roseus/ros/lidar_localization/msg/EKFStd.l
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/roseus/ros/lidar_localization/msg/PosVel.l
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/roseus/ros/lidar_localization/msg/LidarMeasurement.l
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/roseus/ros/lidar_localization/msg/PosVelMag.l
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/roseus/ros/lidar_localization/msg/ESKFStd.l
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/roseus/ros/lidar_localization/msg/IMUGNSSMeasurement.l
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/roseus/ros/lidar_localization/manifest.l
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/roseus/ros/lidar_localization/srv
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/roseus/ros/lidar_localization/srv/saveMap.l
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/roseus/ros/lidar_localization/srv/saveOdometry.l
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/roseus/ros/lidar_localization/srv/saveScanContext.l
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/roseus/ros/lidar_localization/srv/optimizeMap.l
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/msg
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/msg/_package.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/msg/PosVel.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/msg/_package_EKFStd.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/msg/PosVelMag.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/msg/_package_LidarMeasurement.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/msg/_package_ESKFStd.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/msg/EKFStd.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/msg/IMUGNSSMeasurement.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/msg/lidar_localization-msg.asd
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/msg/_package_PosVelMag.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/msg/_package_PosVel.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/msg/ESKFStd.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/msg/_package_IMUGNSSMeasurement.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/msg/LidarMeasurement.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/srv
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/srv/_package_saveMap.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/srv/_package.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/srv/optimizeMap.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/srv/saveMap.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/srv/saveOdometry.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/srv/lidar_localization-srv.asd
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/srv/_package_saveOdometry.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/srv/_package_saveScanContext.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/srv/saveScanContext.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/common-lisp/ros/lidar_localization/srv/_package_optimizeMap.lisp
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/gennodejs/ros/lidar_localization
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/gennodejs/ros/lidar_localization/msg
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/gennodejs/ros/lidar_localization/msg/ESKFStd.js
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/gennodejs/ros/lidar_localization/msg/PosVelMag.js
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/gennodejs/ros/lidar_localization/msg/LidarMeasurement.js
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/gennodejs/ros/lidar_localization/msg/IMUGNSSMeasurement.js
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/gennodejs/ros/lidar_localization/msg/PosVel.js
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/gennodejs/ros/lidar_localization/msg/EKFStd.js
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/gennodejs/ros/lidar_localization/msg/_index.js
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/gennodejs/ros/lidar_localization/srv
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/gennodejs/ros/lidar_localization/srv/saveOdometry.js
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/gennodejs/ros/lidar_localization/srv/optimizeMap.js
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/gennodejs/ros/lidar_localization/srv/saveMap.js
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/gennodejs/ros/lidar_localization/srv/saveScanContext.js
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/gennodejs/ros/lidar_localization/srv/_index.js
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/gennodejs/ros/lidar_localization/_index.js
+Listing /workspace/assignments/09-graph-optimization/devel/.private/lidar_localization/lib/python2.7/dist-packages/lidar_localization ...
+Listing /workspace/assignments/09-graph-optimization/devel/.private/lidar_localization/lib/python2.7/dist-packages/lidar_localization/msg ...
+Listing /workspace/assignments/09-graph-optimization/devel/.private/lidar_localization/lib/python2.7/dist-packages/lidar_localization/srv ...
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/msg
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/msg/_PosVel.pyc
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/msg/_IMUGNSSMeasurement.py
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/msg/_EKFStd.py
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/msg/_IMUGNSSMeasurement.pyc
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/msg/_EKFStd.pyc
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/msg/__init__.py
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/msg/_PosVelMag.py
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/msg/__init__.pyc
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/msg/_ESKFStd.py
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/msg/_ESKFStd.pyc
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/msg/_PosVelMag.pyc
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/msg/_LidarMeasurement.py
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/msg/_PosVel.py
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/msg/_LidarMeasurement.pyc
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/__init__.py
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/srv
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/srv/_saveOdometry.py
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/srv/_saveMap.py
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/srv/_optimizeMap.py
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/srv/_saveScanContext.pyc
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/srv/__init__.py
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/srv/_optimizeMap.pyc
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/srv/__init__.pyc
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/srv/_saveScanContext.py
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/srv/_saveMap.pyc
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/srv/_saveOdometry.pyc
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/python2.7/dist-packages/lidar_localization/__init__.pyc
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/lib/pkgconfig/lidar_localization.pc
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/cmake/lidar_localization-msg-extras.cmake
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/cmake/lidar_localizationConfig.cmake
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/cmake/lidar_localizationConfig-version.cmake
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/package.xml
+-- Installing: /workspace/assignments/09-graph-optimization/install/lib/lidar_localization/data_pretreat_node
+-- Set runtime path of "/workspace/assignments/09-graph-optimization/install/lib/lidar_localization/data_pretreat_node" to ""
+-- Installing: /workspace/assignments/09-graph-optimization/install/lib/lidar_localization/front_end_node
+-- Set runtime path of "/workspace/assignments/09-graph-optimization/install/lib/lidar_localization/front_end_node" to ""
+-- Installing: /workspace/assignments/09-graph-optimization/install/lib/lidar_localization/lio_back_end_node
+-- Set runtime path of "/workspace/assignments/09-graph-optimization/install/lib/lidar_localization/lio_back_end_node" to ""
+-- Installing: /workspace/assignments/09-graph-optimization/install/lib/lidar_localization/loop_closing_node
+-- Set runtime path of "/workspace/assignments/09-graph-optimization/install/lib/lidar_localization/loop_closing_node" to ""
+-- Installing: /workspace/assignments/09-graph-optimization/install/lib/lidar_localization/viewer_node
+-- Set runtime path of "/workspace/assignments/09-graph-optimization/install/lib/lidar_localization/viewer_node" to ""
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/subscriber
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/mapping
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/mapping/back_end
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/mapping/viewer
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/mapping/front_end
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/mapping/loop_closing
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/global_defination
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/publisher
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/sensor_data
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/data_pretreat
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/tools
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/models
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/models/registration
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/models/scan_adjust
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/models/mag_table
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/models/cloud_filter
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/models/pre_integrator
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/models/scan_context_manager
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/models/graph_optimizer
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/models/graph_optimizer/g2o
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/models/graph_optimizer/g2o/vertex
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/models/graph_optimizer/g2o/edge
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/include/lidar_localization/lidar_localization/tf_listener
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/launch
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/launch/lio_mapping.launch
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/config
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/config/mapping
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/config/mapping/viewer.yaml
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/config/mapping/loop_closing.yaml
+-- Installing: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/config/mapping/lio_back_end.yaml
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/config/mapping/back_end.yaml
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/config/mapping/front_end.yaml
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/config/scan_context
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/rviz
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/rviz/mapping.rviz
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/rviz/test_frame.rviz
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/rviz/eskf_analysis.rviz
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/rviz/gnss_ins_sim_localization.rviz
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/rviz/filtering.rviz
+-- Up-to-date: /workspace/assignments/09-graph-optimization/install/share/lidar_localization/rviz/display_bag.rviz

@@ -1,0 +1,591 @@
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target tf_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target _lidar_localization_generate_messages_check_deps_PosVelMag[0m
+[35m[1mScanning dependencies of target _lidar_localization_generate_messages_check_deps_PosVel[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_py[0m
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target nav_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target _lidar_localization_generate_messages_check_deps_LidarMeasurement[0m
+[35m[1mScanning dependencies of target _lidar_localization_generate_messages_check_deps_ESKFStd[0m
+[35m[1mScanning dependencies of target _lidar_localization_generate_messages_check_deps_saveMap[0m
+[35m[1mScanning dependencies of target _lidar_localization_generate_messages_check_deps_optimizeMap[0m
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target _lidar_localization_generate_messages_check_deps_IMUGNSSMeasurement[0m
+[  0%] Built target actionlib_generate_messages_py
+[  0%] Built target tf_generate_messages_nodejs
+[  0%] Built target tf2_msgs_generate_messages_py
+[  0%] Built target tf2_msgs_generate_messages_cpp
+[  0%] Built target tf2_msgs_generate_messages_nodejs
+[  0%] Built target nav_msgs_generate_messages_cpp
+[  0%] Built target actionlib_generate_messages_cpp
+[  0%] Built target sensor_msgs_generate_messages_cpp
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target std_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target _lidar_localization_generate_messages_check_deps_saveOdometry[0m
+[35m[1mScanning dependencies of target _lidar_localization_generate_messages_check_deps_saveScanContext[0m
+[35m[1mScanning dependencies of target nav_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target _lidar_localization_generate_messages_check_deps_EKFStd[0m
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target roscpp_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_eus[0m
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target nav_msgs_generate_messages_eus
+[  0%] Built target sensor_msgs_generate_messages_nodejs
+[  0%] Built target sensor_msgs_generate_messages_lisp
+[  0%] Built target roscpp_generate_messages_cpp
+[  0%] Built target tf2_msgs_generate_messages_eus
+[  0%] Built target _lidar_localization_generate_messages_check_deps_LidarMeasurement
+[  0%] Built target _lidar_localization_generate_messages_check_deps_ESKFStd
+[  0%] Built target _lidar_localization_generate_messages_check_deps_saveMap
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target bond_generate_messages_lisp[0m
+[  0%] Built target _lidar_localization_generate_messages_check_deps_optimizeMap
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_py[0m
+[  0%] Built target _lidar_localization_generate_messages_check_deps_IMUGNSSMeasurement
+[35m[1mScanning dependencies of target actionlib_generate_messages_lisp[0m
+[  0%] Built target _lidar_localization_generate_messages_check_deps_PosVel
+[  0%] Built target _lidar_localization_generate_messages_check_deps_PosVelMag
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target nav_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target nodelet_generate_messages_py[0m
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target roscpp_generate_messages_lisp[0m
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_nodejs
+[35m[1mScanning dependencies of target std_srvs_generate_messages_eus[0m
+[  0%] Built target geometry_msgs_generate_messages_py
+[  0%] Built target actionlib_generate_messages_lisp
+[  0%] Built target bond_generate_messages_lisp
+[35m[1mScanning dependencies of target bond_generate_messages_eus[0m
+[  0%] Built target _lidar_localization_generate_messages_check_deps_saveOdometry
+[  0%] Built target _lidar_localization_generate_messages_check_deps_saveScanContext
+[  0%] Built target nav_msgs_generate_messages_nodejs
+[  0%] Built target sensor_msgs_generate_messages_eus
+[  0%] Built target sensor_msgs_generate_messages_py
+[  0%] Built target roscpp_generate_messages_lisp
+[35m[1mScanning dependencies of target std_msgs_generate_messages_lisp[0m
+[  0%] Built target nodelet_generate_messages_py
+[35m[1mScanning dependencies of target roscpp_generate_messages_py[0m
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_py[0m
+[  0%] Built target _lidar_localization_generate_messages_check_deps_EKFStd
+[35m[1mScanning dependencies of target roscpp_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target tf_generate_messages_py[0m
+[35m[1mScanning dependencies of target dynamic_reconfigure_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target std_srvs_generate_messages_cpp[0m
+[  0%] Built target bond_generate_messages_eus
+[35m[1mScanning dependencies of target topic_tools_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_cpp[0m
+[  0%] Built target std_srvs_generate_messages_eus
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[  0%] Built target roscpp_generate_messages_nodejs
+[  0%] Built target geometry_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_lisp
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_lisp[0m
+[  0%] Built target dynamic_reconfigure_generate_messages_cpp
+[  0%] Built target tf_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_srvs_generate_messages_cpp
+[  0%] Built target roscpp_generate_messages_py
+[  0%] Built target rosgraph_msgs_generate_messages_cpp
+[  0%] Built target topic_tools_generate_messages_cpp
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target roscpp_generate_messages_eus[0m
+[  0%] Built target rosgraph_msgs_generate_messages_eus
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_lisp[0m
+[  0%] Built target std_msgs_generate_messages_eus
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_py[0m
+[  0%] Built target rosgraph_msgs_generate_messages_nodejs
+[35m[1mScanning dependencies of target topic_tools_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target pcl_ros_gencfg[0m
+[35m[1mScanning dependencies of target dynamic_reconfigure_generate_messages_eus[0m
+[35m[1mScanning dependencies of target pcl_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target dynamic_reconfigure_generate_messages_nodejs[0m
+[  0%] Built target rosgraph_msgs_generate_messages_py
+[35m[1mScanning dependencies of target nodelet_generate_messages_lisp[0m
+[  0%] Built target rosgraph_msgs_generate_messages_lisp
+[  0%] Built target roscpp_generate_messages_eus
+[35m[1mScanning dependencies of target dynamic_reconfigure_generate_messages_lisp[0m
+[  0%] Built target dynamic_reconfigure_generate_messages_eus
+[  0%] Built target actionlib_msgs_generate_messages_eus
+[35m[1mScanning dependencies of target nav_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target dynamic_reconfigure_generate_messages_py[0m
+[  0%] Built target pcl_ros_gencfg
+[  0%] Built target actionlib_msgs_generate_messages_lisp
+[  0%] Built target topic_tools_generate_messages_nodejs
+[  0%] Built target actionlib_msgs_generate_messages_py
+[  0%] Built target pcl_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target dynamic_reconfigure_gencfg[0m
+[  0%] Built target nodelet_generate_messages_lisp
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target nodelet_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target bond_generate_messages_py[0m
+[  0%] Built target dynamic_reconfigure_generate_messages_nodejs
+[  0%] Built target dynamic_reconfigure_generate_messages_lisp
+[35m[1mScanning dependencies of target std_srvs_generate_messages_nodejs[0m
+[  0%] Built target dynamic_reconfigure_generate_messages_py
+[35m[1mScanning dependencies of target bond_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target nodelet_generate_messages_nodejs[0m
+[  0%] Built target nav_msgs_generate_messages_py
+[35m[1mScanning dependencies of target nav_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target nodelet_generate_messages_eus[0m
+[  0%] Built target dynamic_reconfigure_gencfg
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target pcl_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target tf_generate_messages_eus[0m
+[  0%] Built target nodelet_generate_messages_cpp
+[  0%] Built target bond_generate_messages_py
+[35m[1mScanning dependencies of target bond_generate_messages_nodejs[0m
+[  0%] Built target std_srvs_generate_messages_nodejs
+[  0%] Built target tf2_msgs_generate_messages_lisp
+[  0%] Built target bond_generate_messages_cpp
+[35m[1mScanning dependencies of target topic_tools_generate_messages_py[0m
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_nodejs[0m
+[  0%] Built target nodelet_generate_messages_nodejs
+[  0%] Built target nav_msgs_generate_messages_lisp
+[  0%] Built target nodelet_generate_messages_eus
+[35m[1mScanning dependencies of target nodelet_topic_tools_gencfg[0m
+[  0%] Built target pcl_msgs_generate_messages_nodejs
+[  0%] Built target tf_generate_messages_eus
+[  0%] Built target actionlib_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target std_srvs_generate_messages_lisp[0m
+[  0%] Built target bond_generate_messages_nodejs
+[35m[1mScanning dependencies of target topic_tools_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target topic_tools_generate_messages_eus[0m
+[35m[1mScanning dependencies of target pcl_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_eus[0m
+[  0%] Built target actionlib_msgs_generate_messages_nodejs
+[  0%] Built target topic_tools_generate_messages_py
+[35m[1mScanning dependencies of target std_srvs_generate_messages_py[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target pcl_msgs_generate_messages_py[0m
+[  0%] Built target nodelet_topic_tools_gencfg
+[35m[1mScanning dependencies of target pcl_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target tf_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target tf_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target lidar_localization_generate_messages_py[0m
+[  0%] Built target std_srvs_generate_messages_lisp
+[35m[1mScanning dependencies of target lidar_localization_generate_messages_nodejs[0m
+[  0%] Built target topic_tools_generate_messages_lisp
+[35m[1mScanning dependencies of target lidar_localization_generate_messages_eus[0m
+[35m[1mScanning dependencies of target lidar_localization_generate_messages_lisp[0m
+[  0%] Built target topic_tools_generate_messages_eus
+[  0%] Built target std_srvs_generate_messages_py
+[  0%] Built target pcl_msgs_generate_messages_eus
+[  0%] Built target pcl_msgs_generate_messages_py
+[  0%] Built target actionlib_generate_messages_nodejs
+[  0%] Built target tf_generate_messages_cpp
+[  0%] Built target pcl_msgs_generate_messages_lisp
+[35m[1mScanning dependencies of target lidar_localization_generate_messages_cpp[0m
+[  0%] Built target tf_generate_messages_lisp
+[  0%] [34m[1mGenerating Python from MSG lidar_localization/LidarMeasurement[0m
+[  1%] [34m[1mGenerating Javascript code from lidar_localization/LidarMeasurement.msg[0m
+[  1%] [34m[1mGenerating Python from MSG lidar_localization/PosVelMag[0m
+[  2%] [34m[1mGenerating Javascript code from lidar_localization/PosVelMag.msg[0m
+[  2%] Built target actionlib_generate_messages_eus
+[  2%] [34m[1mGenerating Python from MSG lidar_localization/IMUGNSSMeasurement[0m
+[  2%] [34m[1mGenerating Javascript code from lidar_localization/IMUGNSSMeasurement.msg[0m
+[  3%] [34m[1mGenerating Lisp code from lidar_localization/LidarMeasurement.msg[0m
+[  3%] [34m[1mGenerating Javascript code from lidar_localization/EKFStd.msg[0m
+[  3%] [34m[1mGenerating Python from MSG lidar_localization/EKFStd[0m
+[  4%] [34m[1mGenerating Javascript code from lidar_localization/PosVel.msg[0m
+[  4%] [34m[1mGenerating Python from MSG lidar_localization/PosVel[0m
+[  4%] [34m[1mGenerating EusLisp code from lidar_localization/LidarMeasurement.msg[0m
+[  4%] [34m[1mGenerating Javascript code from lidar_localization/ESKFStd.msg[0m
+[  5%] [34m[1mGenerating C++ code from lidar_localization/LidarMeasurement.msg[0m
+[  5%] [34m[1mGenerating Lisp code from lidar_localization/PosVelMag.msg[0m
+[35m[1mScanning dependencies of target data_pretreat_node[0m
+[  5%] [34m[1mGenerating Javascript code from lidar_localization/saveMap.srv[0m
+[  6%] [34m[1mGenerating Javascript code from lidar_localization/saveScanContext.srv[0m
+[  6%] [34m[1mGenerating Lisp code from lidar_localization/IMUGNSSMeasurement.msg[0m
+[  7%] [34m[1mGenerating Python from MSG lidar_localization/ESKFStd[0m
+[  7%] [34m[1mGenerating Javascript code from lidar_localization/optimizeMap.srv[0m
+[  7%] [34m[1mGenerating Javascript code from lidar_localization/saveOdometry.srv[0m
+[  8%] [34m[1mGenerating EusLisp code from lidar_localization/PosVelMag.msg[0m
+[  8%] [34m[1mGenerating Lisp code from lidar_localization/EKFStd.msg[0m
+[  8%] [34m[1mGenerating Python code from SRV lidar_localization/optimizeMap[0m
+[  8%] [34m[1mGenerating C++ code from lidar_localization/PosVelMag.msg[0m
+[  8%] [34m[1mGenerating EusLisp code from lidar_localization/IMUGNSSMeasurement.msg[0m
+[  8%] [34m[1mGenerating EusLisp code from lidar_localization/EKFStd.msg[0m
+[35m[1mScanning dependencies of target loop_closing_node[0m
+[  8%] Built target lidar_localization_generate_messages_nodejs
+[  9%] [34m[1mGenerating Lisp code from lidar_localization/PosVel.msg[0m
+[  9%] [34m[1mGenerating Python code from SRV lidar_localization/saveMap[0m
+[35m[1mScanning dependencies of target front_end_node[0m
+[ 10%] [34m[1mGenerating Python code from SRV lidar_localization/saveScanContext[0m
+[ 10%] [34m[1mGenerating Python code from SRV lidar_localization/saveOdometry[0m
+[ 10%] [34m[1mGenerating EusLisp code from lidar_localization/ESKFStd.msg[0m
+[ 10%] [34m[1mGenerating Lisp code from lidar_localization/ESKFStd.msg[0m
+[ 11%] [34m[1mGenerating EusLisp code from lidar_localization/PosVel.msg[0m
+[ 11%] [34m[1mGenerating Lisp code from lidar_localization/optimizeMap.srv[0m
+[ 12%] [34m[1mGenerating Lisp code from lidar_localization/saveMap.srv[0m
+[ 12%] [34m[1mGenerating C++ code from lidar_localization/IMUGNSSMeasurement.msg[0m
+[ 12%] [34m[1mGenerating EusLisp code from lidar_localization/optimizeMap.srv[0m
+[ 12%] [34m[1mGenerating Lisp code from lidar_localization/saveScanContext.srv[0m
+[ 12%] [34m[1mGenerating Lisp code from lidar_localization/saveOdometry.srv[0m
+[ 12%] [34m[1mGenerating EusLisp code from lidar_localization/saveMap.srv[0m
+[ 13%] [34m[1mGenerating EusLisp code from lidar_localization/saveScanContext.srv[0m
+[ 13%] [34m[1mGenerating C++ code from lidar_localization/EKFStd.msg[0m
+[ 13%] [34m[1mGenerating EusLisp manifest code for lidar_localization[0m
+[ 14%] [34m[1mGenerating C++ code from lidar_localization/PosVel.msg[0m
+[ 14%] [34m[1mGenerating C++ code from lidar_localization/ESKFStd.msg[0m
+[ 14%] [34m[1mGenerating EusLisp code from lidar_localization/saveOdometry.srv[0m
+[ 14%] Built target lidar_localization_generate_messages_lisp
+[ 14%] [34m[1mGenerating C++ code from lidar_localization/optimizeMap.srv[0m
+[ 14%] [34m[1mGenerating Python msg __init__.py for lidar_localization[0m
+[ 15%] [34m[1mGenerating C++ code from lidar_localization/saveMap.srv[0m
+[ 15%] [34m[1mGenerating C++ code from lidar_localization/saveScanContext.srv[0m
+[ 15%] [34m[1mGenerating C++ code from lidar_localization/saveOdometry.srv[0m
+[ 16%] [34m[1mGenerating Python srv __init__.py for lidar_localization[0m
+[ 16%] Built target lidar_localization_generate_messages_py
+[ 16%] Built target lidar_localization_generate_messages_cpp
+[35m[1mScanning dependencies of target lio_back_end_node[0m
+[35m[1mScanning dependencies of target viewer_node[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/data_pretreat/data_pretreat_flow.cpp.o[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/apps/loop_closing_node.cpp.o[0m
+[ 17%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/mapping/back_end/lio_back_end_flow.cpp.o[0m
+[ 17%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/mapping/back_end/lio_back_end.cpp.o[0m
+[ 17%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/mapping/front_end/front_end.cpp.o[0m
+[ 18%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/mapping/front_end/front_end_flow.cpp.o[0m
+[ 18%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/mapping/loop_closing/loop_closing.cpp.o[0m
+[ 18%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/models/cloud_filter/box_filter.cpp.o[0m
+[ 18%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/mapping/loop_closing/loop_closing_flow.cpp.o[0m
+[ 19%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/mapping/viewer/viewer_flow.cpp.o[0m
+[ 19%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/mapping/viewer/viewer.cpp.o[0m
+[ 19%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/apps/front_end_node.cpp.o[0m
+[ 19%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/apps/data_pretreat_node.cpp.o[0m
+[ 19%] Built target lidar_localization_generate_messages_eus
+[35m[1mScanning dependencies of target lidar_localization_generate_messages[0m
+[ 19%] Built target lidar_localization_generate_messages
+[ 19%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/data_pretreat/data_pretreat_flow.cpp.o[0m
+[ 19%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/apps/lio_back_end_node.cpp.o[0m
+[ 19%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/apps/viewer_node.cpp.o[0m
+[ 20%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/mapping/back_end/lio_back_end.cpp.o[0m
+[ 20%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/data_pretreat/data_pretreat_flow.cpp.o[0m
+[ 20%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/models/cloud_filter/no_filter.cpp.o[0m
+[ 21%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/models/cloud_filter/voxel_filter.cpp.o[0m
+[ 22%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/data_pretreat/data_pretreat_flow.cpp.o[0m
+[ 22%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/data_pretreat/data_pretreat_flow.cpp.o[0m
+[ 22%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/models/graph_optimizer/g2o/g2o_graph_optimizer.cpp.o[0m
+[ 22%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/mapping/back_end/lio_back_end.cpp.o[0m
+[ 22%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/mapping/back_end/lio_back_end_flow.cpp.o[0m
+[ 22%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/models/graph_optimizer/interface_graph_optimizer.cpp.o[0m
+[ 22%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/models/mag_table/geo_mag_declination.cpp.o[0m
+[01m[K/workspace/assignments/09-graph-optimization/src/lidar_localization/src/models/mag_table/geo_mag_declination.cpp:62:1:[m[K [01;35m[Kwarning: [m[Kmulti-line comment [[01;35m[K-Wcomment[m[K]
+ [01;35m[K/[m[K/ static constexpr const int8_t declination_table[13][37] = \
+ [01;35m[K^[m[K
+[01m[K/workspace/assignments/09-graph-optimization/src/lidar_localization/src/models/mag_table/geo_mag_declination.cpp:80:1:[m[K [01;35m[Kwarning: [m[Kmulti-line comment [[01;35m[K-Wcomment[m[K]
+ [01;35m[K/[m[K/ static constexpr const int8_t inclination_table[13][37] = \
+ [01;35m[K^[m[K
+[01m[K/workspace/assignments/09-graph-optimization/src/lidar_localization/src/models/mag_table/geo_mag_declination.cpp:98:1:[m[K [01;35m[Kwarning: [m[Kmulti-line comment [[01;35m[K-Wcomment[m[K]
+ [01;35m[K/[m[K/ static constexpr const int8_t strength_table[13][37] = \
+ [01;35m[K^[m[K
+[ 23%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/models/pre_integrator/imu_pre_integrator.cpp.o[0m
+[ 23%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/models/pre_integrator/odo_pre_integrator.cpp.o[0m
+[ 23%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/models/registration/ndt_registration.cpp.o[0m
+[ 24%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/mapping/back_end/lio_back_end_flow.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/models/scan_adjust/distortion_adjust.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/mapping/front_end/front_end.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/mapping/back_end/lio_back_end.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/mapping/back_end/lio_back_end.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/models/scan_context_manager/key_frames.pb.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/mapping/front_end/front_end_flow.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/models/scan_context_manager/ring_keys.pb.cpp.o[0m
+[ 26%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/mapping/back_end/lio_back_end_flow.cpp.o[0m
+[ 26%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/models/scan_context_manager/scan_context_manager.cpp.o[0m
+[ 27%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/mapping/loop_closing/loop_closing.cpp.o[0m
+[ 27%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/mapping/loop_closing/loop_closing_flow.cpp.o[0m
+[ 27%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/mapping/front_end/front_end.cpp.o[0m
+[ 27%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/mapping/back_end/lio_back_end_flow.cpp.o[0m
+[ 28%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/models/scan_context_manager/scan_contexts.pb.cpp.o[0m
+[ 28%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/publisher/cloud_publisher.cpp.o[0m
+[ 28%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/publisher/imu_publisher.cpp.o[0m
+[ 29%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/publisher/key_frame_publisher.cpp.o[0m
+[ 29%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/mapping/front_end/front_end.cpp.o[0m
+[ 29%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/mapping/viewer/viewer.cpp.o[0m
+[ 29%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/publisher/key_frames_publisher.cpp.o[0m
+[ 30%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/mapping/front_end/front_end.cpp.o[0m
+[ 30%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/publisher/lidar_measurement_publisher.cpp.o[0m
+[ 30%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/mapping/viewer/viewer_flow.cpp.o[0m
+[ 30%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/mapping/front_end/front_end_flow.cpp.o[0m
+[ 31%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/mapping/front_end/front_end_flow.cpp.o[0m
+[ 32%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/models/cloud_filter/box_filter.cpp.o[0m
+[ 32%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/mapping/loop_closing/loop_closing.cpp.o[0m
+[ 32%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/models/cloud_filter/no_filter.cpp.o[0m
+[ 32%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/mapping/loop_closing/loop_closing.cpp.o[0m
+[ 32%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/models/cloud_filter/voxel_filter.cpp.o[0m
+[ 32%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/mapping/loop_closing/loop_closing_flow.cpp.o[0m
+[ 32%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/publisher/loop_pose_publisher.cpp.o[0m
+[ 34%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/models/graph_optimizer/g2o/g2o_graph_optimizer.cpp.o[0m
+[ 35%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/mapping/viewer/viewer.cpp.o[0m
+[ 36%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/publisher/odometry_publisher.cpp.o[0m
+[ 36%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/mapping/loop_closing/loop_closing_flow.cpp.o[0m
+[ 36%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/mapping/viewer/viewer_flow.cpp.o[0m
+[ 36%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/mapping/front_end/front_end_flow.cpp.o[0m
+[ 36%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/mapping/viewer/viewer.cpp.o[0m
+[ 36%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/models/cloud_filter/box_filter.cpp.o[0m
+[ 36%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/publisher/pos_vel_mag_publisher.cpp.o[0m
+[ 37%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/mapping/loop_closing/loop_closing.cpp.o[0m
+[ 38%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/models/cloud_filter/no_filter.cpp.o[0m
+[ 38%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/publisher/pos_vel_publisher.cpp.o[0m
+[ 39%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/mapping/viewer/viewer_flow.cpp.o[0m
+[ 39%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/mapping/loop_closing/loop_closing_flow.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/publisher/tf_broadcaster.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/mapping/viewer/viewer.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/models/cloud_filter/voxel_filter.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/models/cloud_filter/box_filter.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/models/graph_optimizer/g2o/g2o_graph_optimizer.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/mapping/viewer/viewer_flow.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/sensor_data/gnss_data.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/models/cloud_filter/no_filter.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/models/graph_optimizer/interface_graph_optimizer.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/sensor_data/imu_data.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/sensor_data/key_frame.cpp.o[0m
+[ 41%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/models/cloud_filter/box_filter.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/models/cloud_filter/voxel_filter.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/models/mag_table/geo_mag_declination.cpp.o[0m
+[01m[K/workspace/assignments/09-graph-optimization/src/lidar_localization/src/models/mag_table/geo_mag_declination.cpp:62:1:[m[K [01;35m[Kwarning: [m[Kmulti-line comment [[01;35m[K-Wcomment[m[K]
+ [01;35m[K/[m[K/ static constexpr const int8_t declination_table[13][37] = \
+ [01;35m[K^[m[K
+[01m[K/workspace/assignments/09-graph-optimization/src/lidar_localization/src/models/mag_table/geo_mag_declination.cpp:80:1:[m[K [01;35m[Kwarning: [m[Kmulti-line comment [[01;35m[K-Wcomment[m[K]
+ [01;35m[K/[m[K/ static constexpr const int8_t inclination_table[13][37] = \
+ [01;35m[K^[m[K
+[01m[K/workspace/assignments/09-graph-optimization/src/lidar_localization/src/models/mag_table/geo_mag_declination.cpp:98:1:[m[K [01;35m[Kwarning: [m[Kmulti-line comment [[01;35m[K-Wcomment[m[K]
+ [01;35m[K/[m[K/ static constexpr const int8_t strength_table[13][37] = \
+ [01;35m[K^[m[K
+[ 42%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/models/pre_integrator/imu_pre_integrator.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/sensor_data/loop_pose.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/models/cloud_filter/no_filter.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/models/graph_optimizer/g2o/g2o_graph_optimizer.cpp.o[0m
+[ 44%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/models/pre_integrator/odo_pre_integrator.cpp.o[0m
+[ 44%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/sensor_data/magnetic_field_data.cpp.o[0m
+[ 44%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/models/cloud_filter/voxel_filter.cpp.o[0m
+[ 44%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/sensor_data/pose_data.cpp.o[0m
+[ 45%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/sensor_data/velocity_data.cpp.o[0m
+[ 46%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/models/graph_optimizer/g2o/g2o_graph_optimizer.cpp.o[0m
+[ 46%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/models/registration/ndt_registration.cpp.o[0m
+[ 46%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/subscriber/cloud_subscriber.cpp.o[0m
+[ 46%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/models/graph_optimizer/interface_graph_optimizer.cpp.o[0m
+[ 46%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/models/graph_optimizer/interface_graph_optimizer.cpp.o[0m
+[ 46%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/models/mag_table/geo_mag_declination.cpp.o[0m
+[01m[K/workspace/assignments/09-graph-optimization/src/lidar_localization/src/models/mag_table/geo_mag_declination.cpp:62:1:[m[K [01;35m[Kwarning: [m[Kmulti-line comment [[01;35m[K-Wcomment[m[K]
+ [01;35m[K/[m[K/ static constexpr const int8_t declination_table[13][37] = \
+ [01;35m[K^[m[K
+[01m[K/workspace/assignments/09-graph-optimization/src/lidar_localization/src/models/mag_table/geo_mag_declination.cpp:80:1:[m[K [01;35m[Kwarning: [m[Kmulti-line comment [[01;35m[K-Wcomment[m[K]
+ [01;35m[K/[m[K/ static constexpr const int8_t inclination_table[13][37] = \
+ [01;35m[K^[m[K
+[01m[K/workspace/assignments/09-graph-optimization/src/lidar_localization/src/models/mag_table/geo_mag_declination.cpp:98:1:[m[K [01;35m[Kwarning: [m[Kmulti-line comment [[01;35m[K-Wcomment[m[K]
+ [01;35m[K/[m[K/ static constexpr const int8_t strength_table[13][37] = \
+ [01;35m[K^[m[K
+[ 46%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/models/pre_integrator/imu_pre_integrator.cpp.o[0m
+[ 47%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/models/pre_integrator/odo_pre_integrator.cpp.o[0m
+[ 47%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/models/registration/ndt_registration.cpp.o[0m
+[ 47%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/models/scan_adjust/distortion_adjust.cpp.o[0m
+[ 48%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/models/scan_context_manager/key_frames.pb.cpp.o[0m
+[ 48%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/models/scan_adjust/distortion_adjust.cpp.o[0m
+[ 48%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/subscriber/gnss_subscriber.cpp.o[0m
+[ 48%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/subscriber/imu_subscriber.cpp.o[0m
+[ 48%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/models/scan_context_manager/ring_keys.pb.cpp.o[0m
+[ 48%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/models/scan_context_manager/scan_context_manager.cpp.o[0m
+[ 49%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/models/scan_context_manager/key_frames.pb.cpp.o[0m
+[ 49%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/models/scan_context_manager/ring_keys.pb.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/subscriber/key_frame_subscriber.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/models/scan_context_manager/scan_context_manager.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/models/scan_context_manager/scan_contexts.pb.cpp.o[0m
+[ 51%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/publisher/cloud_publisher.cpp.o[0m
+[ 51%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/publisher/imu_publisher.cpp.o[0m
+[ 51%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/models/graph_optimizer/interface_graph_optimizer.cpp.o[0m
+[ 51%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/publisher/key_frame_publisher.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/publisher/key_frames_publisher.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/subscriber/key_frames_subscriber.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/subscriber/lidar_measurement_subscriber.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/models/scan_context_manager/scan_contexts.pb.cpp.o[0m
+[ 53%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/publisher/cloud_publisher.cpp.o[0m
+[ 53%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/publisher/lidar_measurement_publisher.cpp.o[0m
+[ 53%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/publisher/imu_publisher.cpp.o[0m
+[ 53%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/publisher/loop_pose_publisher.cpp.o[0m
+[ 53%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/publisher/key_frame_publisher.cpp.o[0m
+[ 53%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/publisher/odometry_publisher.cpp.o[0m
+[ 54%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/models/mag_table/geo_mag_declination.cpp.o[0m
+[01m[K/workspace/assignments/09-graph-optimization/src/lidar_localization/src/models/mag_table/geo_mag_declination.cpp:62:1:[m[K [01;35m[Kwarning: [m[Kmulti-line comment [[01;35m[K-Wcomment[m[K]
+ [01;35m[K/[m[K/ static constexpr const int8_t declination_table[13][37] = \
+ [01;35m[K^[m[K
+[01m[K/workspace/assignments/09-graph-optimization/src/lidar_localization/src/models/mag_table/geo_mag_declination.cpp:80:1:[m[K [01;35m[Kwarning: [m[Kmulti-line comment [[01;35m[K-Wcomment[m[K]
+ [01;35m[K/[m[K/ static constexpr const int8_t inclination_table[13][37] = \
+ [01;35m[K^[m[K
+[01m[K/workspace/assignments/09-graph-optimization/src/lidar_localization/src/models/mag_table/geo_mag_declination.cpp:98:1:[m[K [01;35m[Kwarning: [m[Kmulti-line comment [[01;35m[K-Wcomment[m[K]
+ [01;35m[K/[m[K/ static constexpr const int8_t strength_table[13][37] = \
+ [01;35m[K^[m[K
+[ 54%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/models/pre_integrator/imu_pre_integrator.cpp.o[0m
+[ 55%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/subscriber/loop_pose_subscriber.cpp.o[0m
+[ 55%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/models/mag_table/geo_mag_declination.cpp.o[0m
+[01m[K/workspace/assignments/09-graph-optimization/src/lidar_localization/src/models/mag_table/geo_mag_declination.cpp:62:1:[m[K [01;35m[Kwarning: [m[Kmulti-line comment [[01;35m[K-Wcomment[m[K]
+ [01;35m[K/[m[K/ static constexpr const int8_t declination_table[13][37] = \
+ [01;35m[K^[m[K
+[01m[K/workspace/assignments/09-graph-optimization/src/lidar_localization/src/models/mag_table/geo_mag_declination.cpp:80:1:[m[K [01;35m[Kwarning: [m[Kmulti-line comment [[01;35m[K-Wcomment[m[K]
+ [01;35m[K/[m[K/ static constexpr const int8_t inclination_table[13][37] = \
+ [01;35m[K^[m[K
+[01m[K/workspace/assignments/09-graph-optimization/src/lidar_localization/src/models/mag_table/geo_mag_declination.cpp:98:1:[m[K [01;35m[Kwarning: [m[Kmulti-line comment [[01;35m[K-Wcomment[m[K]
+ [01;35m[K/[m[K/ static constexpr const int8_t strength_table[13][37] = \
+ [01;35m[K^[m[K
+[ 55%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/models/pre_integrator/odo_pre_integrator.cpp.o[0m
+[ 56%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/publisher/pos_vel_mag_publisher.cpp.o[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/publisher/key_frames_publisher.cpp.o[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/publisher/lidar_measurement_publisher.cpp.o[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/subscriber/magnetic_field_subscriber.cpp.o[0m
+[ 58%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/models/pre_integrator/imu_pre_integrator.cpp.o[0m
+[ 58%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/publisher/loop_pose_publisher.cpp.o[0m
+[ 58%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/publisher/pos_vel_publisher.cpp.o[0m
+[ 58%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/models/pre_integrator/odo_pre_integrator.cpp.o[0m
+[ 58%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/publisher/odometry_publisher.cpp.o[0m
+[ 58%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/publisher/tf_broadcaster.cpp.o[0m
+[ 58%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/models/registration/ndt_registration.cpp.o[0m
+[ 59%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/publisher/pos_vel_mag_publisher.cpp.o[0m
+[ 59%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/subscriber/odometry_subscriber.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/sensor_data/gnss_data.cpp.o[0m
+[ 61%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/models/registration/ndt_registration.cpp.o[0m
+[ 61%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/subscriber/pos_vel_mag_subscriber.cpp.o[0m
+[ 62%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/models/scan_adjust/distortion_adjust.cpp.o[0m
+[ 62%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/publisher/pos_vel_publisher.cpp.o[0m
+[ 63%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/subscriber/pos_vel_subscriber.cpp.o[0m
+[ 63%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/sensor_data/imu_data.cpp.o[0m
+[ 63%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/models/scan_context_manager/key_frames.pb.cpp.o[0m
+[ 63%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/models/scan_adjust/distortion_adjust.cpp.o[0m
+[ 63%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/subscriber/velocity_subscriber.cpp.o[0m
+[ 63%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/sensor_data/key_frame.cpp.o[0m
+[ 63%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/models/scan_context_manager/ring_keys.pb.cpp.o[0m
+[ 63%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/models/scan_context_manager/key_frames.pb.cpp.o[0m
+[ 63%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/tf_listener/tf_lisener.cpp.o[0m
+[ 64%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/tools/file_manager.cpp.o[0m
+[ 64%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/sensor_data/loop_pose.cpp.o[0m
+[ 64%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/publisher/tf_broadcaster.cpp.o[0m
+[ 64%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/models/scan_context_manager/ring_keys.pb.cpp.o[0m
+[ 64%] [32mBuilding CXX object CMakeFiles/loop_closing_node.dir/src/tools/print_info.cpp.o[0m
+[ 65%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/sensor_data/magnetic_field_data.cpp.o[0m
+[ 65%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/models/scan_context_manager/scan_context_manager.cpp.o[0m
+[ 67%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/sensor_data/gnss_data.cpp.o[0m
+[ 67%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/sensor_data/pose_data.cpp.o[0m
+[ 68%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/models/scan_context_manager/scan_contexts.pb.cpp.o[0m
+[ 68%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/sensor_data/imu_data.cpp.o[0m
+[ 68%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/sensor_data/velocity_data.cpp.o[0m
+[ 68%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/publisher/cloud_publisher.cpp.o[0m
+[ 68%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/publisher/imu_publisher.cpp.o[0m
+[ 69%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/subscriber/cloud_subscriber.cpp.o[0m
+[ 70%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/publisher/key_frame_publisher.cpp.o[0m
+[ 70%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/sensor_data/key_frame.cpp.o[0m
+[ 71%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/models/scan_context_manager/scan_context_manager.cpp.o[0m
+[ 71%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/publisher/key_frames_publisher.cpp.o[0m
+[ 71%] [32m[1mLinking CXX executable /workspace/assignments/09-graph-optimization/devel/.private/lidar_localization/lib/lidar_localization/loop_closing_node[0m
+[ 71%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/sensor_data/loop_pose.cpp.o[0m
+[ 71%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/publisher/lidar_measurement_publisher.cpp.o[0m
+[ 71%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/models/scan_context_manager/scan_contexts.pb.cpp.o[0m
+[ 72%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/sensor_data/magnetic_field_data.cpp.o[0m
+[ 72%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/publisher/loop_pose_publisher.cpp.o[0m
+[ 72%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/publisher/cloud_publisher.cpp.o[0m
+[ 72%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/sensor_data/pose_data.cpp.o[0m
+[ 72%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/subscriber/gnss_subscriber.cpp.o[0m
+[ 73%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/publisher/odometry_publisher.cpp.o[0m
+[ 73%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/sensor_data/velocity_data.cpp.o[0m
+[ 73%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/subscriber/imu_subscriber.cpp.o[0m
+[ 74%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/subscriber/cloud_subscriber.cpp.o[0m
+[ 74%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/publisher/pos_vel_mag_publisher.cpp.o[0m
+[ 74%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/publisher/pos_vel_publisher.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/publisher/imu_publisher.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/subscriber/key_frame_subscriber.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/publisher/key_frame_publisher.cpp.o[0m
+[ 76%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/publisher/tf_broadcaster.cpp.o[0m
+[ 76%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/sensor_data/gnss_data.cpp.o[0m
+[ 76%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/publisher/key_frames_publisher.cpp.o[0m
+[ 77%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/subscriber/key_frames_subscriber.cpp.o[0m
+[ 77%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/sensor_data/imu_data.cpp.o[0m
+[ 77%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/publisher/lidar_measurement_publisher.cpp.o[0m
+[ 77%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/sensor_data/key_frame.cpp.o[0m
+[ 78%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/sensor_data/loop_pose.cpp.o[0m
+[ 79%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/publisher/loop_pose_publisher.cpp.o[0m
+[ 79%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/subscriber/gnss_subscriber.cpp.o[0m
+[ 79%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/sensor_data/magnetic_field_data.cpp.o[0m
+[ 79%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/publisher/odometry_publisher.cpp.o[0m
+[ 79%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/sensor_data/pose_data.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/sensor_data/velocity_data.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/publisher/pos_vel_mag_publisher.cpp.o[0m
+[ 81%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/publisher/pos_vel_publisher.cpp.o[0m
+[ 81%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/subscriber/lidar_measurement_subscriber.cpp.o[0m
+[ 81%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/subscriber/cloud_subscriber.cpp.o[0m
+[ 81%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/subscriber/loop_pose_subscriber.cpp.o[0m
+[ 81%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/subscriber/gnss_subscriber.cpp.o[0m
+[ 82%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/subscriber/magnetic_field_subscriber.cpp.o[0m
+[ 82%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/subscriber/imu_subscriber.cpp.o[0m
+[ 82%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/subscriber/odometry_subscriber.cpp.o[0m
+[ 82%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/publisher/tf_broadcaster.cpp.o[0m
+[ 82%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/subscriber/key_frame_subscriber.cpp.o[0m
+[ 83%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/subscriber/key_frames_subscriber.cpp.o[0m
+[ 83%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/subscriber/pos_vel_mag_subscriber.cpp.o[0m
+[ 83%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/subscriber/imu_subscriber.cpp.o[0m
+[ 83%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/subscriber/lidar_measurement_subscriber.cpp.o[0m
+[ 83%] Built target loop_closing_node
+[ 83%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/subscriber/pos_vel_subscriber.cpp.o[0m
+[ 83%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/sensor_data/gnss_data.cpp.o[0m
+[ 84%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/subscriber/velocity_subscriber.cpp.o[0m
+[ 85%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/subscriber/key_frame_subscriber.cpp.o[0m
+[ 85%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/sensor_data/imu_data.cpp.o[0m
+[ 85%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/tf_listener/tf_lisener.cpp.o[0m
+[ 85%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/subscriber/key_frames_subscriber.cpp.o[0m
+[ 86%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/sensor_data/key_frame.cpp.o[0m
+[ 86%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/subscriber/loop_pose_subscriber.cpp.o[0m
+[ 86%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/sensor_data/loop_pose.cpp.o[0m
+[ 86%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/tools/file_manager.cpp.o[0m
+[ 86%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/sensor_data/magnetic_field_data.cpp.o[0m
+[ 87%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/subscriber/magnetic_field_subscriber.cpp.o[0m
+[ 87%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/subscriber/odometry_subscriber.cpp.o[0m
+[ 87%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/subscriber/lidar_measurement_subscriber.cpp.o[0m
+[ 88%] [32mBuilding CXX object CMakeFiles/lio_back_end_node.dir/src/tools/print_info.cpp.o[0m
+[ 89%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/subscriber/loop_pose_subscriber.cpp.o[0m
+[ 90%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/sensor_data/pose_data.cpp.o[0m
+[ 90%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/subscriber/pos_vel_mag_subscriber.cpp.o[0m
+[ 90%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/subscriber/magnetic_field_subscriber.cpp.o[0m
+[ 90%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/subscriber/pos_vel_subscriber.cpp.o[0m
+[ 90%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/sensor_data/velocity_data.cpp.o[0m
+[ 90%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/subscriber/odometry_subscriber.cpp.o[0m
+[ 90%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/subscriber/cloud_subscriber.cpp.o[0m
+[ 90%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/subscriber/pos_vel_mag_subscriber.cpp.o[0m
+[ 91%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/subscriber/pos_vel_subscriber.cpp.o[0m
+[ 91%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/subscriber/gnss_subscriber.cpp.o[0m
+[ 92%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/subscriber/imu_subscriber.cpp.o[0m
+[ 92%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/subscriber/velocity_subscriber.cpp.o[0m
+[ 93%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/subscriber/velocity_subscriber.cpp.o[0m
+[ 93%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/subscriber/key_frame_subscriber.cpp.o[0m
+[ 93%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/tf_listener/tf_lisener.cpp.o[0m
+[ 93%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/tf_listener/tf_lisener.cpp.o[0m
+[ 93%] [32m[1mLinking CXX executable /workspace/assignments/09-graph-optimization/devel/.private/lidar_localization/lib/lidar_localization/lio_back_end_node[0m
+[ 93%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/tools/file_manager.cpp.o[0m
+[ 94%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/tools/file_manager.cpp.o[0m
+[ 95%] [32mBuilding CXX object CMakeFiles/data_pretreat_node.dir/src/tools/print_info.cpp.o[0m
+[ 95%] [32mBuilding CXX object CMakeFiles/front_end_node.dir/src/tools/print_info.cpp.o[0m
+[ 95%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/subscriber/key_frames_subscriber.cpp.o[0m
+[ 96%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/subscriber/lidar_measurement_subscriber.cpp.o[0m
+[ 96%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/subscriber/loop_pose_subscriber.cpp.o[0m
+[ 96%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/subscriber/magnetic_field_subscriber.cpp.o[0m
+[ 96%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/subscriber/odometry_subscriber.cpp.o[0m
+[ 97%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/subscriber/pos_vel_mag_subscriber.cpp.o[0m
+[ 97%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/subscriber/pos_vel_subscriber.cpp.o[0m
+[ 97%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/subscriber/velocity_subscriber.cpp.o[0m
+[ 98%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/tf_listener/tf_lisener.cpp.o[0m
+[ 98%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/tools/file_manager.cpp.o[0m
+[ 98%] [32mBuilding CXX object CMakeFiles/viewer_node.dir/src/tools/print_info.cpp.o[0m
+[ 98%] [32m[1mLinking CXX executable /workspace/assignments/09-graph-optimization/devel/.private/lidar_localization/lib/lidar_localization/data_pretreat_node[0m
+[ 98%] [32m[1mLinking CXX executable /workspace/assignments/09-graph-optimization/devel/.private/lidar_localization/lib/lidar_localization/front_end_node[0m
+[100%] [32m[1mLinking CXX executable /workspace/assignments/09-graph-optimization/devel/.private/lidar_localization/lib/lidar_localization/viewer_node[0m
+[100%] Built target lio_back_end_node
+[100%] Built target data_pretreat_node
+[100%] Built target front_end_node
+[100%] Built target viewer_node
