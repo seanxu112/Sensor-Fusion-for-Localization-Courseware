@@ -57,39 +57,37 @@ public:
     //
     // TODO: get square root of information matrix:
     //
-    Eigen::Matrix<double, 6, 6>  sqrt_info =  Eigen::LLT<Eigen::Matrix<double, 6 ,6>>(
-      I_
-    ).matrixL().transpose() ;
+    Eigen::Matrix<double, 6, 6>  sqrt_info =  Eigen::LLT<Eigen::Matrix<double, 6 ,6>>(I_).matrixL().transpose() ;
 
-    //
+    
     // TODO: compute residual:
-    //
-    Eigen::Map<Eigen::VectorXd> residual_vec(residuals);
-    residual_vec.head<3> = ori.i.inverse() * (pos_j - pos_i) - pos_ij;
-    residual_vec.tail<3> = (ori_ij * (ori_i.inverse() * ori_j)).log();
+    
+    Eigen::Map<Eigen::Matrix<double, 6, 1>> residual_vec(residuals);
+    residual_vec.head(3) = ori_i.inverse() * (pos_j - pos_i) - pos_ij;
+    residual_vec.tail(3) = (ori_ij * (ori_i.inverse() * ori_j)).log();
 
     //
     // TODO: compute jacobians:
     //
     if ( jacobians ) {
       // compute shared intermediate results:
-      Eigen::MatrixXd<3,3> R_i(ori_i.matrix());
-      // Eigen::MatrixXd<3,3> R_j(ori_i.matrix());
-      Eigen::MatrixXd<3,3> J_r_inv(JacobianRInv(
-                                  residual.block(INDEX_R, 0, 3, 1)));
+      Eigen::Matrix<double, 3, 3> R_i(ori_i.matrix());
+      Eigen::Matrix<double, 3, 3> R_j(ori_j.matrix());
+      Eigen::Matrix<double, 3, 3> J_r_inv(JacobianRInv(
+                                  residual_vec.block(INDEX_R, 0, 3, 1)));
 
       if ( jacobians[0] ) {
         // implement computing:
-        Eigen::Map<Eigen::MatriXd<6,6>> jacobi_mat(jacobians[0]);
+        Eigen::Map<Eigen::Matrix<double, 6, 6>> jacobi_mat(jacobians[0]);
         jacobi_mat.setZero();
         jacobi_mat.block<3,3>(INDEX_P, INDEX_P) = -R_i.transpose();
-        jacobi_mat.block<3,3>(INDEX_P, INDEX_R) = R_i.transpose() * (pos_j - pos_i);
+        jacobi_mat.block<3,3>(INDEX_P, INDEX_R) = Sophus::SO3d::hat(R_i.transpose() * (pos_j - pos_i));
         jacobi_mat.block<3,3>(INDEX_R, INDEX_R) = -J_r_inv * R_j.transpose() * R_i;
       }
 
       if ( jacobians[1] ) {
         // implement computing:
-        Eigen::Map<Eigen::MatriXd<6,6>> jacobi_mat(jacobians[0]);
+        Eigen::Map<Eigen::Matrix<double, 6, 6>> jacobi_mat(jacobians[0]);
         jacobi_mat.setZero();
         jacobi_mat.block<3,3>(INDEX_P, INDEX_P) = R_i.transpose();
         // jacobi_mat.block<3,3>(INDEX_P, INDEX_R) = R_i.transpose() * (pos_j - pos_i);

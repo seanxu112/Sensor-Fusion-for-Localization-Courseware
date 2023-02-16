@@ -351,14 +351,14 @@ bool SlidingWindow::Update(void) {
         // get relative pose measurement:
         Eigen::Matrix4d relative_pose = (last_key_frame_.pose.inverse() * current_key_frame_.pose).cast<double>();
         // TODO: add constraint, lidar frontend / loop closure detection:
-        sliding_window_ptr_->AddPRVAGRelativePoseFactor(param_index_i, param_index_j, relative_pose, measurement_config_.noise.noise.lidar_odometry);
+        sliding_window_ptr_->AddPRVAGRelativePoseFactor(param_index_i, param_index_j, relative_pose, measurement_config_.noise.lidar_odometry);
         
         //
         // b. IMU pre-integration:
         //
         if ( measurement_config_.source.imu_pre_integration ) {
             // TODO: add constraint, IMU pre-integraion:
-            sliding_window_ptr_->AddPRVAGIMUPreIntegrationFactor(param_index_i, param_index_j, imu_pre_integrator_ptr_)
+            sliding_window_ptr_->AddPRVAGIMUPreIntegrationFactor(param_index_i, param_index_j, imu_pre_integration_);
         }
     }
 

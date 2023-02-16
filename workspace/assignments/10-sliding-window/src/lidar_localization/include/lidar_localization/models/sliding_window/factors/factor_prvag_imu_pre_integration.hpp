@@ -82,7 +82,7 @@ public:
     //
     // TODO: compute residual:
     //
-    Eigen::Map<Eigen::VectorXd> residual_vec(residuals);
+    Eigen::Map<Eigen::Matrix<double, 6, 1>> residual_vec(residuals);
     residual_vec.block<3, 1>(INDEX_P, 0) = ori_i.matrix() * (pos_j - pos_i - vel_i*T_ + 0.5*g_*T_*T_) - alpha_ij;
     residual_vec.block<3, 1>(INDEX_R, 0) = (Sophus::SO3d::exp(theta_ij).inverse() * ori_i.inverse() * ori_j).log();
     residual_vec.block<3, 1>(INDEX_V, 0) = ori_i.inverse() * (vel_j - vel_i + g_ * T_) - beta_ij;
@@ -94,39 +94,39 @@ public:
     //
     if ( jacobians ) {
       // compute shared intermediate results:
-      Eigen::MatrixXd<3,3> R_i(ori_i.matrix());
-      Eigen::MatrixXd<3,3> R_j(ori_i.matrix());
-      Eigen::MatrixXd<3,3> R_i_inv(ori_i.inverse().matrix());
-      Eigen::MatrixXd<3,3> R_j_inv(ori_j.inverse().matrix());
-      Eigen::Matrix3d<3,3> J_pa = J_.block<3, 3>(INDEX_P, INDEX_A);
-      Eigen::Matrix3d<3,3> J_pg = J_.block<3, 3>(INDEX_P, INDEX_G);
-      Eigen::Matrix3d<3,3> J_qg = J_.block<3, 3>(INDEX_R, INDEX_G);
-      Eigen::Matrix3d<3,3> J_va = J_.block<3, 3>(INDEX_V, INDEX_A);
-      Eigen::Matrix3d<3,3> J_vg = J_.block<3, 3>(INDEX_V, INDEX_G);
-      Eigen::MatrixXd<3,3> J_r_inv = JacobianRInv(residual.block<3, 1>(INDEX_R, 0));
+      Eigen::MatrixXd R_i(ori_i.matrix());
+      Eigen::MatrixXd R_j(ori_i.matrix());
+      Eigen::MatrixXd R_i_inv(ori_i.inverse().matrix());
+      Eigen::MatrixXd R_j_inv(ori_j.inverse().matrix());
+      Eigen::MatrixXd J_pa = J_.block<3, 3>(INDEX_P, INDEX_A);
+      Eigen::MatrixXd J_pg = J_.block<3, 3>(INDEX_P, INDEX_G);
+      Eigen::MatrixXd J_qg = J_.block<3, 3>(INDEX_R, INDEX_G);
+      Eigen::MatrixXd J_va = J_.block<3, 3>(INDEX_V, INDEX_A);
+      Eigen::MatrixXd J_vg = J_.block<3, 3>(INDEX_V, INDEX_G);
+      Eigen::MatrixXd J_r_inv = JacobianRInv(residual_vec.block<3, 1>(INDEX_R, 0));
 
 
 
       if ( jacobians[0] ) {
-        Eigen::Map<Eigen::MatrixXd<6,15>> jacobi_mat(jacobian[0]);
+        Eigen::Map<Eigen::Matrix<double, 6, 15>> jacobi_mat(jacobians[0]);
         jacobi_mat.setZero();
         // a. residual, position:
         jacobi_mat.block<3,3>(INDEX_P, INDEX_P) = -R_i_inv;
         jacobi_mat.block<3,3>(INDEX_P, INDEX_R) = Sophus::SO3d::hat(R_i_inv*(pos_j - pos_i - vel_i*T_ + 0.5*g_*T_*T_));
         jacobi_mat.block<3,3>(INDEX_P, INDEX_V) = -R_i_inv*T_;
         jacobi_mat.block<3,3>(INDEX_P, INDEX_A) = -J_pa;
-        jacobi_mat.block<3,3>(INDEX_P, INDEX_G) = -J_gw;
+        jacobi_mat.block<3,3>(INDEX_P, INDEX_G) = -J_pg;
 
         // b. residual, orientation:
         // jacobi_mat.block<3,3>(INDEX_R, INDEX_P) = 
         jacobi_mat.block<3,3>(INDEX_R, INDEX_R) = -J_r_inv * R_j_inv * R_i;
         // jacobi_mat.block<3,3>(INDEX_R, INDEX_V) = 
         // jacobi_mat.block<3,3>(INDEX_R, INDEX_A) = 
-        jacobi_mat.block<3,3>(INDEX_R, INDEX_G) = -J_r_inv * (Sophus::SO3d::exp(residual.block<3, 1>(INDEX_R, 0))).matrix().inverse() * J_qg;
+        jacobi_mat.block<3,3>(INDEX_R, INDEX_G) = -J_r_inv * (Sophus::SO3d::exp(residual_vec.block<3, 1>(INDEX_R, 0))).matrix().inverse() * J_qg;
 
         // c. residual, velocity:
         // jacobi_mat.block<3,3>(INDEX_V, INDEX_P) = 
-        jacobi_mat.block<3,3>(INDEX_V, INDEX_R) = R_i_inv * (vel_j - vel_i + g_*T_);
+        jacobi_mat.block<3,3>(INDEX_V, INDEX_R) = Sophus::SO3d::hat(R_i_inv * (vel_j - vel_i + g_*T_));
         jacobi_mat.block<3,3>(INDEX_V, INDEX_V) = -R_i_inv;
         jacobi_mat.block<3,3>(INDEX_V, INDEX_A) = -J_va;
         jacobi_mat.block<3,3>(INDEX_V, INDEX_G) = -J_vg;
@@ -148,7 +148,7 @@ public:
       }
 
       if ( jacobians[1] ) {
-        Eigen::Map<Eigen::MatrixXd<15,15>> jacobi_mat(jacobian[1]);
+        Eigen::Map<Eigen::Matrix<double, 6, 15>> jacobi_mat(jacobians[1]);
         jacobi_mat.setZero();
         // a. residual, position:
         jacobi_mat.block<3,3>(INDEX_P, INDEX_P) = R_i_inv;
