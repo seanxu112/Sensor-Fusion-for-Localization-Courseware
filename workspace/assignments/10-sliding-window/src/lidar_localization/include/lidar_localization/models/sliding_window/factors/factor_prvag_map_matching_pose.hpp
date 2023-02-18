@@ -65,11 +65,12 @@ public:
     if ( jacobians ) {
       if ( jacobians[0] ) {
         // implement jacobian computing:
-        Eigen::Map<Eigen::Matrix<double, 6, 15>> jacobi_mat(jacobians[0]);
+        Eigen::Map<Eigen::Matrix<double, 6, 15, Eigen::RowMajor>> jacobi_mat(jacobians[0]);
         jacobi_mat.setZero();
 
         jacobi_mat.block<3,3>(INDEX_P, INDEX_P) = - Eigen::Matrix3d::Identity();
         jacobi_mat.block<3,3>(INDEX_R, INDEX_R) = JacobianRInv(residual_vec.block<3, 1>(INDEX_R, 0));
+        jacobi_mat = sqrt_info * jacobi_mat;
       }
     }
 

@@ -78,12 +78,12 @@ public:
     //
     // TODO: get square root of information matrix:
     //
-    Eigen::Matrix<double, 6, 6>  sqrt_info =  Eigen::LLT<Eigen::Matrix<double, 6 ,6>>(I_).matrixL().transpose() ;
+    Eigen::Matrix<double, 15, 15>  sqrt_info =  Eigen::LLT<Eigen::Matrix<double, 15 ,15>>(I_).matrixL().transpose() ;
     //
     // TODO: compute residual:
     //
-    Eigen::Map<Eigen::Matrix<double, 6, 1>> residual_vec(residuals);
-    residual_vec.block<3, 1>(INDEX_P, 0) = ori_i.matrix() * (pos_j - pos_i - vel_i*T_ + 0.5*g_*T_*T_) - alpha_ij;
+    Eigen::Map<Eigen::Matrix<double, 15, 1>> residual_vec(residuals);
+    residual_vec.block<3, 1>(INDEX_P, 0) = ori_i.inverse().matrix() * (pos_j - pos_i - vel_i*T_ + 0.5*g_*T_*T_) - alpha_ij;
     residual_vec.block<3, 1>(INDEX_R, 0) = (Sophus::SO3d::exp(theta_ij).inverse() * ori_i.inverse() * ori_j).log();
     residual_vec.block<3, 1>(INDEX_V, 0) = ori_i.inverse() * (vel_j - vel_i + g_ * T_) - beta_ij;
     residual_vec.block<3, 1>(INDEX_A, 0) = b_a_j - b_a_i;
@@ -108,7 +108,7 @@ public:
 
 
       if ( jacobians[0] ) {
-        Eigen::Map<Eigen::Matrix<double, 6, 15>> jacobi_mat(jacobians[0]);
+        Eigen::Map<Eigen::Matrix<double, 15, 15, Eigen::RowMajor>> jacobi_mat(jacobians[0]);
         jacobi_mat.setZero();
         // a. residual, position:
         jacobi_mat.block<3,3>(INDEX_P, INDEX_P) = -R_i_inv;
@@ -148,7 +148,7 @@ public:
       }
 
       if ( jacobians[1] ) {
-        Eigen::Map<Eigen::Matrix<double, 6, 15>> jacobi_mat(jacobians[1]);
+        Eigen::Map<Eigen::Matrix<double, 15, 15, Eigen::RowMajor>> jacobi_mat(jacobians[1]);
         jacobi_mat.setZero();
         // a. residual, position:
         jacobi_mat.block<3,3>(INDEX_P, INDEX_P) = R_i_inv;

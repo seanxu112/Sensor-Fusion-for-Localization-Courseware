@@ -15,7 +15,7 @@ key_frame:
 #
 # sliding window size:
 #
-sliding_window_size: 20
+sliding_window_size: 30
 
 #
 # select measurements:
